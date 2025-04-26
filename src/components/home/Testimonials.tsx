@@ -1,5 +1,6 @@
 import { FaQuoteLeft } from "react-icons/fa";
-import TestimonialsCarousel from "./TestimonialsCarousel";
+import {  TestimonialsCarousel } from "./TestimonialsCarousel";
+import { Quote } from "lucide-react";
 
 const testimonials = [
   {
@@ -24,27 +25,27 @@ const testimonials = [
 
 export default function Testimonials() {
   return (
-    <>
-      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 items-center bg-blue-500 h-[500px] rounded-xl shadow-md">
-        {/* Left Section */}
-        <div className="relative">
-          <div className="w-20 h-20 bg-yellow-400 rounded-full flex items-center justify-center text-3xl text-black font-bold absolute -top-10 -left-10">
-            <FaQuoteLeft />
-          </div>
-          <div className="pl-14 mt-10">
-            <h2 className="text-2xl font-semibold mb-4">
-              What Our Clients Are Saying
-            </h2>
-            <p className="text-sm text-gray-200 max-w-sm">
-              From gated societies to local businesses, our clients across
-              Gurgaon trust us for fast, reliable, and secure CCTV
-              installations.
-            </p>
-          </div>
-        </div>
-        <TestimonialsCarousel />
+    <div className="lg:w-3/4 lg:h-3/4 bg-gradient-to-b from-[#100756] to-[#210eaf] lg:ml-20 flex justify-start">
+      <div className="flex items-center justify-center bg-[#fff815] lg:h-24 lg:w-24 rounded-full z-20 relative lg:-top-12 lg:left-16">
+        <FaQuoteLeft className="text-black lg:text-3xl" />
       </div>
-   
-    </>
+      <div className="h-full w-1/2 flex flex-col  justify-center ">
+        <div className="lg:space-y-3">
+          <h1 className="lg:text-3xl ">
+            What our clients <br />
+            are saying{" "}
+          </h1>
+          <p className="lg:text-xl">
+            From gated societies to local businesses,
+            <br /> our clients across Gurgaon trust us for fast, reliable,{" "}
+            <br />
+            and secure CCTV installations.
+          </p>
+        </div>
+      </div>
+      <div className="z-20 flex relative lg:justify-center lg:items-center lg:w-1/8 -right-[200px]">
+         <TestimonialsCarousel />
+      </div>
+    </div>
   );
 }

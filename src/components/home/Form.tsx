@@ -23,7 +23,7 @@ export default function SiteVisitForm() {
   };
 
   return (
-    <div className="bg-white/12 p-6 rounded-3xl shadow-xl text-center w-[450px] text-white relative">
+    <div className="bg-white/12 p-6 rounded-3xl shadow-xl text-center md:w-[400px] text-white relative">
       <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-white rounded-full p-2">
        <LockIcon className="text-black"/>
       </div>
@@ -39,7 +39,7 @@ export default function SiteVisitForm() {
           placeholder="NAME"
           value={formData.name}
           onChange={handleChange}
-          className="px-4 py-3 rounded-md bg-transparent border border-white focus:outline-none focus:ring-2 focus:ring-blue-400 placeholder-white text-white"
+          className="md:px-4 md:py-3 rounded-md bg-transparent border border-white focus:outline-none focus:ring-2 focus:ring-blue-400 placeholder-white text-white"
           required
         />
         <input
@@ -48,14 +48,14 @@ export default function SiteVisitForm() {
           placeholder="PHONE NO"
           value={formData.phone}
           onChange={handleChange}
-          className="px-4 py-3 rounded-md bg-transparent border border-white focus:outline-none focus:ring-2 focus:ring-blue-400 placeholder-white text-white"
+          className="md:px-4 md:py-3 rounded-md bg-transparent border border-white focus:outline-none focus:ring-2 focus:ring-blue-400 placeholder-white text-white"
           required
         />
         <select
           name="service"
           value={formData.service}
           onChange={handleChange}
-          className="px-4 py-3 rounded-md bg-transparent border border-white focus:outline-none focus:ring-2 focus:ring-blue-400 text-white"
+          className="md:px-4 md:py-3 rounded-md bg-transparent border border-white focus:outline-none focus:ring-2 focus:ring-blue-400 text-white"
           required
         >
           <option value="" disabled>SELECT SERVICE</option>
@@ -68,7 +68,7 @@ export default function SiteVisitForm() {
           name="area"
           value={formData.area}
           onChange={handleChange}
-          className="px-4 py-3 rounded-md bg-transparent border border-white focus:outline-none focus:ring-2 focus:ring-blue-400 text-white"
+          className="md:px-4 md:py-3 rounded-md bg-transparent border border-white focus:outline-none focus:ring-2 focus:ring-blue-400 text-white"
           required
         >
           <option value="" disabled>SELECT AREA</option>
