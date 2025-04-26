@@ -1,64 +1,58 @@
+import { Check } from "lucide-react";
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
-import FancyButton from "./FancyButton";
+import React from "react";
 
-export default function WhyChooseUs() {
+const WhyChooseUs = () => {
+  const features = [
+    "Expertise You Can Trust",
+    "Top-Notch Technology",
+    "Fast & Hassle-Free Installation",
+    "Certified & Vetted Technicians",
+    "Flexible Plans, No Hidden Fees",
+  ];
+
   return (
- 
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-8">
-        {/* Left Content */}
-        <div className="flex-1 space-y-6">
-          {/* Heading */}
-          <div className="flex items-center space-x-4">
-            <div className="w-0 h-0 border-t-[15px] border-t-transparent border-b-[15px] border-b-transparent border-l-[20px] border-l-purple-500" />
-            <h2 className="text-3xl font-bold">Why Choose Us</h2>
-          </div>
-
-          {/* Box with text */}
-          <div className="bg-[#1C0B56] p-6 rounded-lg max-w-xs h-[300px] text-center">
-            <p className="text-lg leading-relaxed">
-              Professionals <br />
-              protecting what <br />
-              matters.
-            </p>
-          </div>
-
-          {/* Book Now button */}
-          <FancyButton className="px-14 py-3 ">
-            Book Now
-            </FancyButton>
+    <div className="h-full w-full flex">
+      <div className="h-full w-2/3 flex flex-col justify-center items-center p-10 space-y-6">
+        <div className="flex items-center space-x-4 mb-6 relative right-[170px]">
+          <div className="w-0 h-0 border-t-[15px] border-t-transparent border-b-[15px] border-b-transparent border-l-[20px] border-l-purple-500" />
+          <h2 className="text-white text-3xl font-semibold">WHY CHOOSE US</h2>
         </div>
+        <div className="flex justify-center items-center gap-8">
+          <div className="flex flex-col space-y-6">
+            <div className="h-[300px] w-[300px] bg-[#180648]/39 rounded-xl p-2 flex justify-center items-center">
+              <h1 className="text-2xl">
+                Professionals <br />
+                protecting
+                <br /> what matters.
+              </h1>
+            </div>
+            <div>
+              <button className="lg:w-full lg:py-2 bg-[#fff815] text-black font-semibold rounded-md">
+                Book Now
+              </button>
+            </div>
+          </div>
+          <div className="space-y-2">
+            {features.map((feature, index) => (
+              <div key={index} className="flex items-center gap-2">
+                {/* Yellow Checkmark */}
+                <Check className="text-yellow-400 w-10 h-10" />
 
-        {/* Bullet Points + Image */}
-        <div className="flex-1 flex flex-col md:flex-row items-center gap-6">
-          {/* Checklist */}
-          <ul className="text-left text-white text-lg space-y-3">
-            {[
-              "Expertise You Can Trust",
-              "Top-Notch Technology",
-              "Fast & Hassle-Free Installation",
-              "Certified & Vetted Technicians",
-              "Flexible Plans, No Hidden Fees",
-            ].map((point, i) => (
-              <li key={i} className="flex items-start gap-2">
-                <span className="text-yellow-400 text-xl mt-1">✔</span>
-                <span>{point}</span>
-              </li>
+                {/* Text */}
+                <span className="text-lg font-medium">{feature}</span>
+              </div>
             ))}
-          </ul>
-
-          {/* Image */}
-          <div className="w-full md:w-[300px] rounded-lg overflow-hidden">
-            <Image
-              src="/why-choose-us-camera.png" // Replace with your actual image path
-              alt="Security Camera Installation"
-              width={400}
-              height={300}
-              className="w-full h-auto object-cover rounded-lg"
-            />
           </div>
         </div>
       </div>
-  
+
+      <div
+        className="h-full w-1/3 "
+        style={{ backgroundImage: "url('/dummy_img.png')" }}
+      ></div>
+    </div>
   );
-}
+};
+
+export default WhyChooseUs;
