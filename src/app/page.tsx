@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "motion/react";
-import Navbar from "@/components/header/Navbar";
+import Navbar from "@/components/header/HomeNavbar";
 import { ImagesSliderDemo } from "@/components/home/ImageSlider";
 import Image from "next/image";
 import SiteVisitForm from "@/components/home/Form";
