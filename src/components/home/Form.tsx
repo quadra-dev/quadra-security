@@ -23,7 +23,7 @@ export default function SiteVisitForm() {
   };
 
   return (
-    <div className="bg-white/12 p-6 rounded-3xl shadow-xl text-center md:w-[400px] text-white relative">
+    <div className="hidden md:block bg-white/12 p-6 rounded-3xl shadow-xl text-center md:w-[400px] text-white relative">
       <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-white rounded-full p-2">
        <LockIcon className="text-black"/>
       </div>

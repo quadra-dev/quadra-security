@@ -41,11 +41,11 @@ const HomeNavbar = () => {
 
   return (
     <div 
-      className={`fixed z-50 w-full transition-all duration-300 ${
+      className={`fixed z-50 w-screen transition-all duration-300 ${
         scrolled || isMenuOpen ? "bg-[#0B0146]/95 backdrop-blur-lg" : "bg-transparent backdrop-blur-2xl"
       }`}
     >
-      <div className="h-18 w-full flex items-center justify-between px-4 md:px-6 lg:px-10">
+      <div className="md:h-18 h-14 w-full flex items-center justify-between px-4 md:px-6 lg:px-10">
         {/* Logo */}
         <div className="flex  gap-1 items-center">
           <Image
@@ -64,7 +64,7 @@ const HomeNavbar = () => {
         {/* Desktop Navigation */}
         <div className="hidden md:block">
           <nav className="">
-            <ul className="flex text-white text-md justify-evenly gap-4 lg:gap-10">
+            <ul className="flex text-white text-md justify-evenly gap-4 md:gap-3 lg:gap-10">
               {navItems.map((item) => (
                 <li key={item.name}>
                   <Link 
