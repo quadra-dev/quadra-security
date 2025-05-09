@@ -13,50 +13,62 @@ import { useEffect, useState } from "react";
 
 const services = [
   {
-    imageSrc: "/camera1.jpg",
-    title: "HD CCTV Systems",
+    imageSrc: "/home-security.jpg",
+    title: "Home Security",
     description:
-      "Ultra-high definition cameras with night vision capability for crystal clear surveillance footage 24/7.",
+      "Comprehensive surveillance and alarm solutions for residences, ensuring your family’s safety around the clock.",
     features: [
-      "4K Resolution Cameras",
-      "Weather-resistant Design",
-      "Remote Viewing Access",
+      "24/7 Monitoring",
+      "Smart Door Sensors",
+      "Remote Access Control",
     ],
   },
   {
-    imageSrc: "/camera2.jpg",
-    title: "HD CCTV Systems",
+    imageSrc: "/industrial-security.jpg",
+    title: "Industrial Security",
     description:
-      "Ultra-high definition cameras with night vision capability for crystal clear surveillance footage 24/7.",
+      "Robust security systems designed for factories, warehouses, and industrial estates to deter unauthorized access.",
     features: [
-      "4K Resolution Cameras",
-      "Weather-resistant Design",
-      "Remote Viewing Access",
+      "Perimeter Intrusion Detection",
+      "HD Surveillance",
+      "Fire and Hazard Alerts",
     ],
   },
   {
-    imageSrc: "/camera3.jpg",
-    title: "HD CCTV Systems",
+    imageSrc: "/real-estate-security.jpg",
+    title: "Real Estate Security",
     description:
-      "Ultra-high definition cameras with night vision capability for crystal clear surveillance footage 24/7.",
+      "Advanced surveillance for residential and commercial properties under development or in operation.",
     features: [
-      "4K Resolution Cameras",
-      "Weather-resistant Design",
-      "Remote Viewing Access",
+      "Construction Site Monitoring",
+      "Access Management",
+      "Night Vision Cameras",
     ],
   },
   {
-    imageSrc: "/camera4.jpg",
-    title: "HD CCTV Systems",
+    imageSrc: "/retail-security.jpg",
+    title: "Retail Security",
     description:
-      "Ultra-high definition cameras with night vision capability for crystal clear surveillance footage 24/7.",
+      "Customized CCTV and theft prevention systems for shops, malls, and stores to reduce shrinkage.",
     features: [
-      "4K Resolution Cameras",
-      "Weather-resistant Design",
-      "Remote Viewing Access",
+      "Customer Behavior Monitoring",
+      "POS Integration",
+      "Panic Button Systems",
+    ],
+  },
+  {
+    imageSrc: "/hospitality-healthcare-security.jpg",
+    title: "Hospitality / Health Care Security",
+    description:
+      "Discreet and effective surveillance tailored for hospitals, clinics, hotels, and resorts to protect guests and patients.",
+    features: [
+      "Visitor Management Systems",
+      "Emergency Response Integration",
+      "Surveillance with Privacy Zones",
     ],
   },
 ];
+
 
 const ServiceCarousel = () => {
   const [api, setApi] = useState<any>(null);
@@ -71,7 +83,7 @@ const ServiceCarousel = () => {
     // Set up autoplay
     const interval = setInterval(() => {
       api.scrollNext();
-    }, 1000);
+    }, 3000);
 
     return () => clearInterval(interval);
   }, [api, isHovered]);
@@ -88,7 +100,7 @@ const ServiceCarousel = () => {
 
   return (
     <div 
-      className="relative px-6 py-10  rounded-xl"
+      className="relative px-6 py-10 w-[300px] md:w-auto rounded-xl"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -110,8 +122,8 @@ const ServiceCarousel = () => {
             </CarouselItem>
           ))}
         </CarouselContent>
-        <CarouselPrevious className="bg-[#211a7d] hover:bg-[#2d26a0] text-white border-none" />
-        <CarouselNext className="bg-[#211a7d] hover:bg-[#2d26a0] text-white border-none" />
+        <CarouselPrevious className="bg-[#211a7d] hover:bg-[#2d26a0] h-6 w-6 m-3 text-white border-none" />
+        <CarouselNext className="bg-[#211a7d] hover:bg-[#2d26a0]  m-3 h-6 w-6 text-white border-none" />
       </Carousel>
 
       {/* Dot indicators */}

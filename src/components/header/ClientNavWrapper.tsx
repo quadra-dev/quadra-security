@@ -3,6 +3,7 @@
 import { usePathname } from "next/navigation";
 import Navbar from "./Navbar";
 import HomeNavbar from "./HomeNavbar";
+import Footer from "../footer/Footer";
 
 export default function ClientNavWrapper({
   children,
@@ -21,6 +22,7 @@ export default function ClientNavWrapper({
     <>
       {!isStudio && (isHome ? <HomeNavbar /> : <Navbar />)}
       {children}
+      <Footer/>
     </>
   );
 }

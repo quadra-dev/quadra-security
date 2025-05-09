@@ -1,5 +1,5 @@
 "use client";
-
+import { motion, useInView } from "framer-motion";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -78,8 +78,8 @@ export default function ContactForm() {
   };
 
   return (
-    <div className="w-full bg-white">
-      {/* Banner Header */}
+    <div className="w-full">
+      {/* Hero Banner */}
       <div className="bg-gray-700 bg-opacity-80 bg-blend-overlay bg-[url('/hero-bg.png')] bg-cover bg-center py-16">
         <div className="container mx-auto text-center">
           <h1 className="text-4xl font-bold text-white">Contact Us</h1>
