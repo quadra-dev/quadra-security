@@ -10,6 +10,7 @@ import BrandsCarousel from "@/components/home/BrandsCarousel";
 import { GiTick } from "react-icons/gi";
 import WhyChooseUs from "@/components/home/WhyChooseUs";
 import Testimonials from "@/components/home/Testimonials";
+import Chatbot from "@/components/Chatbot";
 
 export default function Home() {
   return (
@@ -17,21 +18,21 @@ export default function Home() {
       <section className="h-screen bg-gradient-to-b from-[#0D053F] to-[#2917C9] md:flex justify-evenly items-center">
         <div className="flex flex-col space-y-10">
           <div className="space-y-10">
-            <h1 className="text-white lg:text-5xl font-semibold">
+            <h1 className="text-white lg:text-5xl font-semibold tracking-wide">
               Providing The Best <br /> Surveillance & <br />
               Security Solutions In <br />
               <span>
                 <h1 className="font-bold text-yellow-500">Gurgaon</h1>
               </span>
             </h1>
-            <h2 className="text-white text-3xl">
+            <h2 className="text-white text-3xl mt-[-15px]">
               Get Free Site Visit in Gurgaon and <br /> Delhi NCR
             </h2>
           </div>
 
           <div>
             <FancyButton
-              className="md:py-4 md:px-10"
+              className="md:py-4 md:px-10 mt-[-5px]"
               onClick={() => alert("Consultation booked!")}
             >
               Book your free consultation
@@ -64,6 +65,7 @@ export default function Home() {
         style={{ backgroundImage: "url('/bg_img.png')" }} // replace with your actual image path
       >
         <Testimonials />
+        <Chatbot />
       </section>
     </div>
   );

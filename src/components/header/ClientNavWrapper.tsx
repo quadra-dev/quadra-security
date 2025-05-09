@@ -10,14 +10,16 @@ export default function ClientNavWrapper({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
-  const isHome =
-    pathname === "/" ||
-    pathname.startsWith("/studio/") ||
-    pathname === "/studio";
+
+  // Show HomeNavbar only on the homepage
+  const isHome = pathname === "/";
+
+  // Don't show any navbar for /studio and routes starting with /studio
+  const isStudio = pathname.startsWith("/studio");
 
   return (
     <>
-      {isHome ? <HomeNavbar /> : <Navbar />}
+      {!isStudio && (isHome ? <HomeNavbar /> : <Navbar />)}
       {children}
     </>
   );

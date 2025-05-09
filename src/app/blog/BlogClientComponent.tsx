@@ -117,27 +117,27 @@ export default function BlogClientComponent({
             </div>
 
             {/* Quick form */}
-            <div className="p-4 rounded-lg  border-2 bg-[#6590cd] w-[370px]">
-              <h3 className="text-lg font-semibold mb-4 ml-[15px]">
+            <div className="p-4 rounded-lg  border-2 bg-[#0F0644] w-[370px]">
+              <h3 className="text-lg font-semibold mb-4 ml-[15px] text-white">
                 Book Your Free Consultation Today
               </h3>
               <form className="space-y-4">
                 <input
                   type="text"
                   placeholder="Name"
-                  className=" bg-white p-2 w-full rounded text-[#393535] focus:outline-none focus:ring-2 focus:ring-blue-200"
+                  className=" bg-white p-2 w-[320px] ml-1 rounded text-[#393535] focus:outline-none focus:ring-2 focus:ring-blue-200"
                 />
                 <input
                   type="text"
                   placeholder="Phone No"
-                  className="bg-white p-2 w-full rounded text-[#393535] focus:outline-none focus:ring-2 focus:ring-blue-200"
+                  className="bg-white p-2 w-[320px] ml-1 rounded text-[#393535] focus:outline-none focus:ring-2 focus:ring-blue-200"
                 />
-                <select className="bg-white p-2 w-full rounded text-[#393535] focus:outline-none focus:ring-2 focus:ring-blue-200">
+                <select className="bg-white p-2 w-[320px] ml-1 rounded text-[#393535] focus:outline-none focus:ring-2 focus:ring-blue-200">
                   <option>Select Service</option>
                   <option>Business Surveillance</option>
                   <option>Home CCTV & Safety</option>
                 </select>
-                <select className="bg-white p-2 w-full rounded text-[#393535] focus:outline-none focus:ring-2 focus:ring-blue-200">
+                <select className="bg-white p-2 w-[320px] ml-1 rounded text-[#393535] focus:outline-none focus:ring-2 focus:ring-blue-200">
                   <option>Select Area</option>
                   <option>Gurgaon</option>
                   <option>Delhi</option>
