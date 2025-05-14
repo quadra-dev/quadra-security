@@ -8,7 +8,9 @@ interface PageProps {
   };
 }
 
-export default async function BlogDetailPage({ params }: PageProps) {
+export default async function BlogDetailPage(props: PageProps) {
+  const { params } = props;
+
   const blog = await client.fetch(
     `
     *[_type == "blog" && slug.current == $slug][0] {
