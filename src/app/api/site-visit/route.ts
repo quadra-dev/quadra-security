@@ -50,40 +50,48 @@ export async function POST(req: Request) {
     );
   }
 
-  // 1. Append to Google Sheet
-  try {
-    const keyPath = path.join(process.cwd(), "credentials.json");
-    const credentials = JSON.parse(fs.readFileSync(keyPath, "utf8"));
+ // 1. Append to Google Sheet
+try {
+  const base64Credentials = process.env.GOOGLE_CREDENTIALS_BASE64;
 
-    const auth = new JWT({
-      email: credentials.client_email,
-      key: credentials.private_key,
-      scopes: ["https://www.googleapis.com/auth/spreadsheets"],
-    });
-
-    const sheets = google.sheets({ version: "v4", auth });
-
-    await sheets.spreadsheets.values.append({
-      spreadsheetId: process.env.GOOGLE_SHEET_ID!,
-      range: "Sheet1!A1",
-      valueInputOption: "USER_ENTERED",
-      requestBody: {
-        values: [[name, phone, service, area, email, message, new Date().toLocaleString()]],
-      },
-    });
-
-    // 2. Fire and forget email (background)
-    sendEmail({ name, phone, service, area });
-
-    return NextResponse.json({
-      success: true,
-      message: "Submitted successfully",
-    });
-  } catch (error) {
-    console.error("Sheet error:", error);
-    return NextResponse.json(
-      { success: false, error: "Sheet append failed" },
-      { status: 500 }
-    );
+  if (!base64Credentials) {
+    throw new Error("Missing GOOGLE_CREDENTIALS_BASE64 environment variable");
   }
+
+  const credentials = JSON.parse(
+    Buffer.from(base64Credentials, "base64").toString("utf-8")
+  );
+
+  const auth = new JWT({
+    email: credentials.client_email,
+    key: credentials.private_key,
+    scopes: ["https://www.googleapis.com/auth/spreadsheets"],
+  });
+
+  const sheets = google.sheets({ version: "v4", auth });
+
+  await sheets.spreadsheets.values.append({
+    spreadsheetId: process.env.GOOGLE_SHEET_ID!,
+    range: "Sheet1!A1",
+    valueInputOption: "USER_ENTERED",
+    requestBody: {
+      values: [[name, phone, service, area, email, message, new Date().toLocaleString()]],
+    },
+  });
+
+  // Fire and forget email
+  sendEmail({ name, phone, service, area });
+
+  return NextResponse.json({
+    success: true,
+    message: "Submitted successfully",
+  });
+} catch (error) {
+  console.error("Sheet error:", error);
+  return NextResponse.json(
+    { success: false, error: "Sheet append failed" },
+    { status: 500 }
+  );
+}
+
 }
