@@ -2,22 +2,65 @@ import { client } from "@/sanity/lib/client";
 import { PortableText } from "@portabletext/react";
 import Link from "next/link";
 
- 
+interface BlogPost {
+  title: string;
+  publishedAt: string;
+  excerpt?: string;
+  poster?: {
+    asset: {
+      url: string;
+    };
+  };
+  Content: any;
+}
 
-// @ts-expect-error – Next.js dynamic route type mismatch during build, params are valid at runtime
-export default async function BlogDetailPage({ params }: { params: { slug: string } }) {
+interface PageProps {
+  params: { slug: string };
+  searchParams?: { [key: string]: string | string[] | undefined };
+}
 
-  const blog = await client.fetch(
-    `
-    *[_type == "blog" && slug.current == $slug][0] {
+export async function generateMetadata({ params }: PageProps) {
+  const blog = await client.fetch<BlogPost>(
+    `*[_type == "blog" && slug.current == $slug][0] {
       title,
-      publishedAt,
-      poster { asset->{url} },
-      Content
-    }
-  `,
+      excerpt
+    }`,
     { slug: params.slug }
   );
+
+  return {
+    title: `${blog?.title || "Blog Post"} | Your Site Name`,
+    description: blog?.excerpt || "Security solutions blog post",
+  };
+}
+
+export async function generateStaticParams() {
+  const posts = await client.fetch<
+    { slug: { current: string } }[]
+  >(`*[_type == "blog"] { slug { current } }`);
+
+  return posts.map((post) => ({
+    slug: post.slug.current,
+  }));
+}
+
+export default async function BlogDetailPage({ params }: PageProps) {
+  let blog: BlogPost | null = null;
+  
+  try {
+    blog = await client.fetch<BlogPost>(
+      `*[_type == "blog" && slug.current == $slug][0] {
+        title,
+        publishedAt,
+        poster { asset->{url} },
+        Content
+      }`,
+      { slug: params.slug }
+    );
+  } catch (error) {
+    console.error("Error fetching blog post:", error);
+    return <div className="p-8">Error loading blog post.</div>;
+  }
 
   if (!blog) {
     return <div className="p-8">Blog not found.</div>;
@@ -38,6 +81,7 @@ export default async function BlogDetailPage({ params }: { params: { slug: strin
           <h1 className="text-4xl font-bold text-white">{blog.title}</h1>
         </div>
       </div>
+
       <div className="bg-white container mx-auto p-8 grid grid-cols-1 lg:grid-cols-3 gap-12">
         {/* LEFT CONTENT */}
         <div className="lg:col-span-2 ml-[40px]">
@@ -45,7 +89,8 @@ export default async function BlogDetailPage({ params }: { params: { slug: strin
             <img
               src={blog.poster.asset.url}
               alt={blog.title}
-              className="rounded-sm mb-6 w-[900px] h-[500px]"
+              className="rounded-sm mb-6 w-[900px] h-[500px] object-cover"
+              loading="lazy"
             />
           )}
 
@@ -58,7 +103,7 @@ export default async function BlogDetailPage({ params }: { params: { slug: strin
               })}
             </p>
             <span className="mx-2">|</span>
-            <p>Security</p> {/* Hardcoded Category for now */}
+            <p>Security</p>
           </div>
 
           <div className="prose prose-lg max-w-none text-[#575757] font-serif leading-5.5 space-y-6">
@@ -68,10 +113,8 @@ export default async function BlogDetailPage({ params }: { params: { slug: strin
 
         {/* RIGHT SIDEBAR */}
         <div className="space-y-8 ml-[40px]">
-          {/* Search Box */}
-
           {/* Quick Contact Form */}
-          <div className="p-4 rounded-lg  border-2 bg-[#6590cd] w-[370px]">
+          <div className="p-4 rounded-lg border-2 bg-[#6590cd] w-[370px]">
             <h3 className="text-lg font-semibold mb-4 ml-[15px]">
               Book Your Free Consultation Today
             </h3>
@@ -79,10 +122,10 @@ export default async function BlogDetailPage({ params }: { params: { slug: strin
               <input
                 type="text"
                 placeholder="Name"
-                className=" bg-white p-2 w-full rounded text-[#393535] focus:outline-none focus:ring-2 focus:ring-blue-200"
+                className="bg-white p-2 w-full rounded text-[#393535] focus:outline-none focus:ring-2 focus:ring-blue-200"
               />
               <input
-                type="text"
+                type="tel"
                 placeholder="Phone No"
                 className="bg-white p-2 w-full rounded text-[#393535] focus:outline-none focus:ring-2 focus:ring-blue-200"
               />
@@ -98,13 +141,14 @@ export default async function BlogDetailPage({ params }: { params: { slug: strin
               </select>
               <button
                 type="submit"
-                className="w-full bg-[#FFC43C] text-black font-medium py-2 rounded"
+                className="w-full bg-[#FFC43C] text-black font-medium py-2 rounded hover:bg-[#e6b135] transition-colors"
               >
                 Submit
               </button>
             </form>
           </div>
 
+          {/* Categories */}
           <div className="bg-white p-6 rounded-lg shadow-md">
             <h2 className="text-lg font-medium text-black mb-4">Categories</h2>
             <ul className="space-y-3">
@@ -115,6 +159,7 @@ export default async function BlogDetailPage({ params }: { params: { slug: strin
                       .toLowerCase()
                       .replace(/\s+/g, "-")}`}
                     className="flex items-center text-gray-700 hover:text-indigo-600 transition"
+                    prefetch={false}
                   >
                     <svg
                       className="w-4 h-4 mr-2 text-indigo-600"
