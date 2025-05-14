@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { toast } from "sonner";
 
 const ContactFormm: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -15,15 +16,32 @@ const ContactFormm: React.FC = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+
+
+ const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission logic here
-    console.log("Form submitted:", formData);
-    // Reset form after submission
-    setFormData({ name: "", email: "", phone: "", message: "" });
-    alert(
-      "Thank you! We will contact you soon to schedule your free site visit."
-    );
+
+    const toastId = toast.loading("Submitting request...");
+
+    try {
+      const response = await fetch("/api/site-visit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        toast.success("Site visit scheduled successfully!", { id: toastId });
+        setFormData({ name: "", phone: "", email: "", message: "" });
+      } else {
+        toast.error(result.error || "Something went wrong", { id: toastId });
+      }
+    } catch (error) {
+      console.error(error);
+      toast.error("Submission failed", { id: toastId });
+    }
   };
 
   return (
@@ -36,7 +54,7 @@ const ContactFormm: React.FC = () => {
           onChange={handleChange}
           placeholder="NAME"
           required
-          className="w-full px-4 py-3 border text-white border-gray-300 rounded focus:outline-none focus:border-blue-800 text-base transition-colors"
+          className="w-full px-4 py-3 border text-white border-gray-300 rounded focus:outline-none focus:border-yellow-400 text-base transition-colors"
         />
       </div>
 
@@ -48,7 +66,7 @@ const ContactFormm: React.FC = () => {
           onChange={handleChange}
           placeholder="EMAIL ADDRESS"
           required
-          className="w-full px-4 py-3 text-white border border-gray-300 rounded focus:outline-none focus:border-blue-800 text-base transition-colors"
+          className="w-full px-4 py-3 text-white border border-gray-300 rounded focus:outline-none focus:border-yellow-400 text-base transition-colors"
         />
       </div>
 
@@ -60,7 +78,7 @@ const ContactFormm: React.FC = () => {
           onChange={handleChange}
           placeholder="PHONE NUMBER"
           required
-          className="w-full px-4 py-3 text-white border border-gray-300 rounded focus:outline-none focus:border-blue-800 text-base transition-colors"
+          className="w-full px-4 py-3 text-white border border-gray-300 rounded focus:outline-none focus:border-yellow-400 text-base transition-colors"
         />
       </div>
 
@@ -70,7 +88,7 @@ const ContactFormm: React.FC = () => {
           value={formData.message}
           onChange={handleChange}
           placeholder="MESSAGE (OPTIONAL)"
-          className="w-full px-4 py-3 text-white border border-gray-300 rounded focus:outline-none focus:border-blue-800 text-base transition-colors resize-y min-h-[120px]"
+          className="w-full px-4 py-3 text-white border border-gray-300 rounded focus:outline-none focus:border-yellow-400 text-base transition-colors resize-y min-h-[120px]"
           rows={4}
         />
       </div>

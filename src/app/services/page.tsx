@@ -18,78 +18,177 @@ interface ServiceItem {
 const Services: NextPage = () => {
   const pageRef = useRef<HTMLDivElement>(null);
 
-  const services: ServiceItem[] = [
-    {
-      icon: "📹",
-      title: "CCTV Installation",
-      description:
-        "At Quadra Security, we provide CCTV & surveillance systems that offer peace of mind. Our experienced team will assess your needs and design a custom solution to protect what matters most to you.",
-      features: [
-        "HD/4K Installation (Premium Packages)",
-        "DVR & Accessories & Connections",
-        "IP & Analogue Solutions",
-        "High-Quality Lenses & Sensors",
-        "Remote Viewing Capability",
-      ],
-      imageUrl: "/images/cctv-installer.png",
-    },
-    {
-      icon: "🖥️",
-      title: "Video Wall Solutions",
-      description:
-        "Experience incredible clarity and control with our professional video wall solutions. Perfect for command centers, operation rooms, and retail environments requiring multi-screen displays.",
-      features: [
-        "HD/4K Display Capability",
-        "Dynamic Multi-Screen Control",
-        "Intuitive Wall Control System",
-        "Edge Blending Technology",
-        "Scalable Video Wall Implementation",
-      ],
-      imageUrl: "/images/video-wall.png",
-    },
-    {
-      icon: "📊",
-      title: "Video Analytics",
-      description:
-        "Leverage the advanced video analytics with our intelligent monitoring systems that detect and analyze patterns, behaviors and events in real time, providing actionable insights to help you make the right call.",
-      features: [
-        "Motion Detection & Tracking",
-        "Facial Recognition",
-        "Object Detection",
-        "Behavioral Analysis",
-        "Event & Anomaly Detection",
-      ],
-      imageUrl: "/images/video-analytics.png",
-    },
-    {
-      icon: "🚨",
-      title: "Security Alarms",
-      description:
-        "Our security alarm systems are designed to alert you instantly of unauthorized entry or suspicious activity. We integrate leading technologies to ensure your property remains secure around the clock.",
-      features: [
-        "Motion Detection Systems",
-        "24/7 Silent Monitoring",
-        "Immediate & Mobile Alerts",
-        "Window & Door Sensors",
-        "Emergency and Panic Alarms",
-      ],
-      imageUrl: "/images/security-alarms.jpg",
-    },
-    {
-      icon: "🧳",
-      title: "Baggage Scanners",
-      description:
-        "Ensure thorough scanning of all baggage and parcels with our state-of-the-art scanning systems. Our scanners are designed to efficiently screen items without causing delays in your operations.",
-      features: [
-        "High-Resolution X-Ray Imaging",
-        "Dual-View/Multi-View Capability",
-        "Automatic Threat Detection",
-        "User-Friendly Interface",
-        "Maintenance & Technical Support",
-      ],
-      imageUrl: "/images/baggage-scanner.jpg",
-    },
-  ];
+ const services: ServiceItem[] = [
+  {
+    icon: "📹",
+    title: "CCTV & Surveillance",
+    description:
+      "We provide cutting-edge CCTV solutions including IP, analog, and 4G/WiFi surveillance systems. Ensure round-the-clock monitoring of your premises with high-quality imaging and smart analytics.",
+    features: [
+      "HD/4K Installation",
+      "4G, WiFi, and Solar-Powered Cameras",
+      "Remote Monitoring",
+      "Night Vision & Motion Detection",
+      "Cloud & Local Storage Options",
+    ],
+    imageUrl: "/images/cctv-installer.png",
+  },
+  {
+    icon: "🧬",
+    title: "Biometric Systems",
+    description:
+      "Secure your facility with our biometric access control solutions including fingerprint, facial recognition, and multimodal systems for accurate identification and attendance tracking.",
+    features: [
+      "Fingerprint & Facial Recognition",
+      "Multimodal Biometric Access",
+      "Door Lock Integration",
+      "Attendance Management",
+      "Security & Data Logging",
+    ],
+    imageUrl: "/images/biometric-system.jpg",
+  },
+  {
+    icon: "🚘",
+    title: "ANPR (Automatic Number Plate Recognition)",
+    description:
+      "Deploy ANPR cameras to capture and identify vehicle number plates in real time. Ideal for parking, tolls, and secured entry points.",
+    features: [
+      "Real-Time Plate Recognition",
+      "High-Speed Camera Integration",
+      "Database Matching",
+      "Barrier Integration",
+      "Analytics Dashboard",
+    ],
+    imageUrl: "/images/anpr-camera.jpg",
+  },
+  {
+    icon: "📞",
+    title: "EPABX Systems",
+    description:
+      "Modernize internal communication with our EPABX systems. Suitable for organizations of all sizes looking for seamless call routing and extension management.",
+    features: [
+      "Analog & IP EPABX Systems",
+      "Scalable Extensions",
+      "Voicemail & Call Logs",
+      "Intercom & Paging",
+      "Repair & Installation Services",
+    ],
+    imageUrl: "/images/epabx-system.jpg",
+  },
+  {
+    icon: "🖥️",
+    title: "Interactive Display Panels",
+    description:
+      "Engage users with high-definition interactive panels designed for conference rooms, education, and command centers.",
+    features: [
+      "Touch-Enabled Display",
+      "Multi-Device Connectivity",
+      "Smart Board Capabilities",
+      "Integrated OS and Apps",
+      "Wall Mount & Stand Options",
+    ],
+    imageUrl: "/images/interactive-panel.jpg",
+  },
+  {
+    icon: "📞",
+    title: "Video Door Phones",
+    description:
+      "Enhance home or office security with our video door phone systems. See and communicate with visitors before granting access.",
+    features: [
+      "HD Video Calling",
+      "Intercom Support",
+      "Remote Unlocking",
+      "Wi-Fi Enabled Options",
+      "Multiple Indoor Units",
+    ],
+    imageUrl: "/images/video-door-phone.jpg",
+  },
+  {
+    icon: "🛅",
+    title: "Baggage Scanners",
+    description:
+      "Ensure safety with high-resolution X-ray baggage scanners ideal for malls, offices, and transport hubs.",
+    features: [
+      "Dual View Imaging",
+      "Automatic Threat Detection",
+      "Real-Time Scanning",
+      "Maintenance Support",
+      "High Throughput Rate",
+    ],
+    imageUrl: "/images/baggage-scanner.jpg",
+  },
+  {
+    icon: "🚨",
+    title: "Alarm Systems",
+    description:
+      "Protect property and personnel with advanced alarm systems. Detect intrusion, fire, and unauthorized access instantly.",
+    features: [
+      "Intruder & Panic Alarms",
+      "Door/Window Sensors",
+      "24/7 Monitoring",
+      "Mobile Notifications",
+      "Fire & Smoke Detection",
+    ],
+    imageUrl: "/images/security-alarms.jpg",
+  },
+  {
+    icon: "🔍",
+    title: "Metal Detectors",
+    description:
+      "Deploy handheld and walkthrough metal detectors for reliable screening in secure environments such as events, schools, and offices.",
+    features: [
+      "High Sensitivity Scanning",
+      "Portable & Walkthrough Options",
+      "Gold & Weapon Detection",
+      "Adjustable Thresholds",
+      "Rechargeable Models",
+    ],
+    imageUrl: "/images/metal-detector.jpg",
+  },
+  {
+    icon: "🧱",
+    title: "Access Control Systems",
+    description:
+      "Control who enters your premises with secure and customizable access control systems for doors, gates, and turnstiles.",
+    features: [
+      "RFID & Biometric Entry",
+      "Centralized Access Management",
+      "Time-Based Permissions",
+      "Integration with Door Locks",
+      "Audit Logs & Reports",
+    ],
+    imageUrl: "/images/access-control.jpg",
+  },
+  {
+    icon: "⛔",
+    title: "Boom Barriers & Toll Solutions",
+    description:
+      "Automated boom barriers and toll management systems for gated communities, industrial complexes, and parking areas.",
+    features: [
+      "ANPR Integration",
+      "Fast-Action Barriers",
+      "Remote Control Access",
+      "Toll Payment Systems",
+      "Access Logging",
+    ],
+    imageUrl: "/images/boom-barrier.jpg",
+  },
+  {
+    icon: "🔒",
+    title: "Electronic Door Locks",
+    description:
+      "Upgrade to keyless entry with our range of electronic door locks that support fingerprint, RFID, PIN, and smartphone control.",
+    features: [
+      "Biometric & PIN Access",
+      "Remote Unlocking",
+      "Auto-Lock Mechanism",
+      "Battery Backup",
+      "Tamper Alerts",
+    ],
+    imageUrl: "/images/electronic-door-lock.jpg",
+  },
+];
+
 
   useEffect(() => {
     if (pageRef.current) {
@@ -118,13 +217,13 @@ const Services: NextPage = () => {
         ))}
       </div>
 
-      <div className="bg-gradient-to-b to-[#2716be] from-[#0e0542] p-8 mt-16 border border-b-blue-600">
+      <div className="bg-gradient-to-b to-[#2716be] from-[#0e0542] p-8 mt-16 border-b ">
         <h2 className="text-2xl font-bold mb-8 text-white text-center tracking-widest">
           Schedule a Free Site Visit
         </h2>
         <ContactForm />
       </div>
-      <Footer />
+      
     </main>
   );
 };

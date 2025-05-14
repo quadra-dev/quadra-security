@@ -3,7 +3,7 @@
 import { LockIcon } from "lucide-react";
 import { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
-
+import { toast } from "sonner";
 export default function SiteVisitForm() {
   const [formData, setFormData] = useState({
     name: "",
@@ -19,10 +19,30 @@ export default function SiteVisitForm() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log(formData);
-    // Submit logic here
+
+    const toastId = toast.loading("Submitting request...");
+
+    try {
+      const response = await fetch("/api/site-visit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        toast.success("Site visit scheduled successfully!", { id: toastId });
+        setFormData({ name: "", phone: "", service: "", area: "" });
+      } else {
+        toast.error(result.error || "Something went wrong", { id: toastId });
+      }
+    } catch (error) {
+      console.error(error);
+      toast.error("Submission failed", { id: toastId });
+    }
   };
 
   const ref = useRef(null);
@@ -34,7 +54,7 @@ export default function SiteVisitForm() {
       initial={{ opacity: 0, scale: 0.8 }}
       animate={isInView ? { opacity: 1, scale: 1 } : {}}
       transition={{ duration: 0.7, ease: "easeOut" }}
-      className="block  bg-white/10 md:p-6 p-4 md:rounded-3xl rounded-2xl shadow-2xl text-center md:w-[400px]  h-[300px] md:h-auto text-white relative backdrop-blur-xl"
+      className="block w-5/7 bg-white/10 md:p-6 p-4 md:rounded-3xl rounded-2xl shadow-2xl text-center md:w-[400px]  h-[300px] md:h-auto text-white relative backdrop-blur-xl"
     >
       <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-white rounded-full p-2 shadow-md">
         <LockIcon className="text-black" />
@@ -73,12 +93,45 @@ export default function SiteVisitForm() {
           className="px-4 md:py-3 py-1 text-sm  rounded-md  bg-transparent border border-white  focus:outline-none focus:ring-2 focus:ring-yellow-400 transition-all"
           required
         >
-          <option value=""  className="bg-white" disabled>
+          <option value="" className="bg-white" disabled>
             SELECT SERVICE
           </option>
-          <option value="cctv" className="text-black">CCTV Installation</option>
-          <option value="alarm" className="text-black">Alarm Systems</option>
-          <option value="access" className="text-black">Access Control</option>
+          <option value="cctv-surveillance" className="text-black">
+            CCTV & Surveillance
+          </option>
+          <option value="biometric-systems" className="text-black">
+            Biometric Systems
+          </option>
+          <option value="anpr" className="text-black">
+            ANPR (Automatic Number Plate Recognition)
+          </option>
+          <option value="epabx-systems" className="text-black">
+            EPABX Systems
+          </option>
+          <option value="interactive-display-panels" className="text-black">
+            Interactive Display Panels
+          </option>
+          <option value="video-door-phones" className="text-black">
+            Video Door Phones
+          </option>
+          <option value="baggage-scanners" className="text-black">
+            Baggage Scanners
+          </option>
+          <option value="alarm-systems" className="text-black">
+            Alarm Systems
+          </option>
+          <option value="metal-detectors" className="text-black">
+            Metal Detectors
+          </option>
+          <option value="access-control-systems" className="text-black">
+            Access Control Systems
+          </option>
+          <option value="boom-barriers-toll-solutions" className="text-black">
+            Boom Barriers & Toll Solutions
+          </option>
+          <option value="electronic-door-locks" className="text-black">
+            Electronic Door Locks
+          </option>
         </motion.select>
         <motion.select
           whileFocus={{ scale: 1.02 }}
@@ -91,10 +144,80 @@ export default function SiteVisitForm() {
           <option value="" disabled>
             SELECT AREA
           </option>
-          <option value="north" className="text-black">North Zone</option>
-          <option value="south" className="text-black">South Zone</option>
-          <option value="east" className="text-black">East Zone</option>
-          <option value="west" className="text-black">West Zone</option>
+          <optgroup label="North Gurgaon" className="text-black">
+            <option value="palam-vihar" className="text-black">
+              Palam Vihar
+            </option>
+            <option value="dlf-phase-1" className="text-black">
+              DLF Phase 1
+            </option>
+            <option value="dlf-phase-2" className="text-black">
+              DLF Phase 2
+            </option>
+            <option value="mg-road" className="text-black">
+              MG Road
+            </option>
+          </optgroup>
+
+          <optgroup label="South Gurgaon"  className="text-black">
+            <option value="sohna" className="text-black">
+              Sohna
+            </option>
+            <option value="badshahpur" className="text-black">
+              Badshahpur
+            </option>
+            <option value="sector-67" className="text-black">
+              Sector 67
+            </option>
+            <option value="vatika" className="text-black">
+              Vatika City
+            </option>
+          </optgroup>
+
+          <optgroup label="East Gurgaon" className="text-black">
+            <option value="sector-56" className="text-black">
+              Sector 56
+            </option>
+            <option value="golf-course-road" className="text-black">
+              Golf Course Road
+            </option>
+            <option value="gwalpahari" className="text-black">
+              Gwalpahari
+            </option>
+            <option value="ghata" className="text-black">
+              Ghata Village
+            </option>
+          </optgroup>
+
+          <optgroup label="West Gurgaon" className="text-black">
+            <option value="sector-9" className="text-black">
+              Sector 9
+            </option>
+            <option value="sector-10" className="text-black">
+              Sector 10
+            </option>
+            <option value="hero-honda-chowk" className="text-black">
+              Hero Honda Chowk
+            </option>
+            <option value="iffco-chowk" className="text-black">
+              IFFCO Chowk
+            </option>
+          </optgroup>
+
+          <optgroup label="Central Gurgaon" className="text-black">
+            <option value="civil-lines" className="text-black">
+              Civil Lines
+            </option>
+            <option value="rajiv-chowk" className="text-black">
+              Rajiv Chowk
+            </option>
+            <option value="sector-14" className="text-black">
+              Sector 14
+            </option>
+            <option value="sector-15" className="text-black">
+              Sector 15
+            </option>
+          </optgroup>
         </motion.select>
 
         <motion.button

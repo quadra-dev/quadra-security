@@ -42,7 +42,7 @@ const SolutionsDropdown = () => {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 6 }}
             exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.2 }}
+            transition={{ duration: 0.5 }}
             className="absolute top-full mt-2 left-0 w-60 bg-gray-100 backdrop-blur-md text-black shadow-xl z-10 py-2 rounded-md"
           >
             {solutions.map((item) => (

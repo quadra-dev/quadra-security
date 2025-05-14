@@ -6,6 +6,7 @@ import Image from "next/image";
 import SiteVisitForm from "@/components/home/Form";
 import FancyButton from "@/components/home/FancyButton";
 import ServiceCarousel from "@/components/home/ServiceCarousel";
+import SolutionsCarousel from "@/components/home/SolutionsCrousel";
 import BrandsCarousel from "@/components/home/BrandsCarousel";
 import { GiTick } from "react-icons/gi";
 import WhyChooseUs from "@/components/home/WhyChooseUs";
@@ -83,6 +84,24 @@ export default function Home() {
           </h2>
           <h1 className="text-yellow-500 md:text-5xl text-3xl font-semibold text-center md:text-start">
             Advanced Security Solutions
+          </h1>
+        </motion.div>
+        <div className="flex justify-center w-full">
+          <SolutionsCarousel/>
+        </div>
+      </section>
+       <section className="h-screen w-screen bg-gradient-to-b from-[#151b7e] via-[#300571] to-[#151b7e] flex flex-col justify-center items-center ">
+        <motion.div
+        ref={ref}
+        initial={{ opacity: 0, y: 100 }}
+        animate={isInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 1.2, ease: "easeOut" }}
+         className="space-y-4 md:w-1/2 w-full mt-56 md:mt-0">
+          <h2 className="text-white md:text-4xl text-2xl text-center md:text-start">
+            Check our
+          </h2>
+          <h1 className="text-yellow-500 md:text-5xl text-3xl font-semibold text-center md:text-start">
+            Excellent Services
           </h1>
         </motion.div>
         <div className="flex justify-center w-full">
