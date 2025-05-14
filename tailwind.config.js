@@ -1,21 +1,32 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+import defineConfig from "tailwindcss"
+
+export default defineConfig({
+  content: [
+    "./pages/**/*.{js,ts,jsx,tsx}", // Update with your Next.js folder structure
+    "./components/**/*.{js,ts,jsx,tsx}",
+  ],
   theme: {
     extend: {
-      animation: {
-        rotate: "rotate 10s linear infinite",
+      colors: {
+        primary: "#1D4ED8", // Example primary color
+        secondary: "#F59E0B", // Example secondary color
       },
-      transitionDuration: {
-        600: "600ms",
-        1500: "1500ms",
+      fontFamily: {
+        urbanist: ["Urbanist", "sans-serif"], // Custom font
+      },
+      spacing: {
+        128: "32rem", // Custom spacing (for example, for larger margins/padding)
+      },
+      animation: {
+        fadeIn: "fadeIn 1s ease-out", // Example animation
       },
       keyframes: {
-        rotate: {
-          "0%": { transform: "rotate(0deg) scale(10)" },
-          "100%": { transform: "rotate(-360deg) scale(10)" },
+        fadeIn: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
         },
       },
     },
   },
   plugins: [],
-};
+});
