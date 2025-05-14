@@ -1,7 +1,5 @@
 "use client";
-import { motion, useInView } from "framer-motion";
 import { useState } from "react";
-import { toast } from "react-hot-toast";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({

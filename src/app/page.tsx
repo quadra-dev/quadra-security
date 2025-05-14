@@ -1,14 +1,10 @@
 "use client";
 import { motion, useInView } from "framer-motion";
-import Navbar from "@/components/header/HomeNavbar";
-import { ImagesSliderDemo } from "@/components/home/ImageSlider";
-import Image from "next/image";
 import SiteVisitForm from "@/components/home/Form";
 import FancyButton from "@/components/home/FancyButton";
 import ServiceCarousel from "@/components/home/ServiceCarousel";
 import SolutionsCarousel from "@/components/home/SolutionsCrousel";
 import BrandsCarousel from "@/components/home/BrandsCarousel";
-import { GiTick } from "react-icons/gi";
 import WhyChooseUs from "@/components/home/WhyChooseUs";
 import Testimonials from "@/components/home/Testimonials";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";

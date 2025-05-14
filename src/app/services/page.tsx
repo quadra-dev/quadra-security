@@ -1,11 +1,9 @@
 "use client";
 import type { NextPage } from "next";
-import Head from "next/head";
 import { useEffect, useRef } from "react";
 import ServiceSection from "@/components/ServiceSection";
 import ContactForm from "@/components/ContactFormm";
 import { initLineAnimation } from "@/animations/lineAnimation";
-import Footer from "@/components/footer/Footer";
 
 interface ServiceItem {
   icon: string;

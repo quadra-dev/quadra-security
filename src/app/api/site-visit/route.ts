@@ -2,8 +2,7 @@ import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 import { google } from "googleapis";
 import { JWT } from "google-auth-library";
-import fs from "fs";
-import path from "path";
+
 
 // Helper function for sending email (called in background)
 async function sendEmail({ name, phone, service, area }: Record<string, string>) {

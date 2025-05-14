@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image"; // Optional
 import { FaQuoteLeft } from "react-icons/fa";
 
 interface TestimonialCardProps {
