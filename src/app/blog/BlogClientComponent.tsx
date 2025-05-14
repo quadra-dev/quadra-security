@@ -4,8 +4,8 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { BlogPost, categories } from "./page";
-
+import { BlogPost} from "./page";
+import { categories } from "@/constants/categories";
 export default function BlogClientComponent({
   blogPosts,
 }: {
