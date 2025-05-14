@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { client } from "@/sanity/lib/client";
 import { PortableText } from "@portabletext/react";
 import Link from "next/link";
@@ -35,9 +36,9 @@ export async function generateMetadata({ params }: PageProps) {
 }
 
 export async function generateStaticParams() {
-  const posts = await client.fetch<
-    { slug: { current: string } }[]
-  >(`*[_type == "blog"] { slug { current } }`);
+  const posts = await client.fetch<{ slug: { current: string } }[]>(
+    `*[_type == "blog"] { slug { current } }`
+  );
 
   return posts.map((post) => ({
     slug: post.slug.current,
@@ -46,7 +47,7 @@ export async function generateStaticParams() {
 
 export default async function BlogDetailPage({ params }: PageProps) {
   let blog: BlogPost | null = null;
-  
+
   try {
     blog = await client.fetch<BlogPost>(
       `*[_type == "blog" && slug.current == $slug][0] {
