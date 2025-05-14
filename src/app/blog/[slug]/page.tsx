@@ -2,13 +2,13 @@ import { client } from "@/sanity/lib/client";
 import { PortableText } from "@portabletext/react";
 import Link from "next/link";
 
-type Props = {
+interface PageProps {
   params: {
     slug: string;
   };
-};
+}
 
-export default async function BlogDetailPage({ params }: Props) {
+export default async function BlogDetailPage({ params }: PageProps) {
   const blog = await client.fetch(
     `
     *[_type == "blog" && slug.current == $slug][0] {
