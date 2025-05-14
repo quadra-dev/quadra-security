@@ -15,12 +15,14 @@ interface BlogPost {
   Content: any;
 }
 
-interface PageProps {
-  params: { slug: string };
-  searchParams?: { [key: string]: string | string[] | undefined };
-}
+// Updated PageProps interface to match Next.js expectations
+// interface PageProps {
+//   params: {
+//     slug: string
+//   };
+// }
 
-export async function generateMetadata({ params }: PageProps) {
+export async function generateMetadata({ params }: { params: { slug: string } }) {
   const blog = await client.fetch<BlogPost>(
     `*[_type == "blog" && slug.current == $slug][0] {
       title,
@@ -36,18 +38,18 @@ export async function generateMetadata({ params }: PageProps) {
 }
 
 export async function generateStaticParams() {
-  const posts = await client.fetch<{ slug: { current: string } }[]>(
-    `*[_type == "blog"] { slug { current } }`
-  );
+  const posts = await client.fetch<
+    { slug: { current: string } }[]
+  >(`*[_type == "blog"] { slug { current } }`);
 
   return posts.map((post) => ({
     slug: post.slug.current,
   }));
 }
 
-export default async function BlogDetailPage({ params }: PageProps) {
+export default async function BlogDetailPage({ params }: { params: { slug: string } }) {
   let blog: BlogPost | null = null;
-
+  
   try {
     blog = await client.fetch<BlogPost>(
       `*[_type == "blog" && slug.current == $slug][0] {
