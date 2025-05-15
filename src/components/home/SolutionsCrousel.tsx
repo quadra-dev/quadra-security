@@ -14,7 +14,7 @@ import SolutionCard from "./SolutionCard";
 
 const solutions = [
   {
-    imageSrc: "/home-security.jpg",
+    imageSrc: "https://res.cloudinary.com/dggsp8ihg/image/upload/v1747294413/home_security_ba6wve.jpg",
     title: "Home Security",
     description:
       "Comprehensive surveillance and alarm solutions for residences, ensuring your family’s safety around the clock.",
@@ -26,7 +26,7 @@ const solutions = [
     path: "/solutions/home-security",
   },
   {
-    imageSrc: "/industrial-security.jpg",
+    imageSrc: "https://res.cloudinary.com/dggsp8ihg/image/upload/v1747294436/industrial_security_tr7ojd.jpg",
     title: "Industrial Security",
     description:
       "Robust security systems designed for factories, warehouses, and industrial estates to deter unauthorized access.",
@@ -38,7 +38,7 @@ const solutions = [
     path: "/solutions/industrial-security",
   },
   {
-    imageSrc: "/real-estate-security.jpg",
+    imageSrc: "https://res.cloudinary.com/dggsp8ihg/image/upload/v1747294413/real_estate_security_fwf9kz.jpg",
     title: "Real Estate Security",
     description:
       "Advanced surveillance for residential and commercial properties under development or in operation.",
@@ -50,7 +50,7 @@ const solutions = [
     path: "/solutions/real-estate-security",
   },
   {
-    imageSrc: "/retail-security.jpg",
+    imageSrc: "https://res.cloudinary.com/dggsp8ihg/image/upload/v1747294424/retail_security_uv3hjp.jpg",
     title: "Retail Security",
     description:
       "Customized CCTV and theft prevention systems for shops, malls, and stores to reduce shrinkage.",
@@ -62,7 +62,7 @@ const solutions = [
     path: "/solutions/retail-security",
   },
   {
-    imageSrc: "/hospitality-healthcare-security.jpg",
+    imageSrc: "https://res.cloudinary.com/dggsp8ihg/image/upload/v1747294427/hospital_security_iroejb.jpg",
     title: "Hospitality / Health Care Security",
     description:
       "Discreet and effective surveillance tailored for hospitals, clinics, hotels, and resorts to protect guests and patients.",

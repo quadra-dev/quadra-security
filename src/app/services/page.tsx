@@ -29,7 +29,7 @@ const Services: NextPage = () => {
       "Night Vision & Motion Detection",
       "Cloud & Local Storage Options",
     ],
-    imageUrl: "/images/cctv-installer.png",
+    imageUrl: "https://res.cloudinary.com/dggsp8ihg/image/upload/v1747296562/cctv_installation_and_surveillance_sit3ia.jpg",
   },
   {
     icon: "🧬",
@@ -43,7 +43,7 @@ const Services: NextPage = () => {
       "Attendance Management",
       "Security & Data Logging",
     ],
-    imageUrl: "/images/biometric-system.jpg",
+    imageUrl: "https://res.cloudinary.com/dggsp8ihg/image/upload/v1747296918/biometric_gc80fv.webp",
   },
   {
     icon: "🚘",
@@ -57,7 +57,7 @@ const Services: NextPage = () => {
       "Barrier Integration",
       "Analytics Dashboard",
     ],
-    imageUrl: "/images/anpr-camera.jpg",
+    imageUrl: "https://res.cloudinary.com/dggsp8ihg/image/upload/v1747296559/ANPR-camera_n4y4i9.webp",
   },
   {
     icon: "📞",
@@ -71,7 +71,7 @@ const Services: NextPage = () => {
       "Intercom & Paging",
       "Repair & Installation Services",
     ],
-    imageUrl: "/images/epabx-system.jpg",
+    imageUrl: "https://res.cloudinary.com/dggsp8ihg/image/upload/v1747296562/epabx_systems_zly2de.jpg",
   },
   {
     icon: "🖥️",
@@ -85,7 +85,7 @@ const Services: NextPage = () => {
       "Integrated OS and Apps",
       "Wall Mount & Stand Options",
     ],
-    imageUrl: "/images/interactive-panel.jpg",
+    imageUrl: "https://res.cloudinary.com/dggsp8ihg/image/upload/v1747296568/interactive_panels_bndiiu.png",
   },
   {
     icon: "📞",
@@ -99,7 +99,7 @@ const Services: NextPage = () => {
       "Wi-Fi Enabled Options",
       "Multiple Indoor Units",
     ],
-    imageUrl: "/images/video-door-phone.jpg",
+    imageUrl: "https://res.cloudinary.com/dggsp8ihg/image/upload/v1747296562/video_door_phones_d65vqh.jpg",
   },
   {
     icon: "🛅",
@@ -141,7 +141,7 @@ const Services: NextPage = () => {
       "Adjustable Thresholds",
       "Rechargeable Models",
     ],
-    imageUrl: "/images/metal-detector.jpg",
+    imageUrl: "https://res.cloudinary.com/dggsp8ihg/image/upload/v1747296562/metal_detector_zczuoy.jpg",
   },
   {
     icon: "🧱",
@@ -155,7 +155,7 @@ const Services: NextPage = () => {
       "Integration with Door Locks",
       "Audit Logs & Reports",
     ],
-    imageUrl: "/images/access-control.jpg",
+    imageUrl: "https://res.cloudinary.com/dggsp8ihg/image/upload/v1747296559/Access_Control_enl7ep.webp",
   },
   {
     icon: "⛔",
@@ -169,7 +169,7 @@ const Services: NextPage = () => {
       "Toll Payment Systems",
       "Access Logging",
     ],
-    imageUrl: "/images/boom-barrier.jpg",
+    imageUrl: "https://res.cloudinary.com/dggsp8ihg/image/upload/v1747296562/boom-barrier-banne_slefin.jpg",
   },
   {
     icon: "🔒",
@@ -183,7 +183,7 @@ const Services: NextPage = () => {
       "Battery Backup",
       "Tamper Alerts",
     ],
-    imageUrl: "/images/electronic-door-lock.jpg",
+    imageUrl: "https://res.cloudinary.com/dggsp8ihg/image/upload/v1747296561/Electronic-Door-Locks_x73dcl.webp",
   },
 ];
 

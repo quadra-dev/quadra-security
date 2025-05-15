@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/carousel";
 import { useEffect, useState } from "react";
 
-const services = [
+const services= [
   {
     icon: "📹",
     title: "CCTV & Surveillance",
@@ -25,7 +25,7 @@ const services = [
       "Night Vision & Motion Detection",
       "Cloud & Local Storage Options",
     ],
-    imageSrc: "/images/cctv-installer.png",
+    imageSrc: "https://res.cloudinary.com/dggsp8ihg/image/upload/v1747296562/cctv_installation_and_surveillance_sit3ia.jpg",
   },
   {
     icon: "🧬",
@@ -39,7 +39,7 @@ const services = [
       "Attendance Management",
       "Security & Data Logging",
     ],
-    imageSrc: "/images/biometric-system.jpg",
+    imageSrc: "https://res.cloudinary.com/dggsp8ihg/image/upload/v1747296918/biometric_gc80fv.webp",
   },
   {
     icon: "🚘",
@@ -53,7 +53,7 @@ const services = [
       "Barrier Integration",
       "Analytics Dashboard",
     ],
-    imageSrc: "/images/anpr-camera.jpg",
+    imageSrc: "https://res.cloudinary.com/dggsp8ihg/image/upload/v1747296559/ANPR-camera_n4y4i9.webp",
   },
   {
     icon: "📞",
@@ -67,7 +67,7 @@ const services = [
       "Intercom & Paging",
       "Repair & Installation Services",
     ],
-    imageSrc: "/images/epabx-system.jpg",
+    imageSrc: "https://res.cloudinary.com/dggsp8ihg/image/upload/v1747296562/epabx_systems_zly2de.jpg",
   },
   {
     icon: "🖥️",
@@ -81,7 +81,7 @@ const services = [
       "Integrated OS and Apps",
       "Wall Mount & Stand Options",
     ],
-    imageSrc: "/images/interactive-panel.jpg",
+    imageSrc: "https://res.cloudinary.com/dggsp8ihg/image/upload/v1747296568/interactive_panels_bndiiu.png",
   },
   {
     icon: "📞",
@@ -95,7 +95,7 @@ const services = [
       "Wi-Fi Enabled Options",
       "Multiple Indoor Units",
     ],
-    imageSrc: "/images/video-door-phone.jpg",
+    imageSrc: "https://res.cloudinary.com/dggsp8ihg/image/upload/v1747296562/video_door_phones_d65vqh.jpg",
   },
   {
     icon: "🛅",
@@ -137,7 +137,7 @@ const services = [
       "Adjustable Thresholds",
       "Rechargeable Models",
     ],
-    imageSrc: "/images/metal-detector.jpg",
+    imageSrc: "https://res.cloudinary.com/dggsp8ihg/image/upload/v1747296562/metal_detector_zczuoy.jpg",
   },
   {
     icon: "🧱",
@@ -151,7 +151,7 @@ const services = [
       "Integration with Door Locks",
       "Audit Logs & Reports",
     ],
-    imageSrc: "/images/access-control.jpg",
+    imageSrc: "https://res.cloudinary.com/dggsp8ihg/image/upload/v1747296559/Access_Control_enl7ep.webp",
   },
   {
     icon: "⛔",
@@ -165,7 +165,7 @@ const services = [
       "Toll Payment Systems",
       "Access Logging",
     ],
-    imageSrc: "/images/boom-barrier.jpg",
+    imageSrc: "https://res.cloudinary.com/dggsp8ihg/image/upload/v1747296562/boom-barrier-banne_slefin.jpg",
   },
   {
     icon: "🔒",
@@ -179,7 +179,7 @@ const services = [
       "Battery Backup",
       "Tamper Alerts",
     ],
-    imageSrc: "/images/electronic-door-lock.jpg",
+    imageSrc: "https://res.cloudinary.com/dggsp8ihg/image/upload/v1747296561/Electronic-Door-Locks_x73dcl.webp",
   },
 ];
 

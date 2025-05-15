@@ -1,5 +1,5 @@
 "use client";
-import { motion, useInView } from "framer-motion";
+import { motion} from "framer-motion";
 import SiteVisitForm from "@/components/home/Form";
 import FancyButton from "@/components/home/FancyButton";
 import ServiceCarousel from "@/components/home/ServiceCarousel";
@@ -8,11 +8,11 @@ import BrandsCarousel from "@/components/home/BrandsCarousel";
 import WhyChooseUs from "@/components/home/WhyChooseUs";
 import Testimonials from "@/components/home/Testimonials";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
-import { useRef } from "react";
+// import { useRef } from "react";
 
 export default function Home() {
-   const ref = useRef(null);
-    const isInView = useInView(ref, { once: true });
+  //  const ref = useRef(null);
+  // const isInView = useInView(ref, { once: true });
   const words1 = `Providing The Best Surveillance & Security Solutions In GURGAON`;
   return (
     <div className="font-[family-name:var(--font-urbanist)]">
@@ -70,10 +70,6 @@ export default function Home() {
       {/* section 2 */}
       <section className="h-screen w-screen bg-gradient-to-b from-[#2917C9] via-[#300571] to-[#151b7e] flex flex-col justify-center items-center ">
         <motion.div
-        ref={ref}
-        initial={{ opacity: 0, y: 100 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 1.2, ease: "easeOut" }}
          className="space-y-4 md:w-1/2 w-full mt-56 md:mt-0">
           <h2 className="text-white md:text-4xl text-2xl text-center md:text-start">
             What we Offer
@@ -88,10 +84,6 @@ export default function Home() {
       </section>
        <section className="h-screen w-screen bg-gradient-to-b from-[#151b7e] via-[#300571] to-[#151b7e] flex flex-col justify-center items-center ">
         <motion.div
-        ref={ref}
-        initial={{ opacity: 0, y: 100 }}
-        animate={isInView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 1.2, ease: "easeOut" }}
          className="space-y-4 md:w-1/2 w-full mt-56 md:mt-0">
           <h2 className="text-white md:text-4xl text-2xl text-center md:text-start">
             Check our
