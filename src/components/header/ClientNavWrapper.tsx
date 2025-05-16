@@ -22,7 +22,7 @@ export default function ClientNavWrapper({
     <>
       {!isStudio && (isHome ? <HomeNavbar /> : <Navbar />)}
       {children}
-      <Footer/>
+      <Footer />
     </>
   );
 }

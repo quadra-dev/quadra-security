@@ -5,6 +5,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { BlogPost, categories } from "./page";
+import HeroBanner from "@/components/ui/hero-banner";
 
 export default function BlogClientComponent({
   blogPosts,
@@ -21,11 +22,7 @@ export default function BlogClientComponent({
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <div className="bg-gray-700 bg-opacity-80 bg-blend-overlay bg-[url('/hero-bg.png')] bg-cover bg-center py-24 md:py-32">
-        <div className="container mx-auto text-center">
-          <h1 className="text-4xl font-bold text-white">Latest Posts</h1>
-        </div>
-      </div>
+      <HeroBanner title="Latest Posts" />
 
       {/* Blog Content */}
       <div className="container mx-auto py-12 px-4 md:px-0 ml-1">

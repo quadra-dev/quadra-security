@@ -1,6 +1,7 @@
 import { client } from "@/sanity/lib/client";
 import { PortableText } from "@portabletext/react";
 import Link from "next/link";
+import HeroBanner from "@/components/ui/hero-banner";
 
 interface Props {
   params: { slug: string };
@@ -33,11 +34,7 @@ export default async function BlogDetailPage({ params }: Props) {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <div className="bg-gray-700 bg-opacity-80 bg-blend-overlay bg-[url('/hero-bg.png')] bg-cover bg-center py-16">
-        <div className="container mx-auto text-center">
-          <h1 className="text-4xl font-bold text-white">{blog.title}</h1>
-        </div>
-      </div>
+      <HeroBanner title={blog.title} />
       <div className="bg-white container mx-auto p-8 grid grid-cols-1 lg:grid-cols-3 gap-12">
         {/* LEFT CONTENT */}
         <div className="lg:col-span-2 ml-[40px]">

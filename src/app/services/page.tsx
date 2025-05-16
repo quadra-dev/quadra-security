@@ -5,6 +5,7 @@ import { useEffect, useRef } from "react";
 import ServiceSection from "@/components/ServiceSection";
 import ContactForm from "@/components/ContactFormm";
 import { initLineAnimation } from "@/animations/lineAnimation";
+import HeroBanner from "@/components/ui/hero-banner";
 import Footer from "@/components/footer/Footer";
 
 interface ServiceItem {
@@ -99,11 +100,7 @@ const Services: NextPage = () => {
 
   return (
     <main className="w-full font-[family-name:var(--font-urbanist)]">
-      <div className="bg-gray-700 bg-opacity-80 bg-blend-overlay bg-[url('/hero-bg.png')] bg-cover bg-center py-24 md:py-32">
-        <div className="container mx-auto text-center">
-          <h1 className="text-4xl font-bold text-white">Contact Us</h1>
-        </div>
-      </div>
+      <HeroBanner title="Services" />
       <div className="w-full max-w-6xl mx-auto px-5 font-sans text-gray-800">
         {services.map((service, index) => (
           <ServiceSection
@@ -124,7 +121,6 @@ const Services: NextPage = () => {
         </h2>
         <ContactForm />
       </div>
-      <Footer />
     </main>
   );
 };
