@@ -42,4 +42,3 @@ next-env.d.ts
 
 # google-sheet
 lib/google-service-account.json
-
