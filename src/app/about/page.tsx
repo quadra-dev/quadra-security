@@ -8,15 +8,7 @@ import {
   FaDesktop,
   FaBrain,
   FaCheck,
-  FaPhone,
-  FaEnvelope,
-  FaMapMarkerAlt,
-  FaClock,
-  FaFacebook,
-  FaTwitter,
-  FaInstagram,
-  FaLinkedin,
-  FaYoutube,
+ 
 } from "react-icons/fa";
 
 const AboutUs: React.FC = () => {

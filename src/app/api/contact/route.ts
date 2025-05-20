@@ -3,7 +3,6 @@ import { Contact } from "@/models/Contact";
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 import { google } from "googleapis";
-import { JWT } from "google-auth-library";
 import serviceAccount from "@/lib/google-service-account.json";
 
 export async function POST(req: Request) {
