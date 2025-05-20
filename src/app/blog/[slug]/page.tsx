@@ -1,24 +1,24 @@
+import { Metadata } from "next";
 import { client } from "@/sanity/lib/client";
 import { PortableText } from "@portabletext/react";
-import Link from "next/link";
 import HeroBanner from "@/components/ui/hero-banner";
+import Link from "next/link";
 
-type Props = {
+// This is the expected type for dynamic route pages in App Router
+type PageProps = {
   params: {
     slug: string;
   };
 };
 
-export default async function BlogDetailPage({ params }: Props) {
+export default async function BlogDetailPage({ params }: PageProps) {
   const blog = await client.fetch(
-    `
-    *[_type == "blog" && slug.current == $slug][0] {
+    `*[_type == "blog" && slug.current == $slug][0] {
       title,
       publishedAt,
       poster { asset->{url} },
       Content
-    }
-  `,
+    }`,
     { slug: params.slug }
   );
 
@@ -35,8 +35,8 @@ export default async function BlogDetailPage({ params }: Props) {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
       <HeroBanner title={blog.title} />
+
       <div className="bg-white container mx-auto p-8 grid grid-cols-1 lg:grid-cols-3 gap-12">
         {/* LEFT CONTENT */}
         <div className="lg:col-span-2 ml-[40px]">
@@ -57,7 +57,7 @@ export default async function BlogDetailPage({ params }: Props) {
               })}
             </p>
             <span className="mx-2">|</span>
-            <p>Security</p> {/* Hardcoded Category for now */}
+            <p>Security</p>
           </div>
 
           <div className="prose prose-lg max-w-none text-[#575757] font-serif leading-5.5 space-y-6">
@@ -67,10 +67,7 @@ export default async function BlogDetailPage({ params }: Props) {
 
         {/* RIGHT SIDEBAR */}
         <div className="space-y-8 ml-[40px]">
-          {/* Search Box */}
-
-          {/* Quick Contact Form */}
-          <div className="p-4 rounded-lg  border-2 bg-[#6590cd] w-[370px]">
+          <div className="p-4 rounded-lg border-2 bg-[#6590cd] w-[370px]">
             <h3 className="text-lg font-semibold mb-4 ml-[15px]">
               Book Your Free Consultation Today
             </h3>
@@ -78,7 +75,7 @@ export default async function BlogDetailPage({ params }: Props) {
               <input
                 type="text"
                 placeholder="Name"
-                className=" bg-white p-2 w-full rounded text-[#393535] focus:outline-none focus:ring-2 focus:ring-blue-200"
+                className="bg-white p-2 w-full rounded text-[#393535] focus:outline-none focus:ring-2 focus:ring-blue-200"
               />
               <input
                 type="text"
