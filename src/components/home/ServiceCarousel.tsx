@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use client";
 
 import React from "react";
@@ -11,64 +12,176 @@ import {
 } from "@/components/ui/carousel";
 import { useEffect, useState } from "react";
 
-const services = [
+const services= [
   {
-    imageSrc: "/home-security.jpg",
-    title: "Home Security",
+    icon: "📹",
+    title: "CCTV & Surveillance",
     description:
-      "Comprehensive surveillance and alarm solutions for residences, ensuring your family’s safety around the clock.",
+      "We provide cutting-edge CCTV solutions including IP, analog, and 4G/WiFi surveillance systems. Ensure round-the-clock monitoring of your premises with high-quality imaging and smart analytics.",
     features: [
+      "HD/4K Installation",
+      "4G, WiFi, and Solar-Powered Cameras",
+      "Remote Monitoring",
+      "Night Vision & Motion Detection",
+      "Cloud & Local Storage Options",
+    ],
+    imageSrc: "https://res.cloudinary.com/dggsp8ihg/image/upload/v1747296562/cctv_installation_and_surveillance_sit3ia.jpg",
+  },
+  {
+    icon: "🧬",
+    title: "Biometric Systems",
+    description:
+      "Secure your facility with our biometric access control solutions including fingerprint, facial recognition, and multimodal systems for accurate identification and attendance tracking.",
+    features: [
+      "Fingerprint & Facial Recognition",
+      "Multimodal Biometric Access",
+      "Door Lock Integration",
+      "Attendance Management",
+      "Security & Data Logging",
+    ],
+    imageSrc: "https://res.cloudinary.com/dggsp8ihg/image/upload/v1747296918/biometric_gc80fv.webp",
+  },
+  {
+    icon: "🚘",
+    title: "ANPR (Automatic Number Plate Recognition)",
+    description:
+      "Deploy ANPR cameras to capture and identify vehicle number plates in real time. Ideal for parking, tolls, and secured entry points.",
+    features: [
+      "Real-Time Plate Recognition",
+      "High-Speed Camera Integration",
+      "Database Matching",
+      "Barrier Integration",
+      "Analytics Dashboard",
+    ],
+    imageSrc: "https://res.cloudinary.com/dggsp8ihg/image/upload/v1747296559/ANPR-camera_n4y4i9.webp",
+  },
+  {
+    icon: "📞",
+    title: "EPABX Systems",
+    description:
+      "Modernize internal communication with our EPABX systems. Suitable for organizations of all sizes looking for seamless call routing and extension management.",
+    features: [
+      "Analog & IP EPABX Systems",
+      "Scalable Extensions",
+      "Voicemail & Call Logs",
+      "Intercom & Paging",
+      "Repair & Installation Services",
+    ],
+    imageSrc: "https://res.cloudinary.com/dggsp8ihg/image/upload/v1747296562/epabx_systems_zly2de.jpg",
+  },
+  {
+    icon: "🖥️",
+    title: "Interactive Display Panels",
+    description:
+      "Engage users with high-definition interactive panels designed for conference rooms, education, and command centers.",
+    features: [
+      "Touch-Enabled Display",
+      "Multi-Device Connectivity",
+      "Smart Board Capabilities",
+      "Integrated OS and Apps",
+      "Wall Mount & Stand Options",
+    ],
+    imageSrc: "https://res.cloudinary.com/dggsp8ihg/image/upload/v1747296568/interactive_panels_bndiiu.png",
+  },
+  {
+    icon: "📞",
+    title: "Video Door Phones",
+    description:
+      "Enhance home or office security with our video door phone systems. See and communicate with visitors before granting access.",
+    features: [
+      "HD Video Calling",
+      "Intercom Support",
+      "Remote Unlocking",
+      "Wi-Fi Enabled Options",
+      "Multiple Indoor Units",
+    ],
+    imageSrc: "https://res.cloudinary.com/dggsp8ihg/image/upload/v1747296562/video_door_phones_d65vqh.jpg",
+  },
+  {
+    icon: "🛅",
+    title: "Baggage Scanners",
+    description:
+      "Ensure safety with high-resolution X-ray baggage scanners ideal for malls, offices, and transport hubs.",
+    features: [
+      "Dual View Imaging",
+      "Automatic Threat Detection",
+      "Real-Time Scanning",
+      "Maintenance Support",
+      "High Throughput Rate",
+    ],
+    imageSrc: "/images/baggage-scanner.jpg",
+  },
+  {
+    icon: "🚨",
+    title: "Alarm Systems",
+    description:
+      "Protect property and personnel with advanced alarm systems. Detect intrusion, fire, and unauthorized access instantly.",
+    features: [
+      "Intruder & Panic Alarms",
+      "Door/Window Sensors",
       "24/7 Monitoring",
-      "Smart Door Sensors",
-      "Remote Access Control",
+      "Mobile Notifications",
+      "Fire & Smoke Detection",
     ],
+    imageSrc: "/images/security-alarms.jpg",
   },
   {
-    imageSrc: "/industrial-security.jpg",
-    title: "Industrial Security",
+    icon: "🔍",
+    title: "Metal Detectors",
     description:
-      "Robust security systems designed for factories, warehouses, and industrial estates to deter unauthorized access.",
+      "Deploy handheld and walkthrough metal detectors for reliable screening in secure environments such as events, schools, and offices.",
     features: [
-      "Perimeter Intrusion Detection",
-      "HD Surveillance",
-      "Fire and Hazard Alerts",
+      "High Sensitivity Scanning",
+      "Portable & Walkthrough Options",
+      "Gold & Weapon Detection",
+      "Adjustable Thresholds",
+      "Rechargeable Models",
     ],
+    imageSrc: "https://res.cloudinary.com/dggsp8ihg/image/upload/v1747296562/metal_detector_zczuoy.jpg",
   },
   {
-    imageSrc: "/real-estate-security.jpg",
-    title: "Real Estate Security",
+    icon: "🧱",
+    title: "Access Control Systems",
     description:
-      "Advanced surveillance for residential and commercial properties under development or in operation.",
+      "Control who enters your premises with secure and customizable access control systems for doors, gates, and turnstiles.",
     features: [
-      "Construction Site Monitoring",
-      "Access Management",
-      "Night Vision Cameras",
+      "RFID & Biometric Entry",
+      "Centralized Access Management",
+      "Time-Based Permissions",
+      "Integration with Door Locks",
+      "Audit Logs & Reports",
     ],
+    imageSrc: "https://res.cloudinary.com/dggsp8ihg/image/upload/v1747296559/Access_Control_enl7ep.webp",
   },
   {
-    imageSrc: "/retail-security.jpg",
-    title: "Retail Security",
+    icon: "⛔",
+    title: "Boom Barriers & Toll Solutions",
     description:
-      "Customized CCTV and theft prevention systems for shops, malls, and stores to reduce shrinkage.",
+      "Automated boom barriers and toll management systems for gated communities, industrial complexes, and parking areas.",
     features: [
-      "Customer Behavior Monitoring",
-      "POS Integration",
-      "Panic Button Systems",
+      "ANPR Integration",
+      "Fast-Action Barriers",
+      "Remote Control Access",
+      "Toll Payment Systems",
+      "Access Logging",
     ],
+    imageSrc: "https://res.cloudinary.com/dggsp8ihg/image/upload/v1747296562/boom-barrier-banne_slefin.jpg",
   },
   {
-    imageSrc: "/hospitality-healthcare-security.jpg",
-    title: "Hospitality / Health Care Security",
+    icon: "🔒",
+    title: "Electronic Door Locks",
     description:
-      "Discreet and effective surveillance tailored for hospitals, clinics, hotels, and resorts to protect guests and patients.",
+      "Upgrade to keyless entry with our range of electronic door locks that support fingerprint, RFID, PIN, and smartphone control.",
     features: [
-      "Visitor Management Systems",
-      "Emergency Response Integration",
-      "Surveillance with Privacy Zones",
+      "Biometric & PIN Access",
+      "Remote Unlocking",
+      "Auto-Lock Mechanism",
+      "Battery Backup",
+      "Tamper Alerts",
     ],
+    imageSrc: "https://res.cloudinary.com/dggsp8ihg/image/upload/v1747296561/Electronic-Door-Locks_x73dcl.webp",
   },
 ];
-
 
 const ServiceCarousel = () => {
   const [api, setApi] = useState<any>(null);

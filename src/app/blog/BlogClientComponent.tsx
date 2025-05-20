@@ -4,7 +4,8 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { BlogPost, categories } from "./page";
+import { BlogPost } from "./page";
+import { categories } from "@/constants/categories";
 import HeroBanner from "@/components/ui/hero-banner";
 
 export default function BlogClientComponent({
@@ -13,9 +14,9 @@ export default function BlogClientComponent({
   blogPosts: BlogPost[];
 }) {
   const [searchQuery, setSearchQuery] = useState("");
+
   const formatDate = (dateString: string): string => {
     const date = new Date(dateString);
-    // Use explicit format to ensure consistency
     return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
   };
 
@@ -114,7 +115,7 @@ export default function BlogClientComponent({
             </div>
 
             {/* Quick form */}
-            <div className="p-4 rounded-lg  border-2 bg-[#0F0644] w-[370px]">
+            <div className="p-4 rounded-lg border-2 bg-[#0F0644] w-[370px]">
               <h3 className="text-lg font-semibold mb-4 ml-[15px] text-white">
                 Book Your Free Consultation Today
               </h3>
@@ -122,7 +123,7 @@ export default function BlogClientComponent({
                 <input
                   type="text"
                   placeholder="Name"
-                  className=" bg-white p-2 w-[320px] ml-1 rounded text-[#393535] focus:outline-none focus:ring-2 focus:ring-blue-200"
+                  className="bg-white p-2 w-[320px] ml-1 rounded text-[#393535] focus:outline-none focus:ring-2 focus:ring-blue-200"
                 />
                 <input
                   type="text"

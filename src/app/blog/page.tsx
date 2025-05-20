@@ -13,13 +13,7 @@ export interface BlogPost {
   image: string;
 }
 
-// Categories for the sidebar
-export const categories = [
-  "Business Surveillance",
-  "Biometric & Fingerprint Access",
-  "Home CCTV & Safety",
-  "Residential & Commercial Security",
-];
+
 
 // Server Component for data fetching
 export default async function BlogPage() {
@@ -41,3 +35,5 @@ export default async function BlogPage() {
     </Suspense>
   );
 }
+
+

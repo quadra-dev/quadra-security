@@ -1,12 +1,10 @@
 "use client";
 import type { NextPage } from "next";
-import Head from "next/head";
 import { useEffect, useRef } from "react";
 import ServiceSection from "@/components/ServiceSection";
-import ContactForm from "@/components/ContactFormm";
+import ContactForm from "@/components/ContactForm";
 import { initLineAnimation } from "@/animations/lineAnimation";
 import HeroBanner from "@/components/ui/hero-banner";
-import Footer from "@/components/footer/Footer";
 
 interface ServiceItem {
   icon: string;
@@ -22,73 +20,181 @@ const Services: NextPage = () => {
   const services: ServiceItem[] = [
     {
       icon: "📹",
-      title: "CCTV Installation",
+      title: "CCTV & Surveillance",
       description:
-        "At Quadra Security, we provide CCTV & surveillance systems that offer peace of mind. Our experienced team will assess your needs and design a custom solution to protect what matters most to you.",
+        "We provide cutting-edge CCTV solutions including IP, analog, and 4G/WiFi surveillance systems. Ensure round-the-clock monitoring of your premises with high-quality imaging and smart analytics.",
       features: [
-        "HD/4K Installation (Premium Packages)",
-        "DVR & Accessories & Connections",
-        "IP & Analogue Solutions",
-        "High-Quality Lenses & Sensors",
-        "Remote Viewing Capability",
+        "HD/4K Installation",
+        "4G, WiFi, and Solar-Powered Cameras",
+        "Remote Monitoring",
+        "Night Vision & Motion Detection",
+        "Cloud & Local Storage Options",
       ],
-      imageUrl: "/images/cctv-installer.png",
+      imageUrl:
+        "https://res.cloudinary.com/dggsp8ihg/image/upload/v1747296562/cctv_installation_and_surveillance_sit3ia.jpg",
+    },
+    {
+      icon: "🧬",
+      title: "Biometric Systems",
+      description:
+        "Secure your facility with our biometric access control solutions including fingerprint, facial recognition, and multimodal systems for accurate identification and attendance tracking.",
+      features: [
+        "Fingerprint & Facial Recognition",
+        "Multimodal Biometric Access",
+        "Door Lock Integration",
+        "Attendance Management",
+        "Security & Data Logging",
+      ],
+      imageUrl:
+        "https://res.cloudinary.com/dggsp8ihg/image/upload/v1747296918/biometric_gc80fv.webp",
+    },
+    {
+      icon: "🚘",
+      title: "ANPR (Automatic Number Plate Recognition)",
+      description:
+        "Deploy ANPR cameras to capture and identify vehicle number plates in real time. Ideal for parking, tolls, and secured entry points.",
+      features: [
+        "Real-Time Plate Recognition",
+        "High-Speed Camera Integration",
+        "Database Matching",
+        "Barrier Integration",
+        "Analytics Dashboard",
+      ],
+      imageUrl:
+        "https://res.cloudinary.com/dggsp8ihg/image/upload/v1747296559/ANPR-camera_n4y4i9.webp",
+    },
+    {
+      icon: "📞",
+      title: "EPABX Systems",
+      description:
+        "Modernize internal communication with our EPABX systems. Suitable for organizations of all sizes looking for seamless call routing and extension management.",
+      features: [
+        "Analog & IP EPABX Systems",
+        "Scalable Extensions",
+        "Voicemail & Call Logs",
+        "Intercom & Paging",
+        "Repair & Installation Services",
+      ],
+      imageUrl:
+        "https://res.cloudinary.com/dggsp8ihg/image/upload/v1747296562/epabx_systems_zly2de.jpg",
     },
     {
       icon: "🖥️",
-      title: "Video Wall Solutions",
+      title: "Interactive Display Panels",
       description:
-        "Experience incredible clarity and control with our professional video wall solutions. Perfect for command centers, operation rooms, and retail environments requiring multi-screen displays.",
+        "Engage users with high-definition interactive panels designed for conference rooms, education, and command centers.",
       features: [
-        "HD/4K Display Capability",
-        "Dynamic Multi-Screen Control",
-        "Intuitive Wall Control System",
-        "Edge Blending Technology",
-        "Scalable Video Wall Implementation",
+        "Touch-Enabled Display",
+        "Multi-Device Connectivity",
+        "Smart Board Capabilities",
+        "Integrated OS and Apps",
+        "Wall Mount & Stand Options",
       ],
-      imageUrl: "/images/video-wall.png",
+      imageUrl:
+        "https://res.cloudinary.com/dggsp8ihg/image/upload/v1747296568/interactive_panels_bndiiu.png",
     },
     {
-      icon: "📊",
-      title: "Video Analytics",
+      icon: "📞",
+      title: "Video Door Phones",
       description:
-        "Leverage the advanced video analytics with our intelligent monitoring systems that detect and analyze patterns, behaviors and events in real time, providing actionable insights to help you make the right call.",
+        "Enhance home or office security with our video door phone systems. See and communicate with visitors before granting access.",
       features: [
-        "Motion Detection & Tracking",
-        "Facial Recognition",
-        "Object Detection",
-        "Behavioral Analysis",
-        "Event & Anomaly Detection",
+        "HD Video Calling",
+        "Intercom Support",
+        "Remote Unlocking",
+        "Wi-Fi Enabled Options",
+        "Multiple Indoor Units",
       ],
-      imageUrl: "/images/video-analytics.png",
+      imageUrl:
+        "https://res.cloudinary.com/dggsp8ihg/image/upload/v1747296562/video_door_phones_d65vqh.jpg",
+    },
+    {
+      icon: "🛅",
+      title: "Baggage Scanners",
+      description:
+        "Ensure safety with high-resolution X-ray baggage scanners ideal for malls, offices, and transport hubs.",
+      features: [
+        "Dual View Imaging",
+        "Automatic Threat Detection",
+        "Real-Time Scanning",
+        "Maintenance Support",
+        "High Throughput Rate",
+      ],
+      imageUrl: "/images/baggage-scanner.jpg",
     },
     {
       icon: "🚨",
-      title: "Security Alarms",
+      title: "Alarm Systems",
       description:
-        "Our security alarm systems are designed to alert you instantly of unauthorized entry or suspicious activity. We integrate leading technologies to ensure your property remains secure around the clock.",
+        "Protect property and personnel with advanced alarm systems. Detect intrusion, fire, and unauthorized access instantly.",
       features: [
-        "Motion Detection Systems",
-        "24/7 Silent Monitoring",
-        "Immediate & Mobile Alerts",
-        "Window & Door Sensors",
-        "Emergency and Panic Alarms",
+        "Intruder & Panic Alarms",
+        "Door/Window Sensors",
+        "24/7 Monitoring",
+        "Mobile Notifications",
+        "Fire & Smoke Detection",
       ],
       imageUrl: "/images/security-alarms.jpg",
     },
     {
-      icon: "🧳",
-      title: "Baggage Scanners",
+      icon: "🔍",
+      title: "Metal Detectors",
       description:
-        "Ensure thorough scanning of all baggage and parcels with our state-of-the-art scanning systems. Our scanners are designed to efficiently screen items without causing delays in your operations.",
+        "Deploy handheld and walkthrough metal detectors for reliable screening in secure environments such as events, schools, and offices.",
       features: [
-        "High-Resolution X-Ray Imaging",
-        "Dual-View/Multi-View Capability",
-        "Automatic Threat Detection",
-        "User-Friendly Interface",
-        "Maintenance & Technical Support",
+        "High Sensitivity Scanning",
+        "Portable & Walkthrough Options",
+        "Gold & Weapon Detection",
+        "Adjustable Thresholds",
+        "Rechargeable Models",
       ],
-      imageUrl: "/images/baggage-scanner.jpg",
+      imageUrl:
+        "https://res.cloudinary.com/dggsp8ihg/image/upload/v1747296562/metal_detector_zczuoy.jpg",
+    },
+    {
+      icon: "🧱",
+      title: "Access Control Systems",
+      description:
+        "Control who enters your premises with secure and customizable access control systems for doors, gates, and turnstiles.",
+      features: [
+        "RFID & Biometric Entry",
+        "Centralized Access Management",
+        "Time-Based Permissions",
+        "Integration with Door Locks",
+        "Audit Logs & Reports",
+      ],
+      imageUrl:
+        "https://res.cloudinary.com/dggsp8ihg/image/upload/v1747296559/Access_Control_enl7ep.webp",
+    },
+    {
+      icon: "⛔",
+      title: "Boom Barriers & Toll Solutions",
+      description:
+        "Automated boom barriers and toll management systems for gated communities, industrial complexes, and parking areas.",
+      features: [
+        "ANPR Integration",
+        "Fast-Action Barriers",
+        "Remote Control Access",
+        "Toll Payment Systems",
+        "Access Logging",
+      ],
+      imageUrl:
+        "https://res.cloudinary.com/dggsp8ihg/image/upload/v1747296562/boom-barrier-banne_slefin.jpg",
+    },
+    {
+      icon: "🔒",
+      title: "Electronic Door Locks",
+      description:
+        "Upgrade to keyless entry with our range of electronic door locks that support fingerprint, RFID, PIN, and smartphone control.",
+      features: [
+        "Biometric & PIN Access",
+        "Remote Unlocking",
+        "Auto-Lock Mechanism",
+        "Battery Backup",
+        "Tamper Alerts",
+      ],
+      imageUrl:
+        "https://res.cloudinary.com/dggsp8ihg/image/upload/v1747296561/Electronic-Door-Locks_x73dcl.webp",
     },
   ];
 
@@ -100,7 +206,8 @@ const Services: NextPage = () => {
 
   return (
     <main className="w-full font-[family-name:var(--font-urbanist)]">
-      <HeroBanner title="Services" />
+      <HeroBanner title="Our Services" />
+
       <div className="w-full max-w-6xl mx-auto px-5 font-sans text-gray-800">
         {services.map((service, index) => (
           <ServiceSection
@@ -115,7 +222,7 @@ const Services: NextPage = () => {
         ))}
       </div>
 
-      <div className="bg-gradient-to-b to-[#2716be] from-[#0e0542] p-8 mt-16 border border-b-blue-600">
+      <div className="bg-gradient-to-b to-[#2716be] from-[#0e0542] p-8 mt-16 border-b">
         <h2 className="text-2xl font-bold mb-8 text-white text-center tracking-widest">
           Schedule a Free Site Visit
         </h2>

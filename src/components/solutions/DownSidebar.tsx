@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import React from "react";
+import DownSolutionsSiteVisitForm from "./DownForm";
 
 interface SidebarProps {
   items: { label: string; path: string }[];
@@ -11,9 +12,13 @@ interface SidebarProps {
 const Sidebar: React.FC<SidebarProps> = ({ items }) => {
   const pathname = usePathname();
 
+    const currentSolutionType = pathname.split("/").pop();
+
   return (
     <div className="w-full  md:w-2/5 border shadow-sm lg:m-5 h-fit p-4">
-      <div className="flex flex-col m-2 space-y-3">
+        <DownSolutionsSiteVisitForm solutionType={currentSolutionType}/>
+        <hr className="w-full"/>
+      <div className="flex flex-col m-2 space-y-3 p-3">
         {items.map((item, index) => {
           const isActive = pathname === item.path;
           return (
@@ -32,6 +37,7 @@ const Sidebar: React.FC<SidebarProps> = ({ items }) => {
           );
         })}
       </div>
+   
     </div>
   );
 };
