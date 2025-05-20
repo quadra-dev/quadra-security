@@ -1,7 +1,6 @@
 "use client";
 
 import ContactForm from "@/components/ContactForm";
-import Footer from "@/components/footer/Footer";
 
 export default function ContactUsPage() {
   return (

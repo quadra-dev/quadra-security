@@ -10,7 +10,7 @@ export async function POST(req: Request) {
     const body = await req.json();
     await connectDB();
 
-    const savedContact = await Contact.create(body); // Save to MongoDB
+    await Contact.create(body);
 
     // --- Send email ---
     const transporter = nodemailer.createTransport({

@@ -1,8 +1,17 @@
-// @typescript-eslint/no-unused-vars
 "use client";
 import { cn } from "@/lib/utils";
-import { motion, AnimatePresence } from "motion/react";
+import { motion, AnimatePresence } from "framer-motion";
 import React, { useEffect, useState } from "react";
+
+interface ImagesSliderProps {
+  images: string[];
+  children: React.ReactNode;
+  overlay?: React.ReactNode;
+  overlayClassName?: string;
+  className?: string;
+  autoplay?: boolean;
+  direction?: "up" | "down";
+}
 
 export const ImagesSlider = ({
   images,
@@ -12,17 +21,8 @@ export const ImagesSlider = ({
   className,
   autoplay = true,
   direction = "up",
-}: {
-  images: string[];
-  children: React.ReactNode;
-  overlay?: React.ReactNode;
-  overlayClassName?: string;
-  className?: string;
-  autoplay?: boolean;
-  direction?: "up" | "down";
-}) => {
+}: ImagesSliderProps) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [loading, setLoading] = useState(false);
   const [loadedImages, setLoadedImages] = useState<string[]>([]);
 
   const handleNext = () => {
@@ -37,30 +37,29 @@ export const ImagesSlider = ({
     );
   };
 
-  useEffect(() => {
-    loadImages();
-  }, []);
-
   const loadImages = () => {
-    setLoading(true);
     const loadPromises = images.map((image) => {
-      return new Promise((resolve, reject) => {
+      return new Promise<string>((resolve, reject) => {
         const img = new Image();
         img.src = image;
         img.onload = () => resolve(image);
-        img.onerror = reject;
+        img.onerror = () => reject(new Error(`Failed to load image: ${image}`));
       });
     });
 
     Promise.all(loadPromises)
-      .then((loadedImages) => {
-        setLoadedImages(loadedImages as string[]);
-        setLoading(false);
+      .then((loaded) => {
+        setLoadedImages(loaded);
       })
       .catch((error) => console.error("Failed to load images", error));
   };
+
   useEffect(() => {
-    const handleKeyDown = (event: KeyboardEvent) => {
+    loadImages();
+  }, [images]);
+
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent): void => {
       if (event.key === "ArrowRight") {
         handleNext();
       } else if (event.key === "ArrowLeft") {
@@ -70,8 +69,8 @@ export const ImagesSlider = ({
 
     window.addEventListener("keydown", handleKeyDown);
 
-    // autoplay
-    let interval: any;
+    let interval: ReturnType<typeof setInterval> | undefined;
+
     if (autoplay) {
       interval = setInterval(() => {
         handleNext();
@@ -80,9 +79,9 @@ export const ImagesSlider = ({
 
     return () => {
       window.removeEventListener("keydown", handleKeyDown);
-      clearInterval(interval);
+      if (interval) clearInterval(interval);
     };
-  }, []);
+  }, [autoplay, images.length]);
 
   const slideVariants = {
     initial: {
@@ -123,9 +122,7 @@ export const ImagesSlider = ({
         "overflow-hidden h-full w-full relative flex items-center justify-center",
         className
       )}
-      style={{
-        perspective: "1000px",
-      }}
+      style={{ perspective: "1000px" }}
     >
       {areImagesLoaded && children}
       {areImagesLoaded && overlay && (
@@ -135,7 +132,7 @@ export const ImagesSlider = ({
       )}
 
       {areImagesLoaded && (
-        <AnimatePresence>
+        <AnimatePresence mode="wait">
           <motion.img
             key={currentIndex}
             src={loadedImages[currentIndex]}

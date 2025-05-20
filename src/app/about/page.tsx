@@ -3,13 +3,7 @@ import React from "react";
 import Head from "next/head";
 import Image from "next/image";
 import HeroBanner from "@/components/ui/hero-banner";
-import {
-  FaShieldAlt,
-  FaDesktop,
-  FaBrain,
-  FaCheck,
- 
-} from "react-icons/fa";
+import { FaShieldAlt, FaDesktop, FaBrain, FaCheck } from "react-icons/fa";
 
 const AboutUs: React.FC = () => {
   return (
@@ -37,7 +31,7 @@ const AboutUs: React.FC = () => {
               Guarding Homes & Businesses with Innovation
             </h3>
             <p className="text-gray-600 mb-6">
-              At Quadra Security, we're committed to providing innovative
+              At Quadra Security, we&rsquo;re committed to providing innovative
               security solutions that protect what matters most. With over 15
               years of experience in the industry, we bring the latest
               technology and expert knowledge to safeguard your property.
@@ -114,7 +108,7 @@ const AboutUs: React.FC = () => {
                 <span className="font-bold text-xl">01</span>
               </div>
               <h3 className="text-xl font-bold mb-3">
-                Consultation & Assessment
+                Consultation &amp; Assessment
               </h3>
               <p>
                 We start by understanding your specific security needs through a
@@ -127,7 +121,7 @@ const AboutUs: React.FC = () => {
                 <span className="font-bold text-xl">02</span>
               </div>
               <h3 className="text-xl font-bold mb-3">
-                Design & Implementation
+                Design &amp; Implementation
               </h3>
               <p>
                 Our experts design a customized security solution and implement
@@ -139,7 +133,9 @@ const AboutUs: React.FC = () => {
               <div className="bg-indigo-800 rounded-full w-12 h-12 flex items-center justify-center mb-4">
                 <span className="font-bold text-xl">03</span>
               </div>
-              <h3 className="text-xl font-bold mb-3">Support & Maintenance</h3>
+              <h3 className="text-xl font-bold mb-3">
+                Support &amp; Maintenance
+              </h3>
               <p>
                 We provide ongoing support and maintenance to ensure your
                 security systems remain effective and up-to-date.
