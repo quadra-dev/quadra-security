@@ -104,7 +104,7 @@ export default function Home() {
       <section className=" w-screen bg-gradient-to-b from-[#151b7e] via-[#0D053F] to-[#2917C9] flex flex-col justify-evenly items-center">
         <BrandsCarousel />
       </section>
-      <section className="bg-gradient-to-b from-[#2917C9] via-[#240D63] to-[#0B0146] w-screen text-white flex justify-center items-center h-[230vh]">
+      <section className="bg-gradient-to-b from-[#2917C9] via-[#240D63] to-[#0B0146] w-screen text-white flex justify-center items-center h-[280vh] md:h-[250vh]">
         <WhyChooseUs />
       </section>
       <section
