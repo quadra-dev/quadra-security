@@ -3,14 +3,16 @@ import { PortableText } from "@portabletext/react";
 import HeroBanner from "@/components/ui/hero-banner";
 import Link from "next/link";
 
-// This is the expected type for dynamic route pages in App Router
-type PageProps = {
-  params: {
+// ✅ Props type for dynamic route
+type Props = {
+  params: Promise<{
     slug: string;
-  };
+  }>;
 };
 
-export default async function BlogDetailPage({ params }: PageProps) {
+export default async function BlogDetailPage({ params }: Props) {
+  const { slug } = await params;
+
   const blog = await client.fetch(
     `*[_type == "blog" && slug.current == $slug][0] {
       title,
@@ -18,13 +20,13 @@ export default async function BlogDetailPage({ params }: PageProps) {
       poster { asset->{url} },
       Content
     }`,
-    { slug: params.slug }
+    { slug }
   );
 
   if (!blog) {
     return <div className="p-8">Blog not found.</div>;
   }
-
+  
   const categories = [
     "Business Surveillance",
     "Biometric & Fingerprint Access",
@@ -43,7 +45,7 @@ export default async function BlogDetailPage({ params }: PageProps) {
             <img
               src={blog.poster.asset.url}
               alt={blog.title}
-              className="rounded-sm mb-6 w-[900px] h-[500px]"
+              className="rounded-sm mb-6 w-[900px] h-[500px] object-cover"
             />
           )}
 
@@ -59,15 +61,16 @@ export default async function BlogDetailPage({ params }: PageProps) {
             <p>Security</p>
           </div>
 
-          <div className="prose prose-lg max-w-none text-[#575757] font-serif leading-5.5 space-y-6">
+          <div className="prose prose-lg max-w-none text-[#575757] font-serif leading-6 space-y-6">
             <PortableText value={blog.Content} />
           </div>
         </div>
 
         {/* RIGHT SIDEBAR */}
         <div className="space-y-8 ml-[40px]">
+          {/* Consultation Form */}
           <div className="p-4 rounded-lg border-2 bg-[#6590cd] w-[370px]">
-            <h3 className="text-lg font-semibold mb-4 ml-[15px]">
+            <h3 className="text-lg font-semibold mb-4 ml-[15px] text-white">
               Book Your Free Consultation Today
             </h3>
             <form className="space-y-4">
@@ -100,6 +103,7 @@ export default async function BlogDetailPage({ params }: PageProps) {
             </form>
           </div>
 
+          {/* Categories */}
           <div className="bg-white p-6 rounded-lg shadow-md">
             <h2 className="text-lg font-medium text-black mb-4">Categories</h2>
             <ul className="space-y-3">
@@ -135,4 +139,14 @@ export default async function BlogDetailPage({ params }: PageProps) {
       </div>
     </div>
   );
+}
+
+// ✅ Move this outside the component
+export async function generateStaticParams() {
+  const slugs = await client.fetch(
+    `*[_type == "blog"]{ "slug": slug.current }`
+  );
+  return slugs.map((item: { slug: string }) => ({
+    slug: item.slug,
+  }));
 }
