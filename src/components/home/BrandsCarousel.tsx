@@ -1,72 +1,85 @@
 "use client";
 
 import Image from "next/image";
-import React, { useRef } from "react";
-import Autoplay from "embla-carousel-autoplay";
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+import React from "react";
 
-const brands = Array(7).fill("/brands/cpplus.png"); 
+const authorizedBrands = [
+  { src: "/brands/cpplus.jpg", name: "CP Plus" },
+  { src: "/brands/prama.png", name: "Prama" },
+];
 
-export default function BrandsCarousel() {
-  const plugin = useRef(
-    Autoplay({
-      delay: 2500,
-      stopOnMouseEnter: true,
-      stopOnInteraction: false,
-    })
-  );
+const otherBrands = [
+  "/brands/beetel.png",
+  "/brands/consistent.png",
+  "/brands/daichi.jpeg",
+  "/brands/dlink.png",
+  "/brands/essl.jpg",
+  "/brands/Godrej.svg",
+  "/brands/hawkvision.webp",
+  "/brands/Hikvision.svg",
+  "/brands/tenda.png",
+  "/brands/Western_ Digital.svg",
+];
+
+export default function BrandsGrid() {
+  const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
-    <div className="py-10 px-4 md:w-1/2 w-[250px]">
-      <div className="max-w-6xl mx-auto space-y-6">
-        {/* Title */}
-        <div className="flex items-center space-x-4 mb-6 relative -top-16">
-          <div className="w-0 h-0 border-t-[15px] border-t-transparent border-b-[15px] border-b-transparent border-l-[20px] border-l-purple-500" />
-          <h2 className="text-white md:text-3xl text-xl  font-semibold">
-            Brands We DEAL IN
-          </h2>
-        </div>
+    <div ref={ref} className="py-16 px-4 md:px-8 max-w-6xl mx-auto h-full mt-52">
+      {/* Title */}
+      <div className="flex items-center space-x-4 mb-8">
+        <div className="w-0 h-0 border-t-[15px] border-t-transparent border-b-[15px] border-b-transparent border-l-[20px] border-l-purple-500" />
+        <h2 className="text-white md:text-3xl text-xl font-semibold">
+          Brands We DEAL IN
+        </h2>
+      </div>
 
-        {/* Carousel */}
-        <Carousel
-          plugins={[plugin.current]}
-          opts={{
-            align: "start",
-            loop: true,
-          }}
-          className="w-full"
-        >
-          <CarouselContent>
-            {brands.map((src, index) => (
-              <CarouselItem
-                key={index}
-                className="md:basis-1/4 flex justify-center"
-              >
-                <div className="bg-[#E8E8E8] rounded-2xl p-3 w-[150px] md:w-[150px] md:h-[150px] flex flex-col items-center justify-center">
-                  <Image
-                    src={src}
-                    alt="Brand Logo"
-                    width={60}
-                    height={60}
-                    className="mb-2"
-                  />
-                  <p className="text-red-600 font-bold text-lg">CP PLUS</p>
-                </div>
-              </CarouselItem>
-            ))}
-            
-          </CarouselContent>
-          {/* Prev & Next buttons */}
-          <CarouselPrevious className="bg-purple-600 w-6 h-6  hover:bg-purple-700 text-white" />
-          <CarouselNext className="bg-purple-600 w-6 h-6 hover:bg-purple-700 text-white" />
-        </Carousel>
-        
+      {/* Authorized Sellers */}
+      <h3 className="text-base text-white font-medium mb-3">Authorized Sellers</h3>
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+        {authorizedBrands.map((brand, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 30 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.4, delay: index * 0.1 }}
+            className="relative bg-white rounded-xl overflow-hidden w-full h-[90px] md:h-[110px] flex items-center justify-center p-1.5"
+          >
+            <Image
+              src={brand.src}
+              alt={brand.name}
+              width={100}
+              height={100}
+              className="object-contain w-full h-full"
+            />
+            <span className="absolute top-1.5 right-1.5 bg-green-600 text-white text-[9px] md:text-[10px] px-1.5 py-[1px] rounded-full">
+              Authorized Seller
+            </span>
+          </motion.div>
+        ))}
+      </div>
+
+      {/* Other Brands */}
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        {otherBrands.map((src, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 30 }}
+            animate={inView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.4, delay: index * 0.1 }}
+            className="bg-white rounded-xl overflow-hidden w-full h-[90px] md:h-[110px] flex items-center justify-center p-1.5"
+          >
+            <Image
+              src={src}
+              alt="Brand Logo"
+              width={100}
+              height={100}
+              className="object-contain w-full h-full"
+            />
+          </motion.div>
+        ))}
       </div>
     </div>
   );
