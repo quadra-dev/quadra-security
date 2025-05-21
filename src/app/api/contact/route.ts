@@ -3,14 +3,8 @@ import { Contact } from "@/models/Contact";
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 import { google } from "googleapis";
-import fs from "fs";
-import path from "path";
 
-const serviceAccountPath = path.join(
-  process.cwd(),
-  "src/lib/google-service-account.json"
-);
-const serviceAccount = JSON.parse(fs.readFileSync(serviceAccountPath, "utf-8"));
+const serviceAccount = JSON.parse(process.env.GOOGLE_SERVICE_ACCOUNT_JSON!);
 
 export async function POST(req: Request) {
   try {
