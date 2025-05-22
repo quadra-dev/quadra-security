@@ -1,7 +1,7 @@
 // src/app/blog/page.tsx
 import { Suspense } from "react";
 import { groq } from "next-sanity";
-import { client } from "../../sanity/lib/client";
+import { client } from "../../../sanity-project/lib/client";
 import BlogClientComponent from "./BlogClientComponent";
 
 // Blog post interface for TypeScript
@@ -12,8 +12,6 @@ export interface BlogPost {
   slug: string;
   image: string;
 }
-
-
 
 // Server Component for data fetching
 export default async function BlogPage() {
@@ -35,5 +33,3 @@ export default async function BlogPage() {
     </Suspense>
   );
 }
-
-
