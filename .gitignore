@@ -42,3 +42,5 @@ next-env.d.ts
 
 # google-sheet
 src/lib/google-service-account.json
+
+sanity-project
