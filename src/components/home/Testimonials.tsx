@@ -53,6 +53,16 @@ export default function Testimonials() {
             <br /> us for fast, reliable, and secure
             <br /> CCTV installations.
           </p>
+
+          {/* Button */}
+          <div className="text-center md:text-left mt-2">
+            <a
+              href="/contact-us"
+              className="inline-block px-6 py-2 bg-yellow-400 text-black font-semibold rounded-full shadow-md hover:bg-yellow-300 transition duration-300"
+            >
+              Contact Us
+            </a>
+          </div>
         </div>
         <div className="md:hidden z-20 flex relative lg:justify-center lg:items-center lg:w-1/8 md:-right-[200px]">
           <TestimonialsCarousel />

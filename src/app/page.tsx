@@ -1,5 +1,5 @@
 "use client";
-import { motion} from "framer-motion";
+import { motion } from "framer-motion";
 import SiteVisitForm from "@/components/home/Form";
 import FancyButton from "@/components/home/FancyButton";
 import ServiceCarousel from "@/components/home/ServiceCarousel";
@@ -7,13 +7,19 @@ import SolutionsCarousel from "@/components/home/SolutionsCrousel";
 import BrandsCarousel from "@/components/home/BrandsCarousel";
 import WhyChooseUs from "@/components/home/WhyChooseUs";
 import Testimonials from "@/components/home/Testimonials";
+import { useRouter } from "next/navigation";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 // import { useRef } from "react";
 
 export default function Home() {
+  const router = useRouter();
+  const handleConsultationClick = () => {
+    // Handle the button click event here
+    router.push("/contact-us");
+  };
   //  const ref = useRef(null);
   // const isInView = useInView(ref, { once: true });
-  const words1 = `Providing The Best Surveillance & Security Solutions In GURGAON`;
+  const words1 = `Trusted CCTV Camera Installation & Repair Services in Gurgaon`;
   return (
     <div className="font-[family-name:var(--font-urbanist)]">
       {/* Section 1 */}
@@ -29,9 +35,10 @@ export default function Home() {
                 <TextGenerateEffect words={words1} className="p-2" />
               </h1>
               <h1 className="hidden md:block text-white lg:text-5xl font-semibold">
-                Providing The Best <br /> Surveillance & <br />
-                Security Solutions In <br />
-                <span className="font-bold text-yellow-500">Gurgaon</span>
+                Trusted CCTV Camera <br /> Installation & Repair
+                <br />
+                Services In
+                <span className="ml-4 font-bold text-yellow-500">Gurgaon</span>
               </h1>
             </motion.div>
             <motion.div
@@ -43,7 +50,7 @@ export default function Home() {
                 Get Free Site Visit in Gurgaon and <br /> Delhi NCR
               </h2>
               <h2 className="hidden md:block text-white text-3xl">
-                Get Free Site Visit in Gurgaon and <br /> Delhi NCR
+               Secure Your Home & Business <br /> with Expert CCTV Solutions
               </h2>
             </motion.div>
           </div>
@@ -56,7 +63,7 @@ export default function Home() {
           >
             <FancyButton
               className="py-2 md:py-4 px-8 md:px-10"
-              onClick={() => alert("Consultation booked!")}
+              onClick={handleConsultationClick}
             >
               Book your free consultation
             </FancyButton>
@@ -69,8 +76,7 @@ export default function Home() {
       {/* Section 1 */}
       {/* section 2 */}
       <section className="h-screen w-screen bg-gradient-to-b from-[#2917C9] via-[#300571] to-[#151b7e] flex flex-col justify-center items-center ">
-        <motion.div
-         className="space-y-4 md:w-1/2 w-full mt-56 md:mt-0">
+        <motion.div className="space-y-4 md:w-1/2 w-full mt-56 md:mt-0">
           <h2 className="text-white md:text-4xl text-2xl text-center md:text-start">
             What we Offer
           </h2>
@@ -79,12 +85,11 @@ export default function Home() {
           </h1>
         </motion.div>
         <div className="flex justify-center w-full">
-          <SolutionsCarousel/>
+          <SolutionsCarousel />
         </div>
       </section>
-       <section className="h-screen w-screen bg-gradient-to-b from-[#151b7e] via-[#300571] to-[#151b7e] flex flex-col justify-center items-center ">
-        <motion.div
-         className="space-y-4 md:w-1/2 w-full mt-56 md:mt-0">
+      <section className="h-screen w-screen bg-gradient-to-b from-[#151b7e] via-[#300571] to-[#151b7e] flex flex-col justify-center items-center ">
+        <motion.div className="space-y-4 md:w-1/2 w-full mt-56 md:mt-0">
           <h2 className="text-white md:text-4xl text-2xl text-center md:text-start">
             Check our
           </h2>
@@ -96,14 +101,14 @@ export default function Home() {
           <ServiceCarousel />
         </div>
       </section>
-      <section className="h-screen w-screen bg-gradient-to-b from-[#151b7e] via-[#0D053F] to-[#2917C9] flex flex-col justify-evenly items-center">
+      <section className=" w-screen bg-gradient-to-b from-[#151b7e] via-[#0D053F] to-[#2917C9] flex flex-col justify-evenly items-center">
         <BrandsCarousel />
       </section>
-      <section className="bg-gradient-to-b from-[#2917C9] via-[#240D63] to-[#0B0146] w-screen text-white flex justify-center items-center h-screen">
+      <section className="bg-gradient-to-b from-[#2917C9] via-[#240D63] to-[#0B0146] w-screen text-white flex justify-center items-center h-[280vh] md:h-[250vh]">
         <WhyChooseUs />
       </section>
       <section
-        className=" text-white w-screen md:py-10 py-14 px-4 flex justify-center
+        className=" text-white h-screen w-screen md:py-10 py-14 px-4 flex justify-center
          md:justify-start md:items-center h-screen bg-cover bg-center bg-no-repeat "
         style={{ backgroundImage: "url('/home/bg_img.png')" }} // replace with your actual image path
       >

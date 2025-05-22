@@ -1,10 +1,11 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 "use client";
 
-import { useEffect, useRef } from "react";
+import { ReactNode, useEffect, useRef } from "react";
 import Image from "next/image";
 
 interface ServiceSectionProps {
-  icon: string;
+  icon: ReactNode;
   title: string;
   description: string;
   features: string[];
@@ -28,7 +29,6 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add("opacity-100", "translate-y-0");
-            // Find the line element and animate it
             const lineElement = entry.target.querySelector(".icon-line");
             if (lineElement) {
               lineElement.classList.add("h-full");
@@ -52,41 +52,61 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({
 
   return (
     <div
-      className={`flex ${index % 2 !== 0 ? "flex-row-reverse" : ""} mb-12 py-5 opacity-0 translate-y-5 transition-all duration-600 ease-in-out relative`}
       ref={sectionRef}
       data-section-id={index}
+      className={`
+        flex flex-col md:flex-row 
+        ${index % 2 !== 0 ? "md:flex-row-reverse" : ""}
+        mb-12 py-5 opacity-0 translate-y-5 transition-all duration-[600ms] ease-in-out relative
+        gap-6
+      `}
     >
-      <div className="w-8 flex flex-col items-center mr-5 relative z-10">
-        <div className="w-8 h-8 flex items-center justify-center text-2xl bg-[#00246C] text-white rounded-full z-20 relative">
+      {/* Icon and line */}
+      <div className="flex md:flex-col items-center md:items-start md:mr-5 relative z-10 w-full md:w-auto">
+        <div className="p-2 text-md flex items-center justify-center text-3xl bg-[#00246C] text-white rounded-full relative z-20">
           {icon}
         </div>
-        {/* Line starts right from the icon */}
-        <div className="icon-line w-0.5 bg-[#00246C] absolute top-8 left-1/2 -translate-x-1/2 h-0 transition-all duration-1500 ease-out"></div>
+        {/* Line positioned differently on mobile and desktop */}
+        <div
+          className={`
+            icon-line bg-[#00246C] absolute
+            md:static
+            md:w-0.5 md:h-full
+            w-full h-0.5
+            top-6 left-0 md:left-auto
+            md:mt-2
+            transition-all duration-[1500ms] ease-out
+          `}
+        ></div>
       </div>
 
-      <div className={`flex-1 ${index % 2 !== 0 ? "pr-0 pl-5" : "pr-5"}`}>
-        <h2 className="text-xl font-bold text-[#00246C] mb-2 relative pb-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-10 after:h-0.5 after:bg-blue-800">
+      {/* Text content */}
+      <div className={`flex-1 max-w-full md:max-w-[55%]`}>
+        <h2 className="text-xl font-bold text-[#00246C] mb-3 relative pb-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-10 after:h-0.5 after:bg-blue-800">
           {title}
         </h2>
-        <p className="text-gray-600 mb-4 leading-relaxed">{description}</p>
-        <ul className="list-none p-0 m-0">
-          {features.map((feature, i) => (
-            <li key={i} className="mb-2 flex items-center">
-              <span className="text-[#00246C] font-bold mr-2">✓</span> {feature}
-            </li>
-          ))}
-        </ul>
+        <p className="text-gray-600 mb-4 leading-relaxed whitespace-pre-line">{description}</p>
+        {features.length > 0 && (
+          <ul className="list-none p-0 m-0">
+            {features.map((feature, i) => (
+              <li key={i} className="mb-2 flex items-center">
+                <span className="text-[#00246C] font-bold mr-2 select-none">✓</span> {feature}
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
 
-      <div className="w-2/5 rounded-lg overflow-hidden shadow-md">
-        <div className="relative w-full h-full min-h-[240px]">
-          <Image
-            src={imageUrl}
-            alt={title}
-            fill
-            style={{ objectFit: "cover" }}
-          />
-        </div>
+      {/* Image container */}
+      <div className="w-full md:w-[40%] rounded-lg overflow-hidden shadow-md min-h-[240px] relative">
+        <Image
+          src={imageUrl}
+          alt={title}
+          fill
+          style={{ objectFit: "cover" }}
+          sizes="(max-width: 768px) 100vw, 40vw"
+          priority={index < 2} // prioritize first two images for faster load
+        />
       </div>
     </div>
   );

@@ -14,7 +14,7 @@ import {
 } from "react-icons/fa";
 import HeroBanner from "./ui/hero-banner";
 
-import { toast } from "react-hot-toast";
+import { toast } from "sonner";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -81,8 +81,17 @@ export default function ContactForm() {
       <div>
         <HeroBanner title="Contact Us" />
       </div>
-      <div className="min-h-screen bg-white flex justify-center items-center p-6">
-        <div className="max-w-7xl w-full bg-white rounded-lg shadow-md flex flex-col md:flex-row overflow-hidden border border-gray-100">
+
+      <div className="min-h-screen  bg-white flex flex-col justify-center items-center p-6 font-[family-name:var(--font-urbanist)]">
+        <div className="max-w-4xl mt-8 mx-auto px-4 md:px-0 prose prose-lg prose-blue prose-headings:text-[#00246C] prose-headings:font-extrabold prose-headings:mb-4 prose-p:text-gray-700 prose-p:leading-relaxed prose-p:mb-6">
+          <p>
+            Get in Touch with Quadra Security We’re here to help you secure what
+            matters most. Whether you have a question about our products,
+            services or need expert advice, our team is ready to assist you.
+            Reach out to us today
+          </p>
+        </div>
+        <div className="max-w-7xl w-full mt-8 bg-white rounded-lg shadow-md flex flex-col md:flex-row overflow-hidden border border-gray-100">
           {/* Left Panel: Contact Info */}
           <div className="bg-gradient-to-b from-[#292BA1] to-[#0D0544] text-white w-full md:w-1/3 p-8 space-y-6">
             <div className="text-white text-sm space-y-6">

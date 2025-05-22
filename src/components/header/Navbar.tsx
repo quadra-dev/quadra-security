@@ -7,6 +7,7 @@ import { Menu, X, ChevronDown, ChevronUp } from "lucide-react";
 import FancyButton2 from "../home/FancyButton2";
 import SolutionsDropdown2 from "./SolutionsDropdown2";
 import { AnimatePresence, motion } from "framer-motion";
+import QuotationDialog from "../home/QuotationDialog";
 
 const HomeNavbar = () => {
   const pathname = usePathname();
@@ -51,20 +52,20 @@ const HomeNavbar = () => {
       className={`fixed top-0 left-0 z-50 font-[family-name:var(--font-urbanist)] w-full transition-all duration-300 bg-white shadow-sm`}
     >
       <div className="md:h-18 h-14 w-full flex items-center justify-between px-4 md:px-6 lg:px-10">
-      <button
-            className="md:hidden text-white p-2"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {isMenuOpen ? (
-              ""
-            ) : (
-              <Menu size={24} className="text-black fixed top-4" />
-            )}
-          </button>
+        <button
+          className="md:hidden text-white p-2"
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label="Toggle menu"
+        >
+          {isMenuOpen ? (
+            ""
+          ) : (
+            <Menu size={24} className="text-black fixed top-4" />
+          )}
+        </button>
         <div className="flex gap-1 items-center h-full justify-center w-full md:w-auto md:justify-start">
           {/* Mobile Menu Toggle */}
-          
+
           <Image
             src="/logo2_color.svg"
             width={24}
@@ -76,7 +77,11 @@ const HomeNavbar = () => {
 
         {/* Desktop Nav */}
         <div className="hidden md:block">
-          <nav>
+          <motion.nav
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+          >
             <ul className="flex text-black text-md justify-evenly gap-4 md:gap-3 lg:gap-10">
               {navItems.map((item) => (
                 <li key={item.name}>
@@ -94,17 +99,17 @@ const HomeNavbar = () => {
               ))}
               <SolutionsDropdown2 />
             </ul>
-          </nav>
+          </motion.nav>
         </div>
 
         {/* Desktop CTA Button */}
         <div className="hidden md:flex">
-          <FancyButton2 className="py-2 px-3 text-sm rounded-sm">
-            Get your Quotation Today
-          </FancyButton2>
+          <QuotationDialog>
+            <FancyButton2 className="w-full py-2 px-3 text-sm rounded-sm">
+              Get your Quotation Today
+            </FancyButton2>
+          </QuotationDialog>
         </div>
-
-       
       </div>
 
       {/* Mobile Menu */}
@@ -203,9 +208,11 @@ const HomeNavbar = () => {
 
                 {/* CTA Button */}
                 <li>
-                  <FancyButton2 className="w-full py-2 px-3 text-sm rounded-sm">
-                    Get your Quotation Today
-                  </FancyButton2>
+                  <QuotationDialog>
+                    <FancyButton2 className="w-full py-2 px-3 text-sm rounded-sm">
+                      Get your Quotation Today
+                    </FancyButton2>
+                  </QuotationDialog>
                 </li>
               </ul>
             </motion.div>
