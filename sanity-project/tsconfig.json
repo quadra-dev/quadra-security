@@ -30,7 +30,7 @@
     ".next/types/**/*.ts",
     "src/app/blog/[slug]/page.tsx",
     "tailwind.config.js",
-    "sanity-project/.sanity/structure.ts"
+    ".sanity/structure.ts"
   ],
   "exclude": ["node_modules"]
 }

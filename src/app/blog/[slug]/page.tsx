@@ -1,4 +1,4 @@
-import { client } from "@/sanity/lib/client";
+import { client } from "../../../../sanity-project/lib/client";
 import { PortableText } from "@portabletext/react";
 import HeroBanner from "@/components/ui/hero-banner";
 import Link from "next/link";
@@ -26,7 +26,7 @@ export default async function BlogDetailPage({ params }: Props) {
   if (!blog) {
     return <div className="p-8">Blog not found.</div>;
   }
-  
+
   const categories = [
     "Business Surveillance",
     "Biometric & Fingerprint Access",
