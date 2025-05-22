@@ -224,7 +224,7 @@ const Services: NextPage = () => {
       className="w-full font-[family-name:var(--font-urbanist)]"
       ref={pageRef}
     >
-      <HeroBanner title="Quadra Security - Our Services" />
+      <HeroBanner title="Our Services" />
 
       <section className="max-w-6xl mx-auto px-5 py-10 font-sans text-gray-800">
         <article className="mb-12 max-w-4xl mx-auto px-4 md:px-0 prose prose-lg prose-blue prose-headings:text-[#00246C] prose-headings:font-extrabold prose-headings:mb-4 prose-p:text-gray-700 prose-p:leading-relaxed prose-p:mb-6">

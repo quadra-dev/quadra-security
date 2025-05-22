@@ -8,7 +8,7 @@ export async function POST(req: Request) {
 
     // Parse service account from base64 env var
     const decodedBase64 = Buffer.from(
-      process.env.GOOGLE_SERVICE_ACCOUNT_BASE64 || "",
+      process.env.GOOGLE_CREDENTIALS_BASE64 || "",
       "base64"
     ).toString("utf-8");
 
@@ -19,7 +19,7 @@ export async function POST(req: Request) {
       service: "gmail",
       auth: {
         user: process.env.GMAIL_USER,
-        pass: process.env.GMAIL_PASS,
+        pass: process.env.GMAIL_APP_PASSWORD,
       },
     });
 

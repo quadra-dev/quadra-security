@@ -21,7 +21,7 @@ const AboutUs: React.FC = () => {
 
   return (
     <motion.div
-      className="flex flex-col min-h-screen"
+      className="flex flex-col min-h-screen font-[family-name:var(--font-urbanist)]"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.6 }}

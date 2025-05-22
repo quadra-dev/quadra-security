@@ -77,7 +77,11 @@ const HomeNavbar = () => {
 
         {/* Desktop Nav */}
         <div className="hidden md:block">
-          <nav>
+          <motion.nav
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+          >
             <ul className="flex text-black text-md justify-evenly gap-4 md:gap-3 lg:gap-10">
               {navItems.map((item) => (
                 <li key={item.name}>
@@ -95,7 +99,7 @@ const HomeNavbar = () => {
               ))}
               <SolutionsDropdown2 />
             </ul>
-          </nav>
+          </motion.nav>
         </div>
 
         {/* Desktop CTA Button */}

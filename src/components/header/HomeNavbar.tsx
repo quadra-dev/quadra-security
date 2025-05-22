@@ -102,7 +102,11 @@ const HomeNavbar = () => {
 
         {/* Desktop Navigation */}
         <div className="hidden md:block">
-          <nav>
+          <motion.nav
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+          >
             <ul className="flex text-white text-md justify-evenly gap-4 md:gap-3 lg:gap-10">
               {/* Static nav items */}
               {navItems.map((item) => (
@@ -122,7 +126,7 @@ const HomeNavbar = () => {
               {/* Solutions dropdown */}
               <SolutionsDropdown />
             </ul>
-          </nav>
+          </motion.nav>
         </div>
 
         {/* Desktop CTA Button */}
@@ -233,9 +237,9 @@ const HomeNavbar = () => {
                 {/* CTA Button */}
                 <li>
                   <QuotationDialog>
-                  <FancyButton className="w-full py-2 px-3 text-sm rounded-sm">
-                    Get your Quotation Today
-                  </FancyButton>
+                    <FancyButton className="w-full py-2 px-3 text-sm rounded-sm">
+                      Get your Quotation Today
+                    </FancyButton>
                   </QuotationDialog>
                 </li>
               </ul>
