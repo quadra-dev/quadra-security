@@ -1,7 +1,7 @@
 // src/app/blog/page.tsx
 import { Suspense } from "react";
 import { groq } from "next-sanity";
-import { client } from "../../../sanity-project/lib/client";
+import { client } from "@/lib/sanityClient";
 import BlogClientComponent from "./BlogClientComponent";
 
 // Blog post interface for TypeScript

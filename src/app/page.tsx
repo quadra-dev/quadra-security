@@ -9,6 +9,7 @@ import WhyChooseUs from "@/components/home/WhyChooseUs";
 import Testimonials from "@/components/home/Testimonials";
 import { useRouter } from "next/navigation";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
+import Chatbot from "@/components/Chatbot";
 // import { useRef } from "react";
 
 export default function Home() {
@@ -50,7 +51,7 @@ export default function Home() {
                 Get Free Site Visit in Gurgaon and <br /> Delhi NCR
               </h2>
               <h2 className="hidden md:block text-white text-3xl">
-               Secure Your Home & Business <br /> with Expert CCTV Solutions
+                Secure Your Home & Business <br /> with Expert CCTV Solutions
               </h2>
             </motion.div>
           </div>
@@ -114,6 +115,7 @@ export default function Home() {
       >
         <Testimonials />
       </section>
+      <Chatbot />
     </div>
   );
 }
