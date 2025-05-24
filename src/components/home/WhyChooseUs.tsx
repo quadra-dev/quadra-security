@@ -87,7 +87,7 @@ const WhyChooseUs = () => {
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.3 }}
-      className="w-screen flex flex-col items-center justify-center gap-y-10 py-16 px-4 md:h-[250vh] h-[280vh]"
+      className="w-screen flex flex-col items-center justify-center gap-y-10 py-16 px-4 md:h-[200vh] h-[280vh]"
     >
       {/* Title */}
       <div className="flex items-center space-x-4 mb-2">

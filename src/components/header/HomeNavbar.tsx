@@ -80,7 +80,7 @@ const HomeNavbar = () => {
         {/* Logo */}
         <div className="flex gap-1 items-center h-full w-full md:w-auto justify-center md:justify-start">
           <Image
-            src="/logo2_white.svg"
+            src="/logo_white.svg"
             width={24}
             height={24}
             alt="Quadra Security Logo"
@@ -164,7 +164,7 @@ const HomeNavbar = () => {
               {/* Close Button */}
               <div className="flex  w-full justify-center">
                 <Image
-                  src="/logo2_color.svg"
+                  src="/logo_color.svg"
                   width={24}
                   height={24}
                   alt="Quadra Security Logo"
