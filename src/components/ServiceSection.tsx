@@ -17,7 +17,6 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({
   icon,
   title,
   description,
-  features,
   imageUrl,
   index,
 }) => {
@@ -86,7 +85,7 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({
           {title}
         </h2>
         <p className="text-gray-600 mb-4 leading-relaxed whitespace-pre-line">{description}</p>
-        {features.length > 0 && (
+        {/* {features.length > 0 && (
           <ul className="list-none p-0 m-0">
             {features.map((feature, i) => (
               <li key={i} className="mb-2 flex items-center">
@@ -94,7 +93,7 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({
               </li>
             ))}
           </ul>
-        )}
+        )} */}
       </div>
 
       {/* Image container */}
