@@ -8,7 +8,6 @@ interface ServiceSectionProps {
   icon: ReactNode;
   title: string;
   description: string;
-  features: string[];
   imageUrl: string;
   index: number;
 }
