@@ -38,7 +38,7 @@ export default function Footer() {
         </div>
 
         {/* BRAND & CONTACT */}
-        <div>
+        <div className="text-center md:text-left">
           <h3 className="font-bold text-xl mb-1">QUADRA SECURITY</h3>
           <p className="text-sm mb-3">Protecting What Matters Most</p>
           <div className="text-sm space-y-1">
@@ -48,10 +48,34 @@ export default function Footer() {
           </div>
 
           {/* Social Icons */}
-          <div className="flex gap-4 mt-4 text-xl">
-            <FaInstagram className="hover:text-pink-500 transition" />
-            <FaYoutube className="hover:text-red-500 transition" />
-            <FaLinkedin className="hover:text-blue-400 transition" />
+          <div className="flex justify-center md:justify-start gap-4 mt-4 text-xl">
+            <a
+              href="https://instagram.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="hover:text-pink-500 transition"
+            >
+              <FaInstagram />
+            </a>
+            <a
+              href="https://youtube.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="YouTube"
+              className="hover:text-red-500 transition"
+            >
+              <FaYoutube />
+            </a>
+            <a
+              href="https://linkedin.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="LinkedIn"
+              className="hover:text-blue-400 transition"
+            >
+              <FaLinkedin />
+            </a>
           </div>
         </div>
       </div>
