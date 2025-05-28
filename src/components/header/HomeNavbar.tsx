@@ -80,14 +80,14 @@ const HomeNavbar = () => {
         {/* Logo */}
         <div className="flex gap-1 items-center h-full w-full md:w-auto justify-center md:justify-start">
           <Image
-            src="/logo2_white.svg"
+            src="/logo_white.svg"
             width={24}
             height={24}
             alt="Quadra Security Logo"
             className="md:w-[200px] w-[150px] hidden md:block mt-3"
           />
           <Image
-            src="/logo2_color.svg"
+            src="/logo_color.svg"
             width={24}
             height={24}
             alt="Quadra Security Logo"
@@ -161,20 +161,21 @@ const HomeNavbar = () => {
               transition={{ duration: 0.3, ease: "easeInOut" }}
               className="fixed top-0 right-0 w-full h-full bg-white z-50 shadow-lg p-4 flex flex-col"
             >
-              {/* Close Button */}
-              <div className="flex  w-full justify-center">
+              {/* Logo and Close Button */}
+              <div className="flex w-full justify-between items-center">
+                <div></div> {/* empty div to push logo to right */}
                 <Image
-                  src="/logo2_color.svg"
+                  src="/logo_color.svg"
                   width={24}
                   height={24}
                   alt="Quadra Security Logo"
-                  className="md:w-[200px] w-[150px] md:hidden  mt-3 "
+                  className="md:w-[200px] w-[150px] md:hidden mt-3"
                 />
                 <button
                   onClick={() => setIsMenuOpen(false)}
                   aria-label="Close menu"
                 >
-                  <X size={28} className="text-black fixed right-4 top-4" />
+                  <X size={28} className="text-black" />
                 </button>
               </div>
 

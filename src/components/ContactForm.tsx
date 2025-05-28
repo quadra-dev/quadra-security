@@ -23,9 +23,7 @@ export default function ContactForm() {
     email: "",
     service: "CCTV Installation",
     address: "",
-    pincode: "",
-    date: "",
-    timeSlot: "",
+    city: "Gurgaon",
   });
 
   const [loading, setLoading] = useState(false);
@@ -41,8 +39,33 @@ export default function ContactForm() {
     });
   };
 
+  // Validate Indian mobile number: must start with 7,8 or 9 and exactly 10 digits
+  const isValidMobile = (number: string) => {
+    const mobileRegex = /^[7-9][0-9]{9}$/;
+    return mobileRegex.test(number);
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Validate required fields and mobile format
+    if (!formData.name.trim()) {
+      toast.error("Name is required");
+      return;
+    }
+    if (!formData.mobile.trim()) {
+      toast.error("Mobile number is required");
+      return;
+    }
+    if (!isValidMobile(formData.mobile.trim())) {
+      toast.error("Invalid mobile number.");
+      return;
+    }
+    if (!formData.email.trim()) {
+      toast.error("Email is required");
+      return;
+    }
+
     setLoading(true);
     try {
       const res = await fetch("/api/contact", {
@@ -61,9 +84,7 @@ export default function ContactForm() {
           email: "",
           service: "CCTV Installation",
           address: "",
-          pincode: "",
-          date: "",
-          timeSlot: "",
+          city: "Gurgaon",
         });
       } else {
         toast.error("Something went wrong. Please try again.");
@@ -82,7 +103,7 @@ export default function ContactForm() {
         <HeroBanner title="Contact Us" />
       </div>
 
-      <div className="min-h-screen  bg-white flex flex-col justify-center items-center p-6 font-[family-name:var(--font-urbanist)]">
+      <div className="min-h-screen bg-white flex flex-col justify-center items-center p-6 font-[family-name:var(--font-urbanist)]">
         <div className="max-w-4xl mt-8 mx-auto px-4 md:px-0 prose prose-lg prose-blue prose-headings:text-[#00246C] prose-headings:font-extrabold prose-headings:mb-4 prose-p:text-gray-700 prose-p:leading-relaxed prose-p:mb-6">
           <p>
             Get in Touch with Quadra Security We’re here to help you secure what
@@ -181,6 +202,7 @@ export default function ContactForm() {
                   value={formData.mobile}
                   onChange={handleChange}
                   placeholder="Mobile Number"
+                  maxLength={10}
                   required
                 />
               </div>
@@ -211,49 +233,18 @@ export default function ContactForm() {
                 className="min-h-[100px]"
                 required
               />
-              <div className="grid grid-cols-2 gap-4">
-                <Input
-                  name="pincode"
-                  value={formData.pincode}
-                  onChange={handleChange}
-                  placeholder="Enter Pincode"
-                />
-                <select
-                  name="city"
-                  className="w-full h-10 px-3 py-2 rounded-md border border-slate-300 focus:outline-none"
-                >
-                  <option value="Gurgaon">Gurgaon</option>
-                  <option value="Delhi">Delhi</option>
-                  <option value="Noida">Noida</option>
-                </select>
-              </div>
-              <div className="grid grid-cols-2 gap-4">
-                <Input
-                  type="date"
-                  name="date"
-                  value={formData.date}
-                  onChange={handleChange}
-                  required
-                />
-                <select
-                  name="timeSlot"
-                  value={formData.timeSlot}
-                  onChange={handleChange}
-                  className="w-full h-10 px-3 py-2 rounded-md border border-slate-300 focus:outline-none"
-                  required
-                >
-                  <option value="">Select time slot</option>
-                  <option value="Morning (9am - 12pm)">
-                    Morning (9am - 12pm)
-                  </option>
-                  <option value="Afternoon (12pm - 3pm)">
-                    Afternoon (12pm - 3pm)
-                  </option>
-                  <option value="Evening (3pm - 6pm)">
-                    Evening (3pm - 6pm)
-                  </option>
-                </select>
-              </div>
+              <select
+                name="city"
+                value={formData.city}
+                onChange={handleChange}
+                className="w-full h-10 px-3 py-2 rounded-md border border-slate-300 focus:outline-none"
+                required
+              >
+                <option value="Gurgaon">Gurgaon</option>
+                <option value="Delhi">Delhi</option>
+                <option value="Noida">Noida</option>
+              </select>
+
               <Button
                 type="submit"
                 disabled={loading}

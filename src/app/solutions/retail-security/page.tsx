@@ -20,7 +20,7 @@ const SolutionsPage = () => {
   return (
     <div className="bg-white font-[family-name:var(--font-urbanist)] text-gray-800 min-h-screen">
       {/* Header with background image */}
-       <HeroBanner title="Retail Security" />
+      <HeroBanner title="Retail Security" />
 
       <div className="flex flex-col md:flex-row gap-8">
         {/* Sidebar */}
@@ -50,50 +50,71 @@ const SolutionsPage = () => {
 
             <div>
               <h3 className="font-bold text-lg mb-3">
-                Smart Surveillance. Real Protection.
+                CCTV Solutions for Retail
               </h3>
               <p className="mb-4">
-                In today’s unpredictable world, security isn’t a luxury—it’s a
-                necessity. At Quadro Security, we specialize in providing
-                professional-grade CCTV solutions to help you stay one step
-                ahead when it comes to safety.
+                <strong>Protect People. Prevent Loss. Power Growth.</strong>
               </p>
               <p className="mb-4">
-                With cutting-edge technology and round-the-clock reliability,
-                our surveillance systems are designed to give you peace of
-                mind—whether you’re at home, at work, or on the go.
+                CCTV solutions for retail help you protect assets, prevent
+                fraud, stop shoplifting, and improve customer safety. Quadra
+                Security offers smart, adaptable systems for 24/7 monitoring,
+                analytics, and retail optimization.
               </p>
 
-              <h4 className="font-semibold mb-2">
-                Why Choose Quadro Security?
+              <h4 className="font-semibold mt-4 mb-2">
+                Where Do You Need CCTV in Retail?
               </h4>
-              <ul className="list-disc pl-6 space-y-2 text-sm">
+              <ul className="list-disc pl-6 mb-4">
                 <li>
-                  <strong>IP Cameras</strong> – High-definition clarity and
-                  remote access
+                  <strong>Store Entrances & Exits:</strong> Prevent theft,
+                  manage flagged individuals, and reduce fraudulent claims.
                 </li>
                 <li>
-                  <strong>Wireless Cameras</strong> – Hassle-free setup with
-                  flexible installation
+                  <strong>Checkout & Cash Counters:</strong> Capture every
+                  transaction and resolve disputes with audio/video recording.
                 </li>
                 <li>
-                  <strong>Dome & Bullet Cameras</strong> – Ideal for both indoor
-                  and outdoor use
+                  <strong>Aisles & Store Interiors:</strong> Monitor blind spots
+                  and staff activity, prevent inventory loss.
                 </li>
                 <li>
-                  <strong>Night Vision & Motion Detection</strong> – Stay
-                  protected even in the dark
+                  <strong>Perimeter & Loading Zones:</strong> Stop break-ins,
+                  theft, and vandalism even in low-light.
                 </li>
                 <li>
-                  <strong>Mobile Monitoring</strong> – Watch your property live
-                  from anywhere
+                  <strong>Shopping Mall Common Areas:</strong> Manage crowds and
+                  improve safety across wide areas.
+                </li>
+                <li>
+                  <strong>Stockrooms & Back Offices:</strong> Secure access,
+                  inventory, and respond to emergencies instantly.
                 </li>
               </ul>
 
-              <p className="mt-4">
-                Every product we install is backed by expert support, seamless
-                setup, and a commitment to your safety.
-              </p>
+              <h4 className="font-semibold mt-4 mb-2">
+                Advanced Intelligence with Video Analytics
+              </h4>
+              <ul className="list-disc pl-6 mb-4">
+                <li>
+                  Retail heatmaps & footfall counting for insights and planning
+                </li>
+                <li>
+                  Real-time alerts & visual analytics for smarter decisions
+                </li>
+                <li>Seamless integration with POS and business tools</li>
+              </ul>
+
+              <h4 className="font-semibold mb-2">
+                Why Choose Quadra Security?
+              </h4>
+              <ul className="list-disc pl-6 space-y-2 text-sm">
+                <li>End-to-end smart retail security solutions</li>
+                <li>Expert deployment & support across locations</li>
+                <li>Cloud-based surveillance with mobile access</li>
+                <li>Compatible with retail management tools and POS systems</li>
+                <li>Trusted by top stores for scalable solutions</li>
+              </ul>
             </div>
           </motion.div>
         </motion.div>
