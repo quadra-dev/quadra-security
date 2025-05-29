@@ -18,42 +18,35 @@ import TestimonialCard from "./TestimonialCard";
 
 const testimonials = [
   {
-    name: "XXXXX SINGH",
+    name: "Amit S.",
+    location: "DLF Phase 2",
     description:
-      "The team was at my DLF Phase 2 home within hours. Setup was quick, and now I can monitor my house from anywhere!",
-    imageSrc: "/home/testimonial_img.png",
+      "Excellent service and top-class cameras. Installation was quick and clean.",
+    rating: 5,
   },
   {
-    name: "XXXXX SINGH",
+    name: "Preeti R.",
+    location: "Sushant Lok",
     description:
-      "The team was at my DLF Phase 2 home within hours. Setup was quick, and now I can monitor my house from anywhere!",
-      imageSrc: "/home/testimonial_img.png",
+      "Affordable, professional, and very responsive support. Highly recommend!",
+    rating: 5,
   },
-  {
-    name: "XXXXX SINGH",
+    {
+    name: "Gargi",
+    location: "DLF Phase 2",
     description:
-      "The team was at my DLF Phase 2 home within hours. Setup was quick, and now I can monitor my house from anywhere!",
-      imageSrc: "/testimonial_img.png",
+      "Quality products at affordable rates . Highly recommend !",
+    rating: 5,
   },
-  {
-    name: "XXXXX SINGH",
+      {
+    name: "Sushant Bharadwaj",
+    location: "Sushant Lok",
     description:
-      "The team was at my DLF Phase 2 home within hours. Setup was quick, and now I can monitor my house from anywhere!",
-      imageSrc: "/home/testimonial_img.png",
-  },
-  {
-    name: "XXXXX SINGH",
-    description:
-      "The team was at my DLF Phase 2 home within hours. Setup was quick, and now I can monitor my house from anywhere!",
-      imageSrc: "/home/testimonial_img.png",
-  },
-  {
-    name: "XXXXX SINGH",
-    description:
-      "The team was at my DLF Phase 2 home within hours. Setup was quick, and now I can monitor my house from anywhere!",
-      imageSrc: "/home/testimonial_img.png",
+      "Excellent services and trained professionals .",
+    rating: 5,
   },
 ];
+
 
 export function TestimonialsCarousel() {
   const [api, setApi] = useState<any>(null);

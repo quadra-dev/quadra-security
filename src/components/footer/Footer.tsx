@@ -1,60 +1,73 @@
-import { FaInstagram, FaYoutube, FaLinkedin } from "react-icons/fa";
+import {
+  FaInstagram,
+  FaYoutube,
+  FaLinkedin,
+  FaMapMarkerAlt,
+} from "react-icons/fa";
+
+import logo from "/public/logo_white.svg"; // replace with actual path if different
+import Link from "next/link"; // if using Next.js
 
 export default function Footer() {
   return (
-    <footer className="bg-gradient-to-b to-[#0e0542] from-[#2716be] text-white py-12 px-4 font-[family-name:var(--font-urbanist)]">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-        {/* ABOUT */}
+    <footer className="bg-gradient-to-b to-[#0e0542] from-[#2716be] text-white pt-12 pb-6 px-4 font-[family-name:var(--font-urbanist)]">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
+        {/* Important Links */}
         <div>
-          <h3 className="font-semibold text-lg mb-4">ABOUT</h3>
+          <h3 className="font-semibold text-lg mb-4">IMPORTANT LINKS</h3>
           <ul className="space-y-2 text-sm">
-            <li>Our Company</li>
-            <li>Our Team</li>
-            <li>Careers</li>
-            <li>Privacy Policy</li>
+            <li><Link href="/">Home</Link></li>
+            <li><Link href="/about">About Us</Link></li>
+            <li><Link href="/contact">Contact</Link></li>
+            <li><Link href="/services">Services</Link></li>
+            <li><Link href="/solutions">Solutions</Link></li>
           </ul>
         </div>
 
-        {/* SERVICES */}
+        {/* Services */}
         <div>
-          <h3 className="font-semibold text-lg mb-4">SERVICES</h3>
+          <h3 className="font-semibold text-lg mb-4">OUR SERVICES</h3>
           <ul className="space-y-2 text-sm">
-            <li>CCTV Installation</li>
-            <li>24/7 Remote Monitoring</li>
-            <li>Custom Security Systems</li>
-            <li>Maintenance & Support</li>
+            <li><Link href="/services">CCTV & Surveillance</Link></li>
+            <li><Link href="/services">Biometric Systems</Link></li>
+            <li><Link href="/services">ANPR</Link></li>
+            <li><Link href="/services">EPABX Systems</Link></li>
+            <li><Link href="/services">View All →</Link></li>
           </ul>
         </div>
 
-        {/* LOCATIONS */}
-        <div>
-          <h3 className="font-semibold text-lg mb-4">LOCATIONS</h3>
-          <ul className="space-y-2 text-sm">
-            <li>Gurgaon</li>
-            <li>DLF Phase 2</li>
-            <li>Cyber City</li>
-            <li>Sohna Road</li>
-          </ul>
-        </div>
-
-        {/* BRAND & CONTACT */}
+        {/* Company Info */}
         <div className="text-center md:text-left">
-          <h3 className="font-bold text-xl mb-1">QUADRA SECURITY</h3>
+          <div className="flex items-center justify-center md:justify-start mb-3">
+            <img src={logo.src || "/logo.png"} alt="Quadra Logo" className="h-6 mr-2" />
+
+          </div>
           <p className="text-sm mb-3">Protecting What Matters Most</p>
           <div className="text-sm space-y-1">
             <p>📍 Gurgaon, Haryana</p>
             <p>📞 +91 98XXXXXX85</p>
             <p>✉️ contact@quadrasecurity.in</p>
+            <a
+              href="https://www.google.com/maps/place/Gurgaon,+Haryana"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center mt-1 hover:underline text-sm text-blue-300"
+            >
+              <FaMapMarkerAlt className="mr-1" /> View on Google Maps
+            </a>
           </div>
+        </div>
 
-          {/* Social Icons */}
-          <div className="flex justify-center md:justify-start gap-4 mt-4 text-xl">
+        {/* Social Media */}
+        <div className="text-center md:text-left">
+          <h3 className="font-semibold text-lg mb-4">FOLLOW US</h3>
+          <div className="flex justify-center md:justify-start gap-5 text-2xl">
             <a
               href="https://instagram.com"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Instagram"
               className="hover:text-pink-500 transition"
+              aria-label="Instagram"
             >
               <FaInstagram />
             </a>
@@ -62,8 +75,8 @@ export default function Footer() {
               href="https://youtube.com"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="YouTube"
               className="hover:text-red-500 transition"
+              aria-label="YouTube"
             >
               <FaYoutube />
             </a>
@@ -71,8 +84,8 @@ export default function Footer() {
               href="https://linkedin.com"
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="LinkedIn"
               className="hover:text-blue-400 transition"
+              aria-label="LinkedIn"
             >
               <FaLinkedin />
             </a>
@@ -80,9 +93,9 @@ export default function Footer() {
         </div>
       </div>
 
-      {/* Divider */}
+      {/* Divider & Copyright */}
       <div className="border-t border-white mt-10 pt-6 text-center text-sm">
-        © 2025 Quadra Security. All rights reserved.
+        © {new Date().getFullYear()} Quadra Security. All rights reserved.
       </div>
     </footer>
   );

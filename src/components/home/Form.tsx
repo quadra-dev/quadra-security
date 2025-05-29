@@ -4,6 +4,7 @@ import { LockIcon } from "lucide-react";
 import { useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { toast } from "sonner";
+
 export default function SiteVisitForm() {
   const [formData, setFormData] = useState({
     name: "",
@@ -11,6 +12,8 @@ export default function SiteVisitForm() {
     service: "",
     area: "",
   });
+
+  const [submitting, setSubmitting] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
@@ -21,8 +24,7 @@ export default function SiteVisitForm() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
-    const toastId = toast.loading("Submitting request...");
+    setSubmitting(true);
 
     try {
       const response = await fetch("/api/site-visit", {
@@ -34,14 +36,16 @@ export default function SiteVisitForm() {
       const result = await response.json();
 
       if (response.ok) {
-        toast.success("Site visit scheduled successfully!", { id: toastId });
+        toast.success("Site visit scheduled successfully!");
         setFormData({ name: "", phone: "", service: "", area: "" });
       } else {
-        toast.error(result.error || "Something went wrong", { id: toastId });
+        toast.error(result.error || "Something went wrong");
       }
     } catch (error) {
       console.error(error);
-      toast.error("Submission failed", { id: toastId });
+      toast.error("Submission failed");
+    } finally {
+      setSubmitting(false);
     }
   };
 
@@ -82,7 +86,7 @@ export default function SiteVisitForm() {
           placeholder="PHONE NO"
           value={formData.phone}
           onChange={handleChange}
-          className="px-4 md:py-3 py-1  text-sm rounded-md bg-transparent border border-white placeholder-white/70 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400 transition-all"
+          className="px-4 md:py-3 py-1 text-sm rounded-md bg-transparent border border-white placeholder-white/70 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400 transition-all"
           required
         />
         <motion.select
@@ -90,7 +94,7 @@ export default function SiteVisitForm() {
           name="service"
           value={formData.service}
           onChange={handleChange}
-          className="px-4 md:py-3 py-1 text-sm  rounded-md  bg-transparent border border-white  focus:outline-none focus:ring-2 focus:ring-yellow-400 transition-all"
+          className="px-4 md:py-3 py-1 text-sm rounded-md bg-transparent border border-white focus:outline-none focus:ring-2 focus:ring-yellow-400 transition-all"
           required
         >
           <option value="" className="bg-white" disabled>
@@ -138,7 +142,7 @@ export default function SiteVisitForm() {
           name="area"
           value={formData.area}
           onChange={handleChange}
-          className="px-4 md:py-3 py-1 rounded-md text-sm  bg-transparent border border-white text-white focus:outline-none focus:ring-2 focus:ring-yellow-400 transition-all"
+          className="px-4 md:py-3 py-1 rounded-md text-sm bg-transparent border border-white text-white focus:outline-none focus:ring-2 focus:ring-yellow-400 transition-all"
           required
         >
           <option value="" disabled>
@@ -158,8 +162,7 @@ export default function SiteVisitForm() {
               MG Road
             </option>
           </optgroup>
-
-          <optgroup label="South Gurgaon"  className="text-black">
+          <optgroup label="South Gurgaon" className="text-black">
             <option value="sohna" className="text-black">
               Sohna
             </option>
@@ -173,7 +176,6 @@ export default function SiteVisitForm() {
               Vatika City
             </option>
           </optgroup>
-
           <optgroup label="East Gurgaon" className="text-black">
             <option value="sector-56" className="text-black">
               Sector 56
@@ -188,7 +190,6 @@ export default function SiteVisitForm() {
               Ghata Village
             </option>
           </optgroup>
-
           <optgroup label="West Gurgaon" className="text-black">
             <option value="sector-9" className="text-black">
               Sector 9
@@ -203,7 +204,6 @@ export default function SiteVisitForm() {
               IFFCO Chowk
             </option>
           </optgroup>
-
           <optgroup label="Central Gurgaon" className="text-black">
             <option value="civil-lines" className="text-black">
               Civil Lines
@@ -224,9 +224,12 @@ export default function SiteVisitForm() {
           whileHover={{ scale: 1.03 }}
           whileTap={{ scale: 0.98 }}
           type="submit"
-          className="md:mt-4 bg-[#01024E] text-sm  hover:bg-[#01013a] transition-all text-white font-semibold md:py-3 py-2 rounded-md tracking-widest shadow-md"
+          disabled={submitting}
+          className={`md:mt-4 ${
+            submitting ? "bg-gray-500 cursor-not-allowed" : "bg-[#01024E] hover:bg-[#01013a]"
+          } text-sm transition-all text-white font-semibold md:py-3 py-2 rounded-md tracking-widest shadow-md`}
         >
-          SUBMIT
+          {submitting ? "Submitting..." : "SUBMIT"}
         </motion.button>
       </form>
     </motion.div>

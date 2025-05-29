@@ -4,10 +4,14 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { motion } from "framer-motion";
+import { toast } from "sonner";
+
 import { BlogPost } from "./page";
 import { categories } from "@/constants/categories";
-import { toast } from "sonner";
 import HeroBanner from "@/components/ui/hero-banner";
+import ConsultationForm from "@/components/blog/ConsultationForm";
 
 export default function BlogClientComponent({
   blogPosts,
@@ -15,6 +19,7 @@ export default function BlogClientComponent({
   blogPosts: BlogPost[];
 }) {
   const [searchQuery, setSearchQuery] = useState("");
+  const router = useRouter();
 
   const [formData, setFormData] = useState({
     name: "",
@@ -25,7 +30,6 @@ export default function BlogClientComponent({
 
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>
   ) => {
@@ -33,8 +37,9 @@ export default function BlogClientComponent({
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
-      setIsSubmitting(true)
     e.preventDefault();
+    setIsSubmitting(true);
+
     try {
       const res = await fetch("/api/site-visit", {
         method: "POST",
@@ -48,26 +53,38 @@ export default function BlogClientComponent({
         toast.error(result.error || "Submission failed");
       } else {
         toast.success("Submitted successfully!");
-        setFormData({ name: "", phone: "", service: "", area: "" }); // reset
+        setFormData({ name: "", phone: "", service: "", area: "" });
       }
     } catch (err) {
       toast.error("Something went wrong!");
-
-    } finally{
+    } finally {
       setIsSubmitting(false);
     }
   };
 
-
   const formatDate = (dateString: string): string => {
     const date = new Date(dateString);
-    return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(2, "0")}-${String(date.getDate()).padStart(2, "0")}`;
+    return `${date.getFullYear()}-${String(date.getMonth() + 1).padStart(
+      2,
+      "0"
+    )}-${String(date.getDate()).padStart(2, "0")}`;
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 font-[family-name:var(--font-urbanist)]">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.4 }}
+      className="min-h-screen bg-gray-50 font-[family-name:var(--font-urbanist)]"
+    >
       {/* Hero Section */}
-      <HeroBanner title="Latest Posts" />
+      <motion.div
+        initial={{ y: -40, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6 }}
+      >
+        <HeroBanner title="Latest Posts" />
+      </motion.div>
 
       {/* Blog Content */}
       <div className="container mx-auto py-12 px-4">
@@ -78,18 +95,24 @@ export default function BlogClientComponent({
               .filter((post) =>
                 post.title.toLowerCase().includes(searchQuery.toLowerCase())
               )
-              .map((post) => (
-                <div
+              .map((post, index) => (
+                <motion.div
                   key={post._id}
-                  className="bg-white rounded-lg overflow-hidden shadow-md"
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.5, delay: index * 0.1 }}
+                  className="bg-white h-fit rounded-lg overflow-hidden shadow-md hover:shadow-lg transform hover:scale-[1.02] transition duration-300 ease-in-out cursor-pointer"
                 >
                   <div className="relative h-48 md:h-60">
                     <Image
                       src={post.image}
                       alt={post.title}
                       fill
-                      sizes="(max-width: 768px) 100vw, 33vw"
+                      sizes="(max-width: 768px) 100vw , 33vw"
                       className="object-cover"
+                      onClick={() => {
+                        router.push(`/blog/${post.slug}`);
+                      }}
                     />
                     <div className="absolute top-3 left-3 bg-white text-black text-xs px-2 py-1 rounded">
                       {formatDate(post.publishedAt)}
@@ -120,14 +143,19 @@ export default function BlogClientComponent({
                       </svg>
                     </Link>
                   </div>
-                </div>
+                </motion.div>
               ))}
           </div>
 
           {/* Sidebar */}
           <div className="w-full lg:w-1/3 space-y-8">
             {/* Search Box */}
-            <div className="bg-white p-6 rounded-lg shadow-md">
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              className="bg-white p-6 rounded-lg shadow-md"
+            >
               <h2 className="text-lg text-black font-medium mb-4">Search</h2>
               <div className="flex">
                 <input
@@ -154,68 +182,24 @@ export default function BlogClientComponent({
                   </svg>
                 </button>
               </div>
-            </div>
+            </motion.div>
 
             {/* Quick Form */}
-            <div className="p-6 rounded-lg border-2 bg-[#0F0644] w-full">
-              <h3 className="text-lg font-semibold mb-4 text-white">
-                Book Your Free Consultation Today
-              </h3>
-              <form className="space-y-4" onSubmit={handleSubmit}>
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Name"
-                  value={formData.name}
-                  onChange={handleInputChange}
-                  className="bg-white p-2 w-full rounded text-[#393535] focus:outline-none focus:ring-2 focus:ring-blue-200"
-                  required
-                />
-                <input
-                  type="text"
-                  name="phone"
-                  placeholder="Phone No"
-                  value={formData.phone}
-                  onChange={handleInputChange}
-                  className="bg-white p-2 w-full rounded text-[#393535] focus:outline-none focus:ring-2 focus:ring-blue-200"
-                  required
-                />
-                <select
-                  name="service"
-                  value={formData.service}
-                  onChange={handleInputChange}
-                  className="bg-white p-2 w-full rounded text-[#393535] focus:outline-none focus:ring-2 focus:ring-blue-200"
-                  required
-                >
-                  <option value="">Select Service</option>
-                  <option value="Business Surveillance">
-                    Business Surveillance
-                  </option>
-                  <option value="Home CCTV & Safety">Home CCTV & Safety</option>
-                </select>
-                <select
-                  name="area"
-                  value={formData.area}
-                  onChange={handleInputChange}
-                  className="bg-white p-2 w-full rounded text-[#393535] focus:outline-none focus:ring-2 focus:ring-blue-200"
-                  required
-                >
-                  <option value="">Select Area</option>
-                  <option value="Gurgaon">Gurgaon</option>
-                  <option value="Delhi">Delhi</option>
-                </select>
-                <button
-                  type="submit"
-                  className="w-full bg-[#FFC43C] text-black font-medium py-2 rounded"
-                  disabled={isSubmitting}
-                >
-                  {isSubmitting ? "Submitting..." : "Submit"}
-                </button>
-              </form>
-            </div>
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <ConsultationForm />
+            </motion.div>
 
             {/* Categories */}
-            <div className="bg-white p-6 rounded-lg shadow-md">
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="bg-white p-6 rounded-lg shadow-md"
+            >
               <h2 className="text-lg font-medium text-black mb-4">
                 Categories
               </h2>
@@ -247,10 +231,10 @@ export default function BlogClientComponent({
                   </li>
                 ))}
               </ul>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }

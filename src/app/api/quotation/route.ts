@@ -9,7 +9,7 @@ export async function POST(req: Request) {
       service: "gmail",
       auth: {
         user: process.env.GMAIL_USER,
-        pass: process.env.GMAIL_PASS,
+        pass: process.env.GMAIL_APP_PASSWORD,
       },
     });
 
@@ -25,17 +25,17 @@ export async function POST(req: Request) {
       `,
     });
 
-    // Email to client
-    await transporter.sendMail({
-      from: `"Quadra Booking" <${process.env.GMAIL_USER}>`,
-      to: `${name} <${"quadradev04@gmail.com"}>`,
-      subject: "✅ Quotation Request Received",
-      html: `
-        <h2>Thank you, ${name}!</h2>
-        <p>We've received your request and will contact you shortly at ${phone}.</p>
-        <p>– The Quadra Booking Team</p>
-      `,
-    });
+    // // Email to client
+    // await transporter.sendMail({
+    //   from: `"Quadra Booking" <${process.env.GMAIL_USER}>`,
+    //   to: `${name} <${"quadradev04@gmail.com"}>`,
+    //   subject: "✅ Quotation Request Received",
+    //   html: `
+    //     <h2>Thank you, ${name}!</h2>
+    //     <p>We've received your request and will contact you shortly at ${phone}.</p>
+    //     <p>– The Quadra Booking Team</p>
+    //   `,
+    // });
 
     return NextResponse.json({ success: true });
   } catch (error) {

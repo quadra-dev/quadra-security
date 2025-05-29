@@ -4,13 +4,15 @@ import { groq } from "next-sanity";
 import { client } from "@/lib/sanityClient";
 import BlogClientComponent from "./BlogClientComponent";
 
+export const revalidate = 60;
+
 // Blog post interface for TypeScript
 export interface BlogPost {
-  _id: string;
-  title: string;
-  publishedAt: string;
-  slug: string;
-  image: string;
+  _id: string; 
+  title: string; 
+  publishedAt: string; 
+  slug: string; 
+  image: string; 
 }
 
 // Server Component for data fetching

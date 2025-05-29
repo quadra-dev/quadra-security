@@ -3,6 +3,7 @@ import { Urbanist } from "next/font/google";
 import "./globals.css";
 import ClientNavWrapper from "@/components/header/ClientNavWrapper";
 import { Toaster } from "sonner";
+import { Analytics } from "@vercel/analytics/next"
 
 const urbanist = Urbanist({
   subsets: ["latin"],
@@ -26,6 +27,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${urbanist.variable} antialiased`}>
+        <Analytics/>
         <Toaster />
         <ClientNavWrapper>{children}</ClientNavWrapper>
       </body>

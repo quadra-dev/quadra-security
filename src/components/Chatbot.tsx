@@ -1,7 +1,7 @@
-// Quadra Security Chatbot (Improved UX, Sequential Questions)
 "use client";
 
 import { useState } from "react";
+import { toast } from "sonner";
 
 const allQuestions = [
   {
@@ -41,12 +41,24 @@ export default function Chatbot() {
   const [questionPhase, setQuestionPhase] = useState(true);
 
   const handleStart = () => {
-    if (name.trim() && mobile.trim()) {
-      setMessages([
-        { from: "bot", text: `Hi ${name}, welcome to Quadra Security! 👋` },
-      ]);
-      setHasUserInfo(true);
+    if (!name.trim()) {
+      toast.error("Please enter your name.");
+      return;
     }
+    if (!mobile.trim()) {
+      toast.error("Please enter your mobile number.");
+      return;
+    }
+    if (!/^\d{10}$/.test(mobile.trim())) {
+      toast.error("Enter a valid 10-digit mobile number.");
+      return;
+    }
+
+    setMessages([
+      { from: "bot", text: `Hi ${name}, welcome to Quadra Security! 👋` },
+    ]);
+    setHasUserInfo(true);
+    toast.success("Welcome! Let's get started.");
   };
 
   const handleClick = (q: string, a: string) => {
@@ -73,6 +85,7 @@ export default function Chatbot() {
         ...prev,
         { from: "bot", text: "Thank you for chatting with Quadra Security!" },
       ]);
+      toast("Chat session ended.", { icon: "👋" });
     }
   };
 
@@ -95,7 +108,7 @@ export default function Chatbot() {
             <button
               onClick={() => {
                 setIsOpen(false);
-                // Reset question session only
+                toast("Chat closed. Come back anytime!", { icon: "👋" });
                 setMessages([
                   {
                     from: "bot",
