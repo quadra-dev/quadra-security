@@ -43,13 +43,14 @@ const SolutionsPage = () => {
           transition={{ duration: 0.8, delay: 0.6 }}
         >
           <motion.img
-            src="/solutions/home-security/apartment-security-system.jpg"
+            src="https://res.cloudinary.com/dggsp8ihg/image/upload/v1748621133/solution_01_05_oofby3.png"
             alt="Apartment Security Solutions by Quadra Security"
-            className="w-full rounded-lg mb-8 object-cover h-64 md:h-80"
+            className="w-full rounded-lg mb-8 object-contain h-64 md:h-80"
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.6 }}
           />
+          
 
           <div className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl max-w-none">
             <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-6">

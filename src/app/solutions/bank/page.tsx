@@ -4,6 +4,7 @@ import Sidebar from "@/components/solutions/Sidebar";
 import React from "react";
 import { motion } from "framer-motion";
 import HeroBanner from "@/components/ui/hero-banner";
+import DownSidebar from "@/components/solutions/DownSidebar";
 
 const SolutionsPage = () => {
   const sidebarItems = [
@@ -227,6 +228,10 @@ const SolutionsPage = () => {
             GET FREE SECURITY CONSULTATION
           </motion.button>
         </div>
+              {/* Mobile Sidebar */}
+      <div className="lg:hidden w-full flex justify-center p-6">
+        <DownSidebar items={sidebarItems} />
+      </div>
       </div>
     </div>
   );

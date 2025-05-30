@@ -89,7 +89,7 @@ export default function Home() {
       </section>
 
       {/* Section 3 - Services */}
-      <section className="min-h-screen w-full bg-gradient-to-b from-[#151b7e] via-[#25419a] to-[#151b7e] flex flex-col justify-center items-center py-10 md:py-0">
+      <section className="min-h-screen w-full bg-gradient-to-b from-[#151b7e] via-[#25419a] to-[#151b7e] flex flex-col justify-center items-center  md:py-0">
         <motion.div className="space-y-4 md:w-1/2 w-full px-4 md:px-0">
           <h2 className="text-white md:text-4xl text-2xl text-center md:text-start">
             Check our
