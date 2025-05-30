@@ -115,7 +115,7 @@ export default function Home() {
 
       {/* Testimonials */}
       <section
-        className="text-white w-full py-20 px-4 flex justify-center md:justify-start md:items-center bg-cover bg-center bg-no-repeat"
+        className="text-white h-screen w-full py-20 px-4 flex justify-center md:justify-start md:items-center bg-cover bg-center bg-no-repeat"
         style={{ backgroundImage: "url('/home/bg_img.png')" }}
       >
         <Testimonials />
