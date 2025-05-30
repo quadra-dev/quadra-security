@@ -11,7 +11,7 @@ import Link from "next/link"; // if using Next.js
 export default function Footer() {
   return (
     <footer className="bg-gradient-to-b to-[#0e0542] from-[#2716be] text-white pt-12 pb-6 px-4 font-[family-name:var(--font-urbanist)]">
-      <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
+      <div className="max-w-7xl mx-auto grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-10 text-left">
         {/* Important Links */}
         <div>
           <h3 className="font-semibold text-lg mb-4">IMPORTANT LINKS</h3>
@@ -37,10 +37,9 @@ export default function Footer() {
         </div>
 
         {/* Company Info */}
-        <div className="text-center md:text-left">
-          <div className="flex items-center justify-center md:justify-start mb-3">
+        <div>
+          <div className="flex items-center mb-3">
             <img src={logo.src || "/logo.png"} alt="Quadra Logo" className="h-6 mr-2" />
-
           </div>
           <p className="text-sm mb-3">Protecting What Matters Most</p>
           <div className="text-sm space-y-1">
@@ -59,9 +58,9 @@ export default function Footer() {
         </div>
 
         {/* Social Media */}
-        <div className="text-center md:text-left">
+        <div>
           <h3 className="font-semibold text-lg mb-4">FOLLOW US</h3>
-          <div className="flex justify-center md:justify-start gap-5 text-2xl">
+          <div className="flex gap-5 text-2xl">
             <a
               href="https://instagram.com"
               target="_blank"

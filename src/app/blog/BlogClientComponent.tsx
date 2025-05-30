@@ -148,7 +148,7 @@ export default function BlogClientComponent({
           </div>
 
           {/* Sidebar */}
-          <div className="w-full lg:w-1/3 space-y-8">
+          <div className="w-full lg:w-1/3 space-y-8 ">
             {/* Search Box */}
             <motion.div
               initial={{ opacity: 0, x: 50 }}
@@ -189,6 +189,7 @@ export default function BlogClientComponent({
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
+              className="p-6 md:p-0"
             >
               <ConsultationForm />
             </motion.div>
