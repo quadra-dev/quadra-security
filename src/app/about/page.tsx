@@ -54,16 +54,58 @@ const AboutUs: React.FC = () => {
               Guarding Homes & Businesses with Innovation
             </h3>
             <p className="text-gray-600 mb-6">
-              At Quadra Security, we&rsquo;re committed to providing innovative
-              security solutions that protect what matters most. With over 15
-              years of experience in the industry, we bring the latest
-              technology and expert knowledge to safeguard your property.
+              At <strong>Quadra Security</strong>, we provide more than just
+              security systems — we deliver peace of mind. As a leading{" "}
+              <strong>security service provider in Gurgaon</strong>, our mission
+              is to protect your homes, offices, retail spaces, and commercial
+              properties with smart, reliable, and customized{" "}
+              <strong>security solutions</strong>. Whether you&apos;re looking for
+              the <strong>best home security systems</strong> or professional{" "}
+              <strong>business surveillance</strong>, our commitment is to
+              safeguard what matters most to you using the latest in{" "}
+              <strong>CCTV camera systems</strong> and advanced monitoring
+              technology.
             </p>
             <p className="text-gray-600 mb-6">
-              We pride ourselves on creating customized solutions for each
-              client, understanding that every home and business has unique
-              security requirements and challenges that call for specific
-              solutions.
+              Our strength lies in our four core pillars:
+            </p>
+            <ul className="text-gray-600 mb-6 list-disc pl-6">
+              <li>
+                <strong>Security</strong> – We deploy robust protection using{" "}
+                <strong>high-definition CCTV cameras</strong>,{" "}
+                <strong>wireless home security cameras</strong>, and smart alarm
+                systems, ensuring 24/7 surveillance of every critical zone.
+              </li>
+              <li>
+                <strong>Surveillance</strong> – With{" "}
+                <strong>remote access CCTV monitoring</strong>,{" "}
+                <strong>night vision cameras</strong>, and mobile-enabled
+                systems, you stay connected to your space from anywhere,
+                anytime.
+              </li>
+              <li>
+                <strong>Safety</strong> – We design and install intelligent{" "}
+                <strong>home alarm systems</strong> and{" "}
+                <strong>intrusion detection systems</strong> to deter, detect,
+                and prevent threats in real-time, enhancing your environment&apos;s
+                safety.
+              </li>
+              <li>
+                <strong>Support</strong> – From consultation to{" "}
+                <strong>CCTV installation</strong>,{" "}
+                <strong>system upgrades</strong>, or{" "}
+                <strong>CCTV camera repair</strong>, our dedicated support team
+                ensures seamless service and guidance — before, during, and
+                after installation.
+              </li>
+            </ul>
+            <p className="text-gray-600 mb-6">
+              Choose <strong>Quadra Security</strong> — your trusted partner for{" "}
+              <strong>home security cameras</strong>,{" "}
+              <strong>commercial surveillance systems</strong>, and expert{" "}
+              <strong>security services in Gurgaon</strong>. With our blend of
+              technology, strategy, and genuine care, we protect what you value
+              most.
             </p>
 
             <div className="grid grid-cols-2 gap-4 mb-8">
@@ -71,9 +113,13 @@ const AboutUs: React.FC = () => {
                 { text: "Advanced & Trusted Protection", Icon: FaShieldAlt },
                 { text: "Innovative Remote Monitoring", Icon: FaDesktop },
                 { text: "Smart AI Integration", Icon: FaBrain },
-                { text: "100% Commitment", Icon: FaCheck }
+                { text: "100% Commitment", Icon: FaCheck },
               ].map(({ text, Icon }, i) => (
-                <motion.div key={i} className="flex items-start" variants={fadeInUp}>
+                <motion.div
+                  key={i}
+                  className="flex items-start"
+                  variants={fadeInUp}
+                >
                   <Icon className="text-indigo-600 mr-2 mt-1" />
                   <span className="text-gray-700">{text}</span>
                 </motion.div>
@@ -116,7 +162,7 @@ const AboutUs: React.FC = () => {
           </motion.div>
         </motion.section>
 
-        {/* HOW WE WORK Section */}
+        {/* WHAT WE OFFER Section */}
         <motion.section
           className="bg-indigo-900 text-white py-12 px-6"
           initial="hidden"
@@ -128,24 +174,59 @@ const AboutUs: React.FC = () => {
             className="text-2xl font-bold mb-8 text-center"
             variants={fadeInUp}
           >
-            HOW WE WORK
+            WHAT WE OFFER
           </motion.h2>
           <motion.p
             className="text-center max-w-3xl mx-auto mb-12"
             variants={fadeInUp}
           >
-            At Quadra Security, we follow a comprehensive, consultation-focused
-            methodology to ensure optimal protection for your assets. Our
-            process integrates cutting-edge tech with highly trained
-            professionals to deliver tailored security solutions for homes and
-            businesses.
+            From <strong>high-definition CCTV cameras</strong> with night vision
+            and remote monitoring, to complete{" "}
+            <strong>customized security solutions</strong>
+            for offices, retail shops, warehouses, homes, factories, and
+            institutions — we deliver systems tailored to your space, needs, and
+            budget. Our offerings also include <strong>AMC services</strong>,
+            system upgrades,
+            <strong>professional CCTV installation</strong>, cabling, and
+            continuous support to ensure your security system is always active.
           </motion.p>
 
+          <motion.h2
+            className="text-2xl font-bold mb-8 text-center"
+            variants={fadeInUp}
+          >
+            WHY CHOOSE US
+          </motion.h2>
           <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
             {[
-              ["Consultation & Assessment", "We start by understanding your specific security needs through a detailed assessment of your property and vulnerabilities."],
-              ["Design & Implementation", "Our experts design a customized security solution and implement it with minimal disruption to your daily operations."],
-              ["Support & Maintenance", "We provide ongoing support and maintenance to ensure your security systems remain effective and up-to-date."]
+              [
+                "Customized Quotation",
+                "We deliver affordable CCTV installation packages tailored to each client’s needs — whether it’s a home security camera setup or a full-scale factory surveillance system.",
+              ],
+              [
+                "Free Consultation & Site Visit",
+                "Our experts offer free site surveys and consultations to determine the most effective CCTV solutions — including services in Gurgaon, DLF Phase 1, and more.",
+              ],
+              [
+                "Transparent Pricing",
+                "Enjoy affordable and upfront CCTV installation pricing with no hidden charges — just fair rates for the best-in-class security camera setup.",
+              ],
+              [
+                "Skilled Technicians",
+                "Our certified technicians specialize in home, office, retail, and maid monitoring camera installations, ensuring efficient and professional service.",
+              ],
+              [
+                "Tailored Security Systems",
+                "We design fully personalized security solutions using the latest outdoor cameras, indoor cameras, and PTZ camera setups for maximum coverage.",
+              ],
+              [
+                "24/7 Customer Support",
+                "Our support team offers around-the-clock assistance — from troubleshooting and maintenance to technical help and local CCTV repair services.",
+              ],
+              [
+                "Advanced Equipment",
+                "We deploy state-of-the-art IP cameras, 4K CCTV setups, motion detection systems, and mobile-access surveillance to enhance your protection.",
+              ],
             ].map(([title, desc], i) => (
               <motion.div
                 key={i}
@@ -171,12 +252,30 @@ const AboutUs: React.FC = () => {
           transition={{ staggerChildren: 0.15 }}
         >
           <div className="max-w-6xl mx-auto grid md:grid-cols-4 gap-8 text-center">
-            {([
-              { Icon: FaShieldAlt, title: "Trusted Protection", desc: "Reliable security systems you can count on" },
-              { Icon: FaDesktop, title: "24/7 Monitoring", desc: "Round-the-clock surveillance for complete peace of mind" },
-              { Icon: FaBrain, title: "Smart Integration", desc: "Seamlessly connect with your existing smart home systems" },
-              { Icon: FaCheck, title: "100% Commitment", desc: "Dedicated service from start to finish" }
-            ] as const).map(({ Icon, title, desc }, i) => (
+            {(
+              [
+                {
+                  Icon: FaShieldAlt,
+                  title: "Trusted Protection",
+                  desc: "Reliable security systems you can count on",
+                },
+                {
+                  Icon: FaDesktop,
+                  title: "24/7 Monitoring",
+                  desc: "Round-the-clock surveillance for complete peace of mind",
+                },
+                {
+                  Icon: FaBrain,
+                  title: "Smart Integration",
+                  desc: "Seamlessly connect with your existing smart home systems",
+                },
+                {
+                  Icon: FaCheck,
+                  title: "100% Commitment",
+                  desc: "Dedicated service from start to finish",
+                },
+              ] as const
+            ).map(({ Icon, title, desc }, i) => (
               <motion.div
                 key={i}
                 className="flex flex-col items-center"
@@ -224,17 +323,69 @@ const AboutUs: React.FC = () => {
                 Our Expert Security
               </h2>
               <p className="text-white mb-8">
+                At Quadra Security, our mission is simple — to safeguard your
+                world through
+                <strong> innovation</strong>, <strong>integrity</strong>, and
+                <strong> intelligent security systems</strong>. Whether you&apos;re
+                protecting a high-traffic business, school campus, or an entire
+                building with a complete CCTV camera system, we deliver tailored
+                solutions that provide not just protection — but confidence and
+                peace of mind.
+              </p>
+
+              <p className="text-white mb-8">
                 We employ only the most qualified security professionals to
-                design, install and monitor our advanced security systems. Our
+                design, install, and monitor our advanced security systems. Our
                 team stays updated with the latest industry developments to
-                provide cutting-edge protection.
+                provide{" "}
+                <strong>cutting-edge surveillance and safety solutions</strong>.
+              </p>
+
+              <h3 className="text-xl font-bold text-white mb-4">Our Values</h3>
+              <ul className="text-white mb-8 list-disc pl-5 space-y-2">
+                <li>
+                  <strong>Integrity:</strong> Transparent communication, honest
+                  dealings, and trust are the foundations of our service.
+                </li>
+                <li>
+                  <strong>Innovation:</strong> We leverage smart technology to
+                  deliver reliable and adaptive security solutions.
+                </li>
+                <li>
+                  <strong>Customer Centricity:</strong> Your safety and
+                  satisfaction are always our top priority.
+                </li>
+                <li>
+                  <strong>Excellence:</strong> We aim to exceed industry
+                  standards through superior service, advanced systems, and
+                  expert support.
+                </li>
+              </ul>
+
+              <h3 className="text-xl font-bold text-white mb-4">
+                Connect with Us
+              </h3>
+              <p className="text-white mb-4">
+                Join the Quadra Security family and experience{" "}
+                <strong>complete peace of mind</strong>. Whether you&apos;re
+                exploring options for
+                <strong>retail security cameras</strong>,{" "}
+                <strong>business CCTV systems</strong>, or the
+                <strong>best home security cameras</strong> and{" "}
+                <strong>outdoor surveillance systems</strong>, our experts are
+                ready to guide you every step of the way.
+              </p>
+              <p className="text-white">
+                <strong>Quadra Security</strong> – Because your safety deserves
+                more than just surveillance. It deserves unwavering support with
+                the <strong>best home security systems</strong>.
               </p>
 
               <div className="space-y-4">
                 {[
                   ["Response Time", "95%"],
                   ["Monitoring", "100%"],
-                  ["Support", "90%"]
+                  ["Support", "90%"],
                 ].map(([label, value], i) => (
                   <div key={i}>
                     <h4 className="font-bold mb-2 text-white">{label}</h4>
