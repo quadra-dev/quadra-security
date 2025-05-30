@@ -47,24 +47,23 @@ export default function DownSolutionsSiteVisitForm({
       toast.error("Submission failed", { id: toastId });
     }
   };
+const getHeading = (type?: string) => {
+  switch (type) {
+    case "apartment-real-estate":
+      return "Secure Your Apartment & Property";
+    case "retail":
+      return "Protect Your Retail Space";
+    case "campus":
+      return "Ensure Campus-Wide Security";
+    case "hotels-resorts":
+      return "Provide a Safe Guest Experience";
+    case "bank":
+      return "Safeguard Your Financial Institution";
+    default:
+      return "Book a Visit";
+  }
+};
 
-  const getHeading = (type?: string) => {
-    switch (type) {
-      case "home-security":
-        return "Secure Your Home";
-      case "industrial-security":
-        return "Upgrade Your Workspace";
-      case "real-state-security":
-        return "Monitor Smarter";
-      case "retail-security":
-        return "Automate Your Security";
-      case "hospitality-security":
-        return "Secure Your Life";
-
-      default:
-        return "Book a Visit";
-    }
-  };
 
   return (
     <div className="text-black p-4  max-w-md mx-auto ">

@@ -12,13 +12,14 @@ const SolutionsDropdown = () => {
   const handleMouseEnter = () => setShowDropdown(true);
   const handleMouseLeave = () => setShowDropdown(false);
 
-  const solutions = [
-    { name: "Home Security", path: "/solutions/home-security" },
-    { name: "Industrial Security", path: "/solutions/industrial-security" },
-    { name: "Real Estate Security", path: "/solutions/real-estate-security" },
-    { name: "Retail Security", path: "/solutions/retail-security" },
-    { name: "Hospitality / Health Care Security", path: "/solutions/hospitality-security" },
-  ];
+const solutions = [
+  { name: "Solutions for Apartment and Real Estate", path: "/solutions/apartment-real-estate" },
+  { name: "Solutions for Retail", path: "/solutions/retail" },
+  { name: "Solutions for Campus", path: "/solutions/campus" },
+  { name: "Solutions for Hotels/Resorts", path: "/solutions/hotels-resorts" },
+  { name: "Solutions for Bank", path: "/solutions/bank" },
+];
+
 
   return (
     <li

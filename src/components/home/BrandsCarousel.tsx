@@ -27,7 +27,7 @@ export default function BrandsGrid() {
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
 
   return (
-    <div ref={ref} className="py-16 px-4 md:px-8 max-w-6xl mx-auto h-full mt-24 ">
+    <div ref={ref} className="px-4 md:px-8 max-w-6xl mx-auto h-full ">
       {/* Title */}
       <div className="flex items-center space-x-4 mb-8">
         <div className="w-0 h-0 border-t-[15px] border-t-transparent border-b-[15px] border-b-transparent border-l-[20px] border-l-purple-500" />
