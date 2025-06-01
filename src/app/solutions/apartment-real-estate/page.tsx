@@ -10,7 +10,10 @@ import { useRouter } from "next/navigation";
 const SolutionsPage = () => {
   const router = useRouter();
   const sidebarItems = [
-    { label: "Apartment and Real Estate Security", path: "/solutions/apartment-real-estate" },
+    {
+      label: "Apartment and Real Estate Security",
+      path: "/solutions/apartment-real-estate",
+    },
     { label: "Retail Security", path: "/solutions/retail" },
     { label: "Campus Security", path: "/solutions/campus" },
     { label: "Hotels/Resorts Security", path: "/solutions/hotels-resorts" },
@@ -19,12 +22,9 @@ const SolutionsPage = () => {
 
   return (
     <div className="bg-white font-[family-name:var(--font-urbanist)] text-gray-800 min-h-screen">
-      <HeroBanner 
-        title="Apartment & Real Estate Security Solutions" 
-        
-      />
+      <HeroBanner title="Apartment & Real Estate Security Solutions" />
 
-      <div className="flex flex-col  md:flex-row gap-8 mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="flex flex-col md:flex-row gap-8 mx-auto px-4 sm:px-6 lg:px-8">
         {/* Sidebar - Desktop */}
         <motion.div
           className="hidden md:block w-full md:w-1/4 lg:w-full"
@@ -37,7 +37,7 @@ const SolutionsPage = () => {
 
         {/* Main Content */}
         <motion.div
-          className="w-full md:w-3/4 lg:w-full bg-white rounded-lg p-6 "
+          className="w-full md:w-3/4 lg:w-full bg-white rounded-lg p-6"
           initial={{ y: 30, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.6 }}
@@ -50,7 +50,6 @@ const SolutionsPage = () => {
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.6 }}
           />
-          
 
           <div className="prose prose-sm sm:prose lg:prose-lg xl:prose-xl max-w-none">
             <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-6">
@@ -58,7 +57,12 @@ const SolutionsPage = () => {
             </h1>
 
             <p className="text-lg sm:text-xl text-gray-700 mb-8">
-              In today&apos;s residential environments, <strong>security is no longer optional</strong>. Our specialized surveillance systems combine <strong>AI-powered analytics</strong>, high-definition monitoring, and smart access control to protect every corner of your property - from high-rise apartments to gated communities and commercial developments.
+              In today&apos;s residential environments,{" "}
+              <strong>security is no longer optional</strong>. Our specialized
+              surveillance systems combine <strong>AI-powered analytics</strong>
+              , high-definition monitoring, and smart access control to protect
+              every corner of your property - from high-rise apartments to gated
+              communities and commercial developments.
             </p>
 
             <div className="bg-blue-50 p-6 rounded-lg mb-8">
@@ -66,10 +70,21 @@ const SolutionsPage = () => {
                 Key Benefits for Property Managers & Residents:
               </h2>
               <ul className="list-disc pl-6 space-y-2 text-gray-700">
-                <li>24/7 monitoring with <strong>real-time intrusion alerts</strong></li>
-                <li><strong>Reduced liability</strong> with comprehensive video evidence</li>
-                <li><strong>Increased property value</strong> with advanced security features</li>
-                <li><strong>Peace of mind</strong> for residents and owners</li>
+                <li>
+                  24/7 monitoring with{" "}
+                  <strong>real-time intrusion alerts</strong>
+                </li>
+                <li>
+                  <strong>Reduced liability</strong> with comprehensive video
+                  evidence
+                </li>
+                <li>
+                  <strong>Increased property value</strong> with advanced
+                  security features
+                </li>
+                <li>
+                  <strong>Peace of mind</strong> for residents and owners
+                </li>
               </ul>
             </div>
 
@@ -84,9 +99,12 @@ const SolutionsPage = () => {
                 "Elevators & Stairwells",
                 "Common Areas & Amenities",
                 "Perimeter & Landscape",
-                "Service & Delivery Areas"
+                "Service & Delivery Areas",
               ].map((item, index) => (
-                <div key={index} className="bg-gray-50 p-4 rounded-lg border border-gray-200">
+                <div
+                  key={index}
+                  className="bg-gray-50 p-4 rounded-lg border border-gray-200"
+                >
                   <h3 className="font-medium text-blue-700">{item}</h3>
                 </div>
               ))}
@@ -108,11 +126,21 @@ const SolutionsPage = () => {
                   <li>Tailgating through secured doors</li>
                   <li>Visitor verification difficulties</li>
                 </ul>
-                <h4 className="font-medium text-green-600 mb-2">Our Solutions:</h4>
+                <h4 className="font-medium text-green-600 mb-2">
+                  Our Solutions:
+                </h4>
                 <ul className="list-disc pl-6 space-y-1">
-                  <li><strong>Video intercom systems</strong> with facial recognition</li>
-                  <li><strong>Anti-tailgating detection</strong> with AI analytics</li>
-                  <li><strong>Mobile-based access</strong> for residents and guests</li>
+                  <li>
+                    <strong>Video intercom systems</strong> with facial
+                    recognition
+                  </li>
+                  <li>
+                    <strong>Anti-tailgating detection</strong> with AI analytics
+                  </li>
+                  <li>
+                    <strong>Mobile-based access</strong> for residents and
+                    guests
+                  </li>
                 </ul>
               </div>
             </div>
@@ -129,11 +157,22 @@ const SolutionsPage = () => {
                   <li>Unauthorized parking</li>
                   <li>Poor nighttime visibility</li>
                 </ul>
-                <h4 className="font-medium text-green-600 mb-2">Our Solutions:</h4>
+                <h4 className="font-medium text-green-600 mb-2">
+                  Our Solutions:
+                </h4>
                 <ul className="list-disc pl-6 space-y-1">
-                  <li><strong>ANPR cameras</strong> for automatic license plate recognition</li>
-                  <li><strong>360° panoramic cameras</strong> for complete coverage</li>
-                  <li><strong>Smart lighting integration</strong> with motion detection</li>
+                  <li>
+                    <strong>ANPR cameras</strong> for automatic license plate
+                    recognition
+                  </li>
+                  <li>
+                    <strong>360° panoramic cameras</strong> for complete
+                    coverage
+                  </li>
+                  <li>
+                    <strong>Smart lighting integration</strong> with motion
+                    detection
+                  </li>
                 </ul>
               </div>
             </div>
@@ -150,11 +189,20 @@ const SolutionsPage = () => {
                   <li>Safety concerns in enclosed spaces</li>
                   <li>Limited camera angles</li>
                 </ul>
-                <h4 className="font-medium text-green-600 mb-2">Our Solutions:</h4>
+                <h4 className="font-medium text-green-600 mb-2">
+                  Our Solutions:
+                </h4>
                 <ul className="list-disc pl-6 space-y-1">
-                  <li><strong>Fisheye cameras</strong> for complete elevator coverage</li>
-                  <li><strong>Emergency call buttons</strong> linked to security</li>
-                  <li><strong>Vandal-proof dome cameras</strong> in stairwells</li>
+                  <li>
+                    <strong>Fisheye cameras</strong> for complete elevator
+                    coverage
+                  </li>
+                  <li>
+                    <strong>Emergency call buttons</strong> linked to security
+                  </li>
+                  <li>
+                    <strong>Vandal-proof dome cameras</strong> in stairwells
+                  </li>
                 </ul>
               </div>
             </div>
@@ -171,12 +219,22 @@ const SolutionsPage = () => {
                   "Integration with existing building systems",
                   "24/7 professional monitoring available",
                   "Regular system maintenance & updates",
-                  "Competitive pricing for HOAs & developers"
+                  "Competitive pricing for HOAs & developers",
                 ].map((item, index) => (
                   <div key={index} className="flex items-start">
                     <div className="bg-blue-100 p-2 rounded-full mr-4">
-                      <svg className="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
+                      <svg
+                        className="w-5 h-5 text-blue-600"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth="2"
+                          d="M5 13l4 4L19 7"
+                        ></path>
                       </svg>
                     </div>
                     <p className="text-gray-700">{item}</p>
@@ -202,9 +260,12 @@ const SolutionsPage = () => {
                   "Apartment Surveillance Cost",
                   "Best Security for Apartments",
                   "24/7 Property Monitoring",
-                  "HOA Security Solutions"
+                  "HOA Security Solutions",
                 ].map((keyword, index) => (
-                  <span key={index} className="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm">
+                  <span
+                    key={index}
+                    className="bg-gray-100 text-gray-800 px-3 py-1 rounded-full text-sm"
+                  >
                     {keyword}
                   </span>
                 ))}
@@ -221,7 +282,8 @@ const SolutionsPage = () => {
             Secure Your Residential Property Today
           </h2>
           <p className="text-lg text-gray-700 mb-8 max-w-3xl mx-auto">
-            Get a free security assessment and consultation for your apartment complex or real estate development.
+            Get a free security assessment and consultation for your apartment
+            complex or real estate development.
           </p>
           <motion.button
             whileHover={{ scale: 1.05 }}
