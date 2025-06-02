@@ -3,6 +3,7 @@ import { Suspense } from "react";
 import { groq } from "next-sanity";
 import { client } from "@/lib/sanityClient";
 import BlogClientComponent from "./BlogClientComponent";
+import Canonical from "@/utils/Canonical";
 
 export const revalidate = 60;
 
@@ -30,8 +31,12 @@ export default async function BlogPage() {
   const blogPosts = await client.fetch(query);
 
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <>
+    <Canonical/>
+        <Suspense fallback={<div>Loading...</div>}>
       <BlogClientComponent blogPosts={blogPosts} />
     </Suspense>
+    </>
+
   );
 }

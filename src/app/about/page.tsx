@@ -7,6 +7,7 @@ import HeroBanner from "@/components/ui/hero-banner";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { FaShieldAlt, FaDesktop, FaBrain, FaCheck } from "react-icons/fa";
+import Canonical from "@/utils/Canonical";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -20,7 +21,9 @@ const AboutUs: React.FC = () => {
   };
 
   return (
-    <motion.div
+    <>
+    <Canonical/>
+     <motion.div
       className="flex flex-col min-h-screen font-[family-name:var(--font-urbanist)]"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -406,7 +409,9 @@ const AboutUs: React.FC = () => {
         </motion.section>
       </main>
     </motion.div>
-  );
+
+    </>
+     );
 };
 
 export default AboutUs;

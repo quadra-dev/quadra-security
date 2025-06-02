@@ -6,6 +6,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import HeroBanner from "@/components/ui/hero-banner";
 import { useRouter } from "next/navigation";
+import Canonical from "@/utils/Canonical";
 
 const SolutionsPage = () => {
   const router = useRouter();
@@ -21,7 +22,9 @@ const SolutionsPage = () => {
   ];
 
   return (
-    <div className="bg-white font-[family-name:var(--font-urbanist)] text-gray-800 min-h-screen">
+    <>
+    <Canonical/>
+        <div className="bg-white font-[family-name:var(--font-urbanist)] text-gray-800 min-h-screen">
       <HeroBanner title="Campus Security Solutions" />
 
       <div className="flex flex-col md:flex-row gap-8 mx-auto px-4 sm:px-6 lg:px-8">
@@ -366,6 +369,8 @@ const SolutionsPage = () => {
         <DownSidebar items={sidebarItems} />
       </div>
     </div>
+    </>
+
   );
 };
 

@@ -19,6 +19,7 @@ import {
   FaRoad,
   FaLock,
 } from "react-icons/fa";
+import Canonical from "@/utils/Canonical";
 
 interface ServiceItem {
   icon: ReactNode;
@@ -144,7 +145,9 @@ const Services: NextPage = () => {
   }, []);
 
   return (
-    <main
+    <>
+    <Canonical/>
+     <main
       className="w-full font-[family-name:var(--font-urbanist)]"
       ref={pageRef}
     >
@@ -215,7 +218,9 @@ const Services: NextPage = () => {
 
       </section>
     </main>
-  );
+
+    </>
+     );
 };
 
 export default Services;

@@ -10,6 +10,7 @@ import Testimonials from "@/components/home/Testimonials";
 import { useRouter } from "next/navigation";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import Chatbot from "@/components/Chatbot";
+import Canonical from "@/utils/Canonical";
 
 export default function Home() {
   const router = useRouter();
@@ -20,7 +21,9 @@ export default function Home() {
   const words1 = `Trusted CCTV Camera Installation & Repair Services in Gurgaon`;
 
   return (
-    <div className="font-[family-name:var(--font-urbanist)]">
+    <>
+    <Canonical/>
+     <div className="font-[family-name:var(--font-urbanist)]">
       {/* Section 1 - Hero */}
       <section className="min-h-screen md:h-screen bg-gradient-to-b from-[#0D053F] to-[#2917C9] md:flex justify-evenly items-center pt-20 md:pt-0">
         <div className="flex flex-col justify-center md:justify-start md:space-y-10 space-y-4 py-10 md:py-0">
@@ -123,5 +126,7 @@ export default function Home() {
 
       <Chatbot />
     </div>
-  );
+
+    </>
+     );
 }

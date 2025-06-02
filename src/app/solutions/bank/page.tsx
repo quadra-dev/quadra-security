@@ -5,6 +5,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import HeroBanner from "@/components/ui/hero-banner";
 import DownSidebar from "@/components/solutions/DownSidebar";
+import Canonical from "@/utils/Canonical";
 
 const SolutionsPage = () => {
   const sidebarItems = [
@@ -16,7 +17,9 @@ const SolutionsPage = () => {
   ];
 
   return (
-    <div className="bg-white font-[family-name:var(--font-urbanist)] text-gray-800 min-h-screen">
+    <>
+    <Canonical/>
+        <div className="bg-white font-[family-name:var(--font-urbanist)] text-gray-800 min-h-screen">
       {/* Header Banner Section */}
       <HeroBanner 
         title="Comprehensive Bank Security Solutions" 
@@ -234,6 +237,8 @@ const SolutionsPage = () => {
       </div>
       </div>
     </div>
+    </>
+
   );
 };
 

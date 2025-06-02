@@ -5,6 +5,7 @@ import ClientNavWrapper from "@/components/header/ClientNavWrapper";
 import { Toaster } from "sonner";
 import { Analytics } from "@vercel/analytics/next";
 
+
 const urbanist = Urbanist({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700", "800"],

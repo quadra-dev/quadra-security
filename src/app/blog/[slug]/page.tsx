@@ -4,6 +4,7 @@ import HeroBanner from "@/components/ui/hero-banner";
 import Link from "next/link";
 import type { Metadata } from "next";
 import ConsultationForm from "@/components/blog/ConsultationForm";
+import Canonical from "@/utils/Canonical";
 
 export const revalidate = 60;
 
@@ -51,7 +52,9 @@ export default async function BlogDetailPage({ params }: Props) {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <>
+    <Canonical/>
+     <div className="min-h-screen bg-gray-50">
       <HeroBanner title={blog.title} />
 
       <div className="bg-white container mx-auto px-4 sm:px-6 lg:px-8 py-8 grid grid-cols-1 lg:grid-cols-3 gap-8">
@@ -118,7 +121,9 @@ export default async function BlogDetailPage({ params }: Props) {
         </div>
       </div>
     </div>
-  );
+
+    </>
+     );
 }
 
 export async function generateStaticParams() {
