@@ -3,9 +3,13 @@ import nodemailer from "nodemailer";
 import { google } from "googleapis";
 import { JWT } from "google-auth-library";
 
-
 // Helper function for sending email (called in background)
-async function sendEmail({ name, phone, service, area }: Record<string, string>) {
+async function sendEmail({
+  name,
+  phone,
+  service,
+  area,
+}: Record<string, string>) {
   try {
     const transporter = nodemailer.createTransport({
       service: "gmail",
@@ -49,48 +53,57 @@ export async function POST(req: Request) {
     );
   }
 
- // 1. Append to Google Sheet
-try {
-  const base64Credentials = process.env.GOOGLE_CREDENTIALS_BASE64;
+  // 1. Append to Google Sheet
+  try {
+    const base64Credentials = process.env.GOOGLE_CREDENTIALS_BASE64;
 
-  if (!base64Credentials) {
-    throw new Error("Missing GOOGLE_CREDENTIALS_BASE64 environment variable");
+    if (!base64Credentials) {
+      throw new Error("Missing GOOGLE_CREDENTIALS_BASE64 environment variable");
+    }
+
+    const credentials = JSON.parse(
+      Buffer.from(base64Credentials, "base64").toString("utf-8")
+    );
+
+    const auth = new JWT({
+      email: credentials.client_email,
+      key: credentials.private_key,
+      scopes: ["https://www.googleapis.com/auth/spreadsheets"],
+    });
+
+    const sheets = google.sheets({ version: "v4", auth });
+
+    await sheets.spreadsheets.values.append({
+      spreadsheetId: process.env.GOOGLE_SHEET_ID!,
+      range: "Sheet1!A1",
+      valueInputOption: "USER_ENTERED",
+      requestBody: {
+        values: [
+          [
+            name,
+            phone,
+            service,
+            area,
+            email,
+            message,
+            new Date().toLocaleString(),
+          ],
+        ],
+      },
+    });
+
+    // Fire and forget email
+    sendEmail({ name, phone, service, area });
+
+    return NextResponse.json({
+      success: true,
+      message: "Submitted successfully",
+    });
+  } catch (error) {
+    console.error("Sheet error:", error);
+    return NextResponse.json(
+      { success: false, error: "Sheet append failed" },
+      { status: 500 }
+    );
   }
-
-  const credentials = JSON.parse(
-    Buffer.from(base64Credentials, "base64").toString("utf-8")
-  );
-
-  const auth = new JWT({
-    email: credentials.client_email,
-    key: credentials.private_key,
-    scopes: ["https://www.googleapis.com/auth/spreadsheets"],
-  });
-
-  const sheets = google.sheets({ version: "v4", auth });
-
-  await sheets.spreadsheets.values.append({
-    spreadsheetId: process.env.GOOGLE_SHEET_ID!,
-    range: "Sheet1!A1",
-    valueInputOption: "USER_ENTERED",
-    requestBody: {
-      values: [[name, phone, service, area, email, message, new Date().toLocaleString()]],
-    },
-  });
-
-  // Fire and forget email
-  sendEmail({ name, phone, service, area });
-
-  return NextResponse.json({
-    success: true,
-    message: "Submitted successfully",
-  });
-} catch (error) {
-  console.error("Sheet error:", error);
-  return NextResponse.json(
-    { success: false, error: "Sheet append failed" },
-    { status: 500 }
-  );
-}
-
 }
