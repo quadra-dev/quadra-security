@@ -26,7 +26,7 @@ export default function Home() {
       <div className="font-[family-name:var(--font-urbanist)]">
 
         {/* Section 1 - Hero */}
-        <section className="min-h-screen md:h-screen bg-gradient-to-b from-[#0D053F] to-[#2917C9] md:flex justify-evenly items-center pt-20 md:pt-0">
+        <section className="-mb-px min-h-screen md:h-screen bg-gradient-to-b from-[#0D053F] to-[#2917C9] md:flex justify-evenly items-center pt-20 md:pt-0">
           <div className="flex flex-col justify-center md:justify-start md:space-y-10 space-y-4 py-10 md:py-0">
             <div className="md:space-y-10">
               <motion.div
@@ -78,7 +78,7 @@ export default function Home() {
         </section>
 
         {/* Section 2 - Solutions */}
-        <section className="min-h-screen w-full bg-gradient-to-b from-[#2917C9] via-[#4830ce] to-[#151b7e] flex flex-col items-center md:py-0">
+        <section className="-mb-px min-h-screen w-full bg-gradient-to-b from-[#2917C9] via-[#2c14b3] to-[#151b7e] flex flex-col items-center md:py-0">
           <motion.div className="space-y-4 md:w-1/2 w-full px-4 md:px-0">
             <h2 className="text-white md:text-4xl text-2xl text-center md:text-start">
               What We Offer
@@ -96,7 +96,7 @@ export default function Home() {
         </section>
 
         {/* Section 3 - Services */}
-        <section className="min-h-screen w-full bg-gradient-to-b from-[#151b7e] via-[#25419a] to-[#151b7e] flex flex-col justify-center items-center md:py-0">
+        <section className="-mb-px min-h-screen w-full bg-gradient-to-b from-[#151b7e] via-[#0f2d91] to-[#151b7e] flex flex-col justify-center items-center md:py-0">
           <motion.div className="space-y-4 md:w-1/2 w-full px-4 md:px-0">
             <h2 className="text-white md:text-4xl text-2xl text-center md:text-start">
               Explore Our Services
@@ -114,18 +114,18 @@ export default function Home() {
         </section>
 
         {/* Brands Section */}
-        <section className="w-full bg-gradient-to-b from-[#151b7e] via-[#3f2eac] to-[#2917C9] flex flex-col justify-evenly items-center py-10 md:py-0">
+        <section className="-mb-px w-full bg-gradient-to-b from-[#151b7e] via-[#3f2eac] to-[#2917C9] flex flex-col justify-evenly items-center py-10 md:py-0">
           <BrandsCarousel />
         </section>
 
         {/* Why Choose Us */}
-        <section className="bg-gradient-to-b from-[#2917C9] via-[#240D63] to-[#1e0c84] w-full text-white flex justify-center items-center md:py-20">
+        <section className="-mb-px bg-gradient-to-b from-[#2917C9] via-[#240D63] to-[#1e0c84] w-full text-white flex justify-center items-center md:py-20">
           <WhyChooseUs />
         </section>
 
         {/* Testimonials */}
         <section
-          className="text-white h-screen w-full py-20 px-4 flex justify-center md:justify-start md:items-center bg-cover bg-center bg-no-repeat"
+          className="-mb-px text-white h-screen w-full py-20 px-4 flex justify-center md:justify-start md:items-center bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: "url('/home/bg_img.png')" }}
         >
           <Testimonials />

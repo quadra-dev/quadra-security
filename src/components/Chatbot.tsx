@@ -1,6 +1,9 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import { useState } from "react";
+import { FaRocketchat } from "react-icons/fa";
+import { FaMessage, FaRobot } from "react-icons/fa6";
 import { toast } from "sonner";
 
 const allQuestions = [
@@ -98,13 +101,13 @@ export default function Chatbot() {
         className="fixed bottom-5 right-5 z-50 bg-[#13095C] text-white p-4 rounded-full shadow-lg hover:bg-purple-700 transition"
         aria-label="Toggle Chat"
       >
-        💬
+       <FaMessage/>
       </button>
 
       {isOpen && (
         <div className="fixed bottom-24 right-5 w-80 max-w-[90%] bg-[#13095C] shadow-2xl rounded-xl z-50 flex flex-col">
           <div className="bg-purple-700 text-white px-4 py-3 rounded-t-xl font-semibold text-lg flex justify-between items-center">
-            🤖 Quadra Bot
+            <FaRobot/> Quadra Bot
             <button
               onClick={() => {
                 setIsOpen(false);

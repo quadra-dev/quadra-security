@@ -7,6 +7,7 @@ import {
 
 import logo from "/public/logo_white.svg"; // replace with actual path if different
 import Link from "next/link"; // if using Next.js
+import { FaLocationDot} from "react-icons/fa6";
 
 export default function Footer() {
   return (
@@ -43,9 +44,8 @@ export default function Footer() {
           </div>
           <p className="text-sm mb-3">Protecting What Matters Most</p>
           <div className="text-sm space-y-1">
-            <p>📍 Gurgaon, Haryana</p>
-            <p>📞 +91 98XXXXXX85</p>
-            <p>✉️ contact@quadrasecurity.in</p>
+            <p className="flex items-center gap-2"><FaLocationDot/> Gurgaon, Haryana</p>
+            <p>✉️ office@quadrasecurity.com</p>
             <a
               href="https://www.google.com/maps/place/Gurgaon,+Haryana"
               target="_blank"
