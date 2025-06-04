@@ -11,6 +11,7 @@ import { useRouter } from "next/navigation";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import Chatbot from "@/components/Chatbot";
 import Canonical from "@/utils/Canonical";
+import Head from "next/head";
 
 export default function Home() {
   const router = useRouter();
@@ -22,9 +23,18 @@ export default function Home() {
 
   return (
     <>
-      <Canonical />
-      <div className="font-[family-name:var(--font-urbanist)]">
+      <Head>
+        <title>
+          CCTV Installation in Gurgaon | CCTV Cameras & Security Services
+        </title>
+        <meta
+          name="description"
+          content="Quadra Security offers expert CCTV installation in Gurgaon, high-quality CCTV cameras, and complete security services for homes, offices, and commercial spaces."
+        />
+        <Canonical />
+      </Head>
 
+      <div className="font-[family-name:var(--font-urbanist)]">
         {/* Section 1 - Hero */}
         <section className="-mb-px min-h-screen md:h-screen bg-gradient-to-b from-[#0D053F] to-[#2917C9] md:flex justify-evenly items-center pt-20 md:pt-0">
           <div className="flex flex-col justify-center md:justify-start md:space-y-10 space-y-4 py-10 md:py-0">
@@ -39,7 +49,9 @@ export default function Home() {
                 </h1>
                 <h1 className="hidden md:block text-white lg:text-5xl font-semibold">
                   Complete Security Solutions for Your <br /> Home & Office in
-                  <span className="ml-2 font-bold text-yellow-500">Gurgaon</span>
+                  <span className="ml-2 font-bold text-yellow-500">
+                    Gurgaon
+                  </span>
                 </h1>
               </motion.div>
 
@@ -49,10 +61,12 @@ export default function Home() {
                 transition={{ duration: 0.8, delay: 1 }}
               >
                 <h2 className="md:hidden text-white text-lg text-center px-4">
-                  CCTV, Biometric Systems, Video Door Phones <br /> and More — Installed by Experts
+                  CCTV, Biometric Systems, Video Door Phones <br /> and More —
+                  Installed by Experts
                 </h2>
                 <h2 className="hidden md:block text-white text-3xl">
-                  Professional CCTV & Biometric Installation <br /> with Free Site Visit in Gurgaon
+                  Professional CCTV & Biometric Installation <br /> with Free
+                  Site Visit in Gurgaon
                 </h2>
               </motion.div>
             </div>
@@ -87,7 +101,10 @@ export default function Home() {
               Smart & Reliable Security Solutions
             </h1>
             <p className="text-white text-center md:text-start">
-              From advanced CCTV camera setups and biometric attendance systems to video door phones and access control — we provide reliable, scalable, and future-ready solutions for homes, businesses, and institutions.
+              From advanced CCTV camera setups and biometric attendance systems
+              to video door phones and access control — we provide reliable,
+              scalable, and future-ready solutions for homes, businesses, and
+              institutions.
             </p>
           </motion.div>
           <div className="flex justify-center w-full px-4 md:px-0">
@@ -105,7 +122,9 @@ export default function Home() {
               End-to-End Installation & Support
             </h1>
             <p className="text-white text-center md:text-start">
-              We handle everything — from product recommendation and planning to installation, repair, and ongoing maintenance. Get peace of mind with Quadra Security’s trusted services in Gurgaon.
+              We handle everything — from product recommendation and planning to
+              installation, repair, and ongoing maintenance. Get peace of mind
+              with Quadra Security’s trusted services in Gurgaon.
             </p>
           </motion.div>
           <div className="flex justify-center w-full px-4 md:px-0">

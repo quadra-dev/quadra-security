@@ -4,16 +4,17 @@ import { groq } from "next-sanity";
 import { client } from "@/lib/sanityClient";
 import BlogClientComponent from "./BlogClientComponent";
 import Canonical from "@/utils/Canonical";
+import Head from "next/head";
 
 export const revalidate = 60;
 
 // Blog post interface for TypeScript
 export interface BlogPost {
-  _id: string; 
-  title: string; 
-  publishedAt: string; 
-  slug: string; 
-  image: string; 
+  _id: string;
+  title: string;
+  publishedAt: string;
+  slug: string;
+  image: string;
 }
 
 // Server Component for data fetching
@@ -32,11 +33,18 @@ export default async function BlogPage() {
 
   return (
     <>
-    <Canonical/>
-        <Suspense fallback={<div>Loading...</div>}>
-      <BlogClientComponent blogPosts={blogPosts} />
-    </Suspense>
-    </>
+      <Head>
+        <title>Blog - Quadra Security</title>
+        <meta
+          name="description"
+          content="Read the latest news and updates on CCTV surveillance, security installations, biometrics, and other security services in Gurgaon."
+        />
+        <Canonical />
+      </Head>
 
+      <Suspense fallback={<div>Loading...</div>}>
+        <BlogClientComponent blogPosts={blogPosts} />
+      </Suspense>
+    </>
   );
 }

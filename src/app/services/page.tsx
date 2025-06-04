@@ -20,6 +20,7 @@ import {
   FaLock,
 } from "react-icons/fa";
 import Canonical from "@/utils/Canonical";
+import Head from "next/head";
 
 interface ServiceItem {
   icon: ReactNode;
@@ -54,7 +55,7 @@ const Services: NextPage = () => {
       title: "ANPR (Automatic Number Plate Recognition)",
       description:
         "Quadra Security installs high-quality ANPR cameras to automate number plate recognition for traffic management, parking lots, toll plazas, and residential societies. Whether you need ANPR systems for commercial security or public safety, our cutting-edge services ensures accurate vehicle tracking and monitoring. We supply and integrate branded ANPR camera solutions with expert deployment, ensuring compliance and performance across all environments.",
-      
+
       imageUrl:
         "https://res.cloudinary.com/dggsp8ihg/image/upload/v1747296559/ANPR-camera_n4y4i9.webp",
     },
@@ -146,81 +147,89 @@ const Services: NextPage = () => {
 
   return (
     <>
-    <Canonical/>
-     <main
-      className="w-full font-[family-name:var(--font-urbanist)]"
-      ref={pageRef}
-    >
-      <HeroBanner title="Our Services" />
+      <Head>
+        <title>Our Services | Quadra Security</title>
+        <meta
+          name="description"
+          content="Explore Quadra Security's advanced security solutions including CCTV installation, biometric systems, video door phones, and more."
+        />
+        <Canonical />
+      </Head>
 
-      <section className="max-w-6xl mx-auto px-5 py-10 font-sans text-gray-800">
-        <article className="mb-12 max-w-4xl mx-auto px-4 md:px-0 prose prose-lg prose-blue prose-headings:text-[#00246C] prose-headings:font-extrabold prose-headings:mb-4 prose-p:text-gray-700 prose-p:leading-relaxed prose-p:mb-6">
-          <h1 className="text-3xl md:text-4xl leading-tight mb-6">
-            Quadra Security: Committed to Safeguarding Your Home, Business, and
-            Community
-          </h1>
+      <main
+        className="w-full font-[family-name:var(--font-urbanist)]"
+        ref={pageRef}
+      >
+        <HeroBanner title="Our Services" />
 
-          <p>
-            Quadra Security is dedicated to delivering cutting-edge security
-            systems designed for reliability, efficiency, and peace of mind.
-            Serving Gurgaon and nearby regions, we specialize in the design,
-            installation, and maintenance of state-of-the-art security solutions
-            tailored to your needs.
-          </p>
+        <section className="max-w-6xl mx-auto px-5 py-10 font-sans text-gray-800">
+          <article className="mb-12 max-w-4xl mx-auto px-4 md:px-0 prose prose-lg prose-blue prose-headings:text-[#00246C] prose-headings:font-extrabold prose-headings:mb-4 prose-p:text-gray-700 prose-p:leading-relaxed prose-p:mb-6">
+            <h1 className="text-3xl md:text-4xl leading-tight mb-6">
+              Quadra Security: Committed to Safeguarding Your Home, Business,
+              and Community
+            </h1>
 
-          <p>
-            We provide comprehensive security solutions for industrial,
-            residential, and commercial properties to protect against
-            unauthorized access, theft, and other threats. Whether you want to
-            secure your business, apartment, or high-traffic area, we have you
-            covered.
-          </p>
+            <p>
+              Quadra Security is dedicated to delivering cutting-edge security
+              systems designed for reliability, efficiency, and peace of mind.
+              Serving Gurgaon and nearby regions, we specialize in the design,
+              installation, and maintenance of state-of-the-art security
+              solutions tailored to your needs.
+            </p>
 
-          <blockquote className="border-l-4 border-[#00246C] pl-4 italic text-[#00246C] mb-6">
-            Choosing Quadra Security means choosing peace of mind. We help you
-            secure your assets and people while ensuring smooth day-to-day
-            operations with our efficient and scalable access control systems
-            for office or home use.
-          </blockquote>
-        </article>
+            <p>
+              We provide comprehensive security solutions for industrial,
+              residential, and commercial properties to protect against
+              unauthorized access, theft, and other threats. Whether you want to
+              secure your business, apartment, or high-traffic area, we have you
+              covered.
+            </p>
 
-        {services.map((service, index) => (
-          <ServiceSection
-            key={index}
-            icon={service.icon}
-            title={service.title}
-            imageUrl={service.imageUrl}
-            description={
-              service.description +
-              (service.detailedContent ? " " + service.detailedContent : "")
-            }
-            index={index}
-          />
-        ))}
-        <div className="max-w-4xl mt-16 mx-auto px-4 md:px-0 prose prose-lg prose-blue prose-headings:text-[#00246C] prose-headings:font-extrabold prose-headings:mb-4 prose-p:text-gray-700 prose-p:leading-relaxed prose-p:mb-6">
-          <p>
-            In addition to providing advanced security systems, we also share
-            valuable tips and insights on enhancing safety at home and in the
-            workplace. Visit our blog for the latest updates, expert advice, and
-            industry best practices to stay informed and protected.
-          </p>
+            <blockquote className="border-l-4 border-[#00246C] pl-4 italic text-[#00246C] mb-6">
+              Choosing Quadra Security means choosing peace of mind. We help you
+              secure your assets and people while ensuring smooth day-to-day
+              operations with our efficient and scalable access control systems
+              for office or home use.
+            </blockquote>
+          </article>
 
-          <p>
-            <strong>Not sure which security solution is right for you?</strong>{" "}
-            Our team is here to help. Reach out for a free consultation or
-            on-site assessment, and let us recommend a tailored solution that
-            fits your unique needs.
-          </p>
-        </div>
-       <div className="mt-16">
-        <ContactForm />
-       </div>
+          {services.map((service, index) => (
+            <ServiceSection
+              key={index}
+              icon={service.icon}
+              title={service.title}
+              imageUrl={service.imageUrl}
+              description={
+                service.description +
+                (service.detailedContent ? " " + service.detailedContent : "")
+              }
+              index={index}
+            />
+          ))}
+          <div className="max-w-4xl mt-16 mx-auto px-4 md:px-0 prose prose-lg prose-blue prose-headings:text-[#00246C] prose-headings:font-extrabold prose-headings:mb-4 prose-p:text-gray-700 prose-p:leading-relaxed prose-p:mb-6">
+            <p>
+              In addition to providing advanced security systems, we also share
+              valuable tips and insights on enhancing safety at home and in the
+              workplace. Visit our blog for the latest updates, expert advice,
+              and industry best practices to stay informed and protected.
+            </p>
 
-      </section>
-    </main>
-
+            <p>
+              <strong>
+                Not sure which security solution is right for you?
+              </strong>{" "}
+              Our team is here to help. Reach out for a free consultation or
+              on-site assessment, and let us recommend a tailored solution that
+              fits your unique needs.
+            </p>
+          </div>
+          <div className="mt-16">
+            <ContactForm />
+          </div>
+        </section>
+      </main>
     </>
-     );
+  );
 };
 
 export default Services;
