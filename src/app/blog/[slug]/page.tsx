@@ -1,7 +1,6 @@
 import { client } from "@/lib/sanityClient";
 import { PortableText } from "@portabletext/react";
 import HeroBanner from "@/components/ui/hero-banner";
-import Link from "next/link";
 import type { Metadata } from "next";
 import ConsultationForm from "@/components/blog/ConsultationForm";
 import Canonical from "@/utils/Canonical";
@@ -44,12 +43,6 @@ export default async function BlogDetailPage({ params }: Props) {
     return <div className="p-8">Blog not found.</div>;
   }
 
-  const categories = [
-    "Business Surveillance",
-    "Biometric & Fingerprint Access",
-    "Home CCTV & Safety",
-    "Residential & Commercial Security",
-  ];
 
   return (
     <>
@@ -63,7 +56,7 @@ export default async function BlogDetailPage({ params }: Props) {
           {blog.poster && (
             <img
               src={blog.poster.asset.url}
-              alt={blog.title}
+              alt={`Cover image for blog post titled "${blog.title}"`}
               className="rounded-md mb-6 w-full h-auto max-h-[500px] object-cover"
             />
           )}
@@ -89,35 +82,7 @@ export default async function BlogDetailPage({ params }: Props) {
         <div className="space-y-8">
           <ConsultationForm />
 
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <h2 className="text-lg font-medium text-black mb-4">Categories</h2>
-            <ul className="space-y-3">
-              {categories.map((category, index) => (
-                <li key={index}>
-                  <Link
-                    href={`/category/${category.toLowerCase().replace(/\s+/g, "-")}`}
-                    className="flex items-center text-gray-700 hover:text-indigo-600 transition"
-                  >
-                    <svg
-                      className="w-4 h-4 mr-2 text-indigo-600"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M9 5l7 7-7 7"
-                      />
-                    </svg>
-                    {category}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+        
         </div>
       </div>
     </div>

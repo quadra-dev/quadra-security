@@ -106,7 +106,7 @@ export default function BlogClientComponent({
                   <div className="relative h-48 md:h-60">
                     <Image
                       src={post.image}
-                      alt={post.title}
+                      alt={`Cover image for blog post titled "${post.title}"`}
                       fill
                       sizes="(max-width: 768px) 100vw , 33vw"
                       className="object-cover"
@@ -194,45 +194,7 @@ export default function BlogClientComponent({
               <ConsultationForm />
             </motion.div>
 
-            {/* Categories */}
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="bg-white p-6 rounded-lg shadow-md"
-            >
-              <h2 className="text-lg font-medium text-black mb-4">
-                Categories
-              </h2>
-              <ul className="space-y-3">
-                {categories.map((category, index) => (
-                  <li key={index}>
-                    <Link
-                      href={`/category/${category
-                        .toLowerCase()
-                        .replace(/\s+/g, "-")}`}
-                      className="flex items-center text-gray-700 hover:text-indigo-600 transition"
-                    >
-                      <svg
-                        className="w-4 h-4 mr-2 text-indigo-600"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M9 5l7 7-7 7"
-                        />
-                      </svg>
-                      {category}
-                    </Link>
-                  </li>
-                ))}
-              </ul>
-            </motion.div>
+           
           </div>
         </div>
       </div>

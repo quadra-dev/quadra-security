@@ -11,16 +11,18 @@ const authorizedBrands = [
 ];
 
 const otherBrands = [
+  "/brands/Hikvision.svg",
   "/brands/beetel.png",
-  "/brands/consistent.png",
+
   "/brands/daichi.jpeg",
   "/brands/dlink.png",
   "/brands/essl.jpg",
   "/brands/Godrej.svg",
   "/brands/hawkvision.webp",
-  "/brands/Hikvision.svg",
+
   "/brands/tenda.png",
   "/brands/Western_ Digital.svg",
+  "/brands/consistent.png",
 ];
 
 export default function BrandsGrid() {
@@ -37,7 +39,9 @@ export default function BrandsGrid() {
       </div>
 
       {/* Authorized Sellers */}
-      <h3 className="text-base text-white font-medium mb-3">Authorized Sellers</h3>
+      <h3 className="text-base text-white font-medium mb-3">
+        Authorized Sellers
+      </h3>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
         {authorizedBrands.map((brand, index) => (
           <motion.div

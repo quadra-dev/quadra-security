@@ -34,10 +34,10 @@ const SolutionsPage = () => {
         {/* Header Banner Section */}
         <HeroBanner title="Comprehensive Bank Security Solutions" />
 
-        <div className="flex flex-col md:flex-row gap-8 mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col md:flex-row gap-4 md:gap-6 mx-auto px-4 sm:px-6 lg:px-8 max-w-7xl">
           {/* Sidebar */}
           <motion.div
-            className="w-full md:w-1/4 lg:w-full"
+               className="hidden md:block w-full md:w-1/4 lg:w-2/6"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6, delay: 0.4 }}
@@ -47,7 +47,7 @@ const SolutionsPage = () => {
 
           {/* Main content */}
           <motion.div
-            className="w-full md:w-3/4 lg:w-4/5 bg-white rounded-lg p-6 "
+             className="w-full md:w-3/4 lg:w-4/5 bg-white rounded-lg p-4 md:p-6"
             initial={{ y: 30, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ duration: 0.8, delay: 0.6 }}
