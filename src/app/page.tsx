@@ -92,7 +92,7 @@ export default function Home() {
         </section>
 
         {/* Section 2 - Solutions */}
-        <section className="-mb-px min-h-screen w-full bg-gradient-to-b from-[#210fc8] via-[#1f0998]  to-[#050956] flex flex-col items-center md:py-0">
+        <section className="-mb-px min-h-screen w-full bg-gradient-to-b from-[#210fc8] via-[#4f178a] to-[#310f6a] flex flex-col items-center md:py-0">
           <motion.div className="space-y-4 md:w-1/2 w-full px-4 md:px-0">
             <h2 className="text-white md:text-4xl text-2xl text-center md:text-start">
               What We Offer
@@ -113,7 +113,7 @@ export default function Home() {
         </section>
 
         {/* Section 3 - Services */}
-        <section className="-mb-px min-h-screen w-full bg-gradient-to-b from-[#050956]  via-[#1c0dc2] to-[#232ce6] flex flex-col justify-center items-center md:py-0">
+        <section className="-mb-px min-h-screen w-full bg-gradient-to-b from-[#310f6a]  via-[#4821a3] to-[#5423e6] flex flex-col justify-center items-center md:py-0">
           <motion.div className="space-y-4 md:w-1/2 w-full px-4 md:px-0">
             <h2 className="text-white md:text-4xl text-2xl text-center md:text-start">
               Explore Our Services
@@ -133,12 +133,12 @@ export default function Home() {
         </section>
 
         {/* Brands Section */}
-        <section className="-mb-px w-full bg-gradient-to-b from-[#232ce6] via-[#2811bb] to-[#2917C9] flex flex-col justify-evenly items-center py-10 md:py-0">
+        <section className="-mb-px w-full bg-gradient-to-b from-[#5423e6] via-[#370d99] to-[#500a89]  flex flex-col justify-evenly items-center py-10 md:py-0">
           <BrandsCarousel />
         </section>
 
         {/* Why Choose Us */}
-        <section className="-mb-px bg-gradient-to-b from-[#2917C9] via-[#110c78] to-[#1e0c84] w-full text-white flex justify-center items-center md:py-20">
+        <section className="-mb-px bg-gradient-to-b from-[#500a89]  via-[#2e023a] to-[#2a0456] w-full text-white flex justify-center items-center md:py-20">
           <WhyChooseUs />
         </section>
 

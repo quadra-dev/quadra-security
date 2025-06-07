@@ -12,68 +12,70 @@ import {
 import { useEffect, useState } from "react";
 import SolutionCard from "./SolutionCard";
 
+
 const solutions = [
   {
-    imageSrc: "https://res.cloudinary.com/dggsp8ihg/image/upload/v1747294413/home_security_ba6wve.jpg",
-    title: "Home Security",
+    imageSrc: "https://res.cloudinary.com/dggsp8ihg/image/upload/v1749295759/Security-Camera-Types-for-Apartment-Buildings_lu2icg.jpg",
+    title: "Apartment and Real Estate Security",
     description:
-      "Comprehensive surveillance and alarm solutions for residences, ensuring your family’s safety around the clock.",
+      "Smart surveillance and access control for apartments, gated communities, and real estate properties .",
     features: [
-      "24/7 Monitoring",
-      "Smart Door Sensors",
-      "Remote Access Control",
+      "Visitor and Resident Management",
+      "Perimeter Monitoring",
     ],
-    path: "/solutions/home-security",
+    path: "/solutions/apartment-real-estate",
   },
   {
-    imageSrc: "https://res.cloudinary.com/dggsp8ihg/image/upload/v1747294436/industrial_security_tr7ojd.jpg",
-    title: "Industrial Security",
-    description:
-      "Robust security systems designed for factories, warehouses, and industrial estates to deter unauthorized access.",
-    features: [
-      "Perimeter Intrusion Detection",
-      "HD Surveillance",
-      "Fire and Hazard Alerts",
-    ],
-    path: "/solutions/industrial-security",
-  },
-  {
-    imageSrc: "https://res.cloudinary.com/dggsp8ihg/image/upload/v1747294413/real_estate_security_fwf9kz.jpg",
-    title: "Real Estate Security",
-    description:
-      "Advanced surveillance for residential and commercial properties under development or in operation.",
-    features: [
-      "Construction Site Monitoring",
-      "Access Management",
-      "Night Vision Cameras",
-    ],
-    path: "/solutions/real-estate-security",
-  },
-  {
-    imageSrc: "https://res.cloudinary.com/dggsp8ihg/image/upload/v1747294424/retail_security_uv3hjp.jpg",
+    imageSrc: "https://res.cloudinary.com/dggsp8ihg/image/upload/v1749295677/1746437705448_bktnqn.jpg",
     title: "Retail Security",
     description:
-      "Customized CCTV and theft prevention systems for shops, malls, and stores to reduce shrinkage.",
+      "End-to-end CCTV and theft prevention systems for shops, malls, and showrooms to reduce shrinkage and enhance in-store monitoring.",
     features: [
-      "Customer Behavior Monitoring",
+      "Customer Behavior Analytics",
       "POS Integration",
-      "Panic Button Systems",
+      "Real-Time Theft Alerts",
     ],
-    path: "/solutions/retail-security",
+    path: "/solutions/retail",
   },
   {
-    imageSrc: "https://res.cloudinary.com/dggsp8ihg/image/upload/v1747294427/hospital_security_iroejb.jpg",
-    title: "Hospitality / Health Care Security",
+    imageSrc: "https://res.cloudinary.com/dggsp8ihg/image/upload/v1749295974/Security-camera-monitor-Adobe-Andrey-Popov-e1668014100791_v2flei.jpg",
+    title: "Campus Security",
     description:
-      "Discreet and effective surveillance tailored for hospitals, clinics, hotels, and resorts to protect guests and patients.",
+      "Integrated surveillance solutions for schools, colleges, and campuses to ensure a secure learning environment.",
     features: [
-      "Visitor Management Systems",
-      "Emergency Response Integration",
-      "Surveillance with Privacy Zones",
+      "Entry/Exit Monitoring",
+      "Emergency Alert Systems",
+      "Perimeter Intrusion Detection",
     ],
-    path: "/solutions/hospitality-security",
+    path: "/solutions/campus",
+  },
+  {
+    imageSrc: "https://res.cloudinary.com/dggsp8ihg/image/upload/v1749296049/hotel-13-2-c_domjtq.jpg",
+    title: "Hotels/Resorts Security",
+    description:
+      "Discreet and efficient security for hospitality environments to protect guests, staff, and infrastructure.",
+    features: [
+      "Guest and Staff Access Control",
+      "Surveillance with Privacy Zones",
+      "Emergency Response Integration",
+    ],
+    path: "/solutions/hotels-resorts",
+  },
+  {
+    imageSrc: "https://res.cloudinary.com/dggsp8ihg/image/upload/v1749296125/1723391449-7497_nc5cfc.jpg",
+    title: "Bank Security",
+    description:
+      "High-level security systems for banks and ATMs to ensure asset protection and operational integrity.",
+    features: [
+      "Vault and ATM Surveillance",
+      "Facial Recognition Access",
+      "Alarm Integration and Quick Response",
+    ],
+    path: "/solutions/bank",
   },
 ];
+
+
 
 
 

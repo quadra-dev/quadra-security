@@ -8,10 +8,11 @@ import React from "react";
 const authorizedBrands = [
   { src: "/brands/cpplus.jpg", name: "CP Plus" },
   { src: "/brands/prama.png", name: "Prama" },
+  { src: "/brands/Hikvision.svg", name: "Hikvision" },
 ];
 
 const otherBrands = [
-  "/brands/Hikvision.svg",
+  
   "/brands/beetel.png",
 
   "/brands/daichi.jpeg",

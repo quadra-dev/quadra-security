@@ -16,7 +16,7 @@ const Sidebar: React.FC<SidebarProps> = ({ items }) => {
   const currentSolutionType = pathname.split("/").pop();
 
   return (
-    <div className="lg:block hidden h-fit space-y-6 m-5">
+    <div className="lg:block  hidden h-fit space-y-6 m-5">
         <SolutionsSiteVisitForm solutionType={currentSolutionType} />
       <div className="border shadow-sm p-4">
         <div className="flex flex-col m-2 space-y-3">

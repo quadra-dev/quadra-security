@@ -62,11 +62,11 @@ const AboutUs: React.FC = () => {
                 About Quadra Security
               </h2>
               <h3 className="text-3xl font-bold text-indigo-800 mb-4">
-                Guarding Homes & Businesses with Innovation
+                Security . Surveillance . Safety . Support .
               </h3>
               <p className="text-gray-600 mb-6">
-                At <strong>Quadra Security</strong>, we provide more than just
-                security systems — we deliver peace of mind. As a leading{" "}
+                At <strong>Quadra Security</strong>, we believe true peace of mind comes from knowing your world is protected 
+                - not just by systems but by people who care . As a leading{" "}
                 <strong>security service provider in Gurgaon</strong>, our
                 mission is to protect your homes, offices, retail spaces, and
                 commercial properties with smart, reliable, and customized{" "}
