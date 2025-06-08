@@ -157,7 +157,7 @@ const Services: NextPage = () => {
       </Head>
 
       <main
-        className="w-full font-[family-name:var(--font-urbanist)] bg-gradient-to-b from-[#0D053F] to-[#210fc8]"
+        className="w-full font-[family-name:var(--font-urbanist)] bg-gradient-to-b from-[#0D053F] via-[#2d0446] to-[#180129]"
         ref={pageRef}
       >
         <HeroBanner title="Our Services" />

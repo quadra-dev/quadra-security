@@ -14,6 +14,7 @@ export default function ClientNavWrapper({
   const pathname = usePathname();
   const isHome =
     pathname === "/" ||
+    pathname === "/services" ||
     pathname.startsWith("/studio/") ||
     pathname === "/studio";
 

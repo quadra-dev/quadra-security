@@ -56,7 +56,7 @@ const SolutionsPage = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
           >
             <motion.img
-              src="https://res.cloudinary.com/dggsp8ihg/image/upload/v1748621133/solution_01_05_oofby3.png"
+              src="https://res.cloudinary.com/dggsp8ihg/image/upload/v1748621124/solution_for_apartment_01_xwh0s6.jpg"
               alt="Apartment Security Solutions by Quadra Security"
               className="w-full rounded-lg mb-8 object-contain h-64 md:h-80"
               initial={{ scale: 0.9, opacity: 0 }}
