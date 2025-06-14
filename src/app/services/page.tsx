@@ -157,12 +157,12 @@ const Services: NextPage = () => {
       </Head>
 
       <main
-        className="w-full font-[family-name:var(--font-urbanist)] bg-gradient-to-b from-[#0D053F] via-[#2d0446] to-[#180129]"
+        className="w-full font-[family-name:var(--font-urbanist)]"
         ref={pageRef}
       >
         <HeroBanner title="Our Services" />
 
-        <section className="max-w-6xl mx-auto px-5 py-10 font-sans text-white">
+        <section className="max-w-6xl mx-auto px-5 py-10 font-sans text-gray-800">
           <article className="mb-12 max-w-4xl mx-auto px-4 md:px-0 prose prose-lg prose-blue prose-headings:text-[#00246C] prose-headings:font-extrabold prose-headings:mb-4 prose-p:text-gray-700 prose-p:leading-relaxed prose-p:mb-6">
             <h1 className="text-3xl md:text-4xl leading-tight mb-6">
               Quadra Security: Committed to Safeguarding Your Home, Business,
@@ -185,7 +185,7 @@ const Services: NextPage = () => {
               covered.
             </p>
 
-            <blockquote className="border-l-4 border-white pl-4 italic text-white mb-6">
+            <blockquote className="border-l-4 border-blue-500 pl-4 italic text-blue-500 mb-6">
               Choosing Quadra Security means choosing peace of mind. We help you
               secure your assets and people while ensuring smooth day-to-day
               operations with our efficient and scalable access control systems
