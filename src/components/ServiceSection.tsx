@@ -61,13 +61,13 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({
     >
       {/* Icon and line */}
       <div className="flex md:flex-col items-center md:items-start md:mr-5 relative z-10 w-full md:w-auto">
-        <div className="p-2 text-md flex items-center justify-center text-3xl bg-[#f0b100] text-black rounded-full relative z-20">
+        <div className="p-2 text-md flex items-center justify-center text-3xl bg-blue-800 text-black rounded-full relative z-20">
           {icon}
         </div>
         {/* Line positioned differently on mobile and desktop */}
         <div
           className={`
-            icon-line bg-[#f0b100] absolute
+            icon-line bg-blue-800 absolute
             md:static
             md:w-0.5 md:h-full
             w-full h-0.5
@@ -80,10 +80,10 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({
 
       {/* Text content */}
       <div className={`flex-1 max-w-full md:max-w-[55%]`}>
-        <h2 className="text-xl font-bold text-[#f0b100] mb-3 relative pb-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-10 after:h-0.5 after:bg-[#f0b100]">
+        <h2 className="text-xl font-bold text-white mb-3 relative pb-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-10 after:h-0.5 after:bg-[#f0b100]">
           {title}
         </h2>
-        <p className="text-white mb-4 leading-relaxed whitespace-pre-line">{description}</p>
+        <p className="text-gray-800 mb-4 leading-relaxed whitespace-pre-line">{description}</p>
         {/* {features.length > 0 && (
           <ul className="list-none p-0 m-0">
             {features.map((feature, i) => (
