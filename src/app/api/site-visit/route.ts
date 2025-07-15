@@ -45,7 +45,7 @@ export async function POST(req: Request) {
   } = body;
 
   // Validate phone number
-  const phoneRegex = /^[6-9]\d{9}$/;
+  const phoneRegex = /^\+?[0-9\s\-]{9,}$/;
   if (!phoneRegex.test(phone)) {
     return NextResponse.json(
       { success: false, error: "Invalid phone number" },

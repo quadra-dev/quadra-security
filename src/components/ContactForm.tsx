@@ -19,7 +19,7 @@ import { toast } from "sonner";
 export default function ContactForm() {
   const [formData, setFormData] = useState({
     name: "",
-    mobile: "",
+    mobile: "+91",
     email: "",
     service: "CCTV Installation",
     address: "",
@@ -41,7 +41,7 @@ export default function ContactForm() {
 
   // Validate Indian mobile number: must start with 7,8 or 9 and exactly 10 digits
   const isValidMobile = (number: string) => {
-    const mobileRegex = /^[7-9][0-9]{9}$/;
+    const mobileRegex = /^\+?[0-9\s\-]{9,}$/;
     return mobileRegex.test(number);
   };
 
@@ -61,11 +61,7 @@ export default function ContactForm() {
       toast.error("Invalid mobile number.");
       return;
     }
-    if (!formData.email.trim()) {
-      toast.error("Email is required");
-      return;
-    }
-
+    
     setLoading(true);
     try {
       const res = await fetch("/api/contact", {
@@ -202,7 +198,7 @@ export default function ContactForm() {
                   value={formData.mobile}
                   onChange={handleChange}
                   placeholder="Mobile Number"
-                  maxLength={10}
+                  
                   required
                 />
               </div>
@@ -212,7 +208,7 @@ export default function ContactForm() {
                 value={formData.email}
                 onChange={handleChange}
                 placeholder="Email Address"
-                required
+                
               />
               <select
                 name="service"
@@ -231,14 +227,14 @@ export default function ContactForm() {
                 onChange={handleChange}
                 placeholder="Enter street address and locality"
                 className="min-h-[100px]"
-                required
+                
               />
               <select
                 name="city"
                 value={formData.city}
                 onChange={handleChange}
                 className="w-full h-10 px-3 py-2 rounded-md border border-slate-300 focus:outline-none"
-                required
+                
               >
                 <option value="Gurgaon">Gurgaon</option>
                 <option value="Delhi">Delhi</option>
