@@ -23,6 +23,7 @@ import Canonical from "@/utils/Canonical";
 import Head from "next/head";
 
 interface ServiceItem {
+  serviceId : string;
   icon: ReactNode;
   title: string;
   description: string;
@@ -35,6 +36,7 @@ const Services: NextPage = () => {
 
   const services: ServiceItem[] = [
     {
+      serviceId : "Cctv",
       icon: <FaVideo />,
       title: "CCTV & Surveillance",
       description:
@@ -43,6 +45,7 @@ const Services: NextPage = () => {
         "https://res.cloudinary.com/dggsp8ihg/image/upload/v1747296562/cctv_installation_and_surveillance_sit3ia.jpg",
     },
     {
+      serviceId : "Biometric",
       icon: <FaFingerprint />,
       title: "Biometric Systems",
       description:
@@ -51,6 +54,7 @@ const Services: NextPage = () => {
         "https://res.cloudinary.com/dggsp8ihg/image/upload/v1747296918/biometric_gc80fv.webp",
     },
     {
+      serviceId : "ANPR",
       icon: <FaCar />,
       title: "ANPR (Automatic Number Plate Recognition)",
       description:
@@ -60,6 +64,7 @@ const Services: NextPage = () => {
         "https://res.cloudinary.com/dggsp8ihg/image/upload/v1747296559/ANPR-camera_n4y4i9.webp",
     },
     {
+      serviceId : "EPABX",
       icon: <FaPhone />,
       title: "EPABX Systems",
       description:
@@ -69,6 +74,7 @@ const Services: NextPage = () => {
         "https://res.cloudinary.com/dggsp8ihg/image/upload/v1747296562/epabx_systems_zly2de.jpg",
     },
     {
+      serviceId : "InteractiveDisplayPanels",
       icon: <FaChalkboardTeacher />,
       title: "Interactive Display Panels",
       description:
@@ -78,6 +84,7 @@ const Services: NextPage = () => {
         "https://res.cloudinary.com/dggsp8ihg/image/upload/v1747296568/interactive_panels_bndiiu.png",
     },
     {
+      serviceId : "VideoDoorPhones",
       icon: <FaDoorOpen />,
       title: "Video Door Phones",
       description:
@@ -87,6 +94,7 @@ const Services: NextPage = () => {
         "https://res.cloudinary.com/dggsp8ihg/image/upload/v1747296562/video_door_phones_d65vqh.jpg",
     },
     {
+      serviceId : "BaggageScanners",
       icon: <FaSuitcase />,
       title: "Baggage Scanners",
       description:
@@ -95,6 +103,7 @@ const Services: NextPage = () => {
       imageUrl: "/images/baggage-scanner.jpg",
     },
     {
+      serviceId : "AlarmSystems",
       icon: <FaBell />,
       title: "Alarm Systems",
       description:
@@ -103,6 +112,7 @@ const Services: NextPage = () => {
       imageUrl: "/images/security-alarms.jpg",
     },
     {
+      serviceId : "MetalDetectors",
       icon: <FaSearch />,
       title: "Metal Detectors",
       description:
@@ -111,6 +121,7 @@ const Services: NextPage = () => {
         "https://res.cloudinary.com/dggsp8ihg/image/upload/v1747296562/metal_detector_zczuoy.jpg",
     },
     {
+      serviceId : "AccessControlSystems",
       icon: <FaShieldAlt />,
       title: "Access Control Systems",
       description:
@@ -120,6 +131,7 @@ const Services: NextPage = () => {
         "https://res.cloudinary.com/dggsp8ihg/image/upload/v1747296559/Access_Control_enl7ep.webp",
     },
     {
+      serviceId : "BoomBarries",
       icon: <FaRoad />,
       title: "Boom Barriers & Toll Solutions",
       description:
@@ -129,6 +141,7 @@ const Services: NextPage = () => {
         "https://res.cloudinary.com/dggsp8ihg/image/upload/v1747296562/boom-barrier-banne_slefin.jpg",
     },
     {
+      serviceId : "ElectronicDoorLocks",
       icon: <FaLock />,
       title: "Electronic Door Locks",
       description:
@@ -177,7 +190,7 @@ const Services: NextPage = () => {
               solutions tailored to your needs.
             </p>
 
-            <p>
+            <p id="aboveCctv">
               We provide comprehensive security solutions for industrial,
               residential, and commercial properties to protect against
               unauthorized access, theft, and other threats. Whether you want to
@@ -195,6 +208,7 @@ const Services: NextPage = () => {
 
           {services.map((service, index) => (
             <ServiceSection
+            serviceId={service.serviceId}
               key={index}
               icon={service.icon}
               title={service.title}
