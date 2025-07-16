@@ -25,15 +25,21 @@ export default function SiteVisitForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitting(true);
+
     const cleanedPhone = formData.phone.replace(/[\s\-]/g, "");
-     console.log("Raw Phone:", formData.phone);
-     console.log("Cleaned Phone:", cleanedPhone);
     const isValidPhone = /^\+?[0-9\s\-]{9,}$/.test(cleanedPhone);
       if (!isValidPhone) {
        toast.error("Please enter a valid phone number");
        setSubmitting(false);
        return;
       }
+        const nameRegex = /^[A-Za-z\s]+$/;
+        if (!nameRegex.test(formData.name.trim())) {
+           toast.error("Please enter a valid name (letters and spaces only)");
+           setSubmitting(false);
+           return;
+  }
+
 
     try {
       const response = await fetch("/api/site-visit", {
@@ -45,7 +51,7 @@ export default function SiteVisitForm() {
       const result = await response.json();
       
       if (response.ok) {
-        toast.success("Site visit scheduled successfully!");
+        toast.success("We will contact you soon!");
         setFormData({ name: "", phone: "", service: "", area: "" });
       } else {
         toast.error(result.error || "Something went wrong");
@@ -157,7 +163,7 @@ export default function SiteVisitForm() {
           
         >
           <option value="" disabled>
-            SELECT AREA
+            SELECT AREA/CITY
           </option>
           <optgroup label="North Gurgaon" className="text-black">
             <option value="palam-vihar" className="text-black">

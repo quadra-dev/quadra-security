@@ -44,11 +44,17 @@ export default function ContactForm() {
     const mobileRegex = /^\+?[0-9\s\-]{9,}$/;
     return mobileRegex.test(number);
   };
+  
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Validate required fields and mobile format
+     // Validate required fields and mobile format
+    const nameRegex = /^[A-Za-z\s]+$/;
+    if (!nameRegex.test(formData.name.trim())) {
+      toast.error("Please enter a valid name (letters and spaces only)");
+      return;
+  }
     if (!formData.name.trim()) {
       toast.error("Name is required");
       return;
@@ -117,11 +123,8 @@ export default function ContactForm() {
                 <h2 className="text-2xl font-semibold mb-4 text-white">
                   GET IN TOUCH
                 </h2>
-                <div className="space-y-5">
-                  <div className="flex items-center gap-3">
-                    <IoCall className="text-xl text-white" />
-                    <span className="text-white">+91-9876543210</span>
-                  </div>
+                <div className="space-y-6">
+                 
                   <div className="flex items-center gap-3">
                     <MdEmail className="text-xl text-white" />
                     <span className="text-white">
