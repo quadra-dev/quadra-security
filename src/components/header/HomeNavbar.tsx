@@ -23,14 +23,16 @@ const HomeNavbar = () => {
     { name: "Contact Us", path: "/contact-us" },
   ];
 
-const solutionItems = [
-  { name: "Solutions for Apartment and Real Estate", path: "/solutions/apartment-real-estate" },
-  { name: "Solutions for Retail", path: "/solutions/retail" },
-  { name: "Solutions for Campus", path: "/solutions/campus" },
-  { name: "Solutions for Hotels/Resorts", path: "/solutions/hotels-resorts" },
-  { name: "Solutions for Bank", path: "/solutions/bank" },
-];
-
+  const solutionItems = [
+    {
+      name: "Solutions for Apartment and Real Estate",
+      path: "/solutions/apartment-real-estate",
+    },
+    { name: "Solutions for Retail", path: "/solutions/retail" },
+    { name: "Solutions for Campus", path: "/solutions/campus" },
+    { name: "Solutions for Hotels/Resorts", path: "/solutions/hotels-resorts" },
+    { name: "Solutions for Bank", path: "/solutions/bank" },
+  ];
 
   useEffect(() => {
     const handleScroll = () => {
@@ -77,20 +79,25 @@ const solutionItems = [
 
         {/* Logo */}
         <div className="flex gap-1 items-center h-full w-full md:w-auto justify-center md:justify-start">
-          <Image
-            src="/logo_white.svg"
-            width={24}
-            height={24}
-            alt="Quadra Security Logo"
-            className="md:w-[200px] w-[150px] hidden md:block mt-3"
-          />
-          <Image
-            src="/logo_color.svg"
-            width={24}
-            height={24}
-            alt="Quadra Security Logo"
-            className="md:w-[200px] w-[150px] md:hidden mt-3 "
-          />
+          <Link href="/">
+            <Image
+              src="/logo_white.svg"
+              width={24}
+              height={24}
+              alt="Quadra Security Logo"
+              className="md:w-[200px] w-[150px] hidden md:block mt-3"
+            />
+          </Link>
+
+          <Link href="/">
+            <Image
+              src="/logo_color.svg"
+              width={24}
+              height={24}
+              alt="Quadra Security Logo"
+              className="md:w-[200px] w-[150px] md:hidden mt-3 "
+            />
+          </Link>
           <div className="flex flex-col justify-start">
             {/* <p className="text-white font-semibold text-md">
               Quadra <span className="text-yellow-500">Security</span>

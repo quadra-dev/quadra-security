@@ -5,6 +5,7 @@ import { ReactNode, useEffect, useRef } from "react";
 import Image from "next/image";
 
 interface ServiceSectionProps {
+  serviceId: string;
   icon: ReactNode;
   title: string;
   description: string;
@@ -13,6 +14,7 @@ interface ServiceSectionProps {
 }
 
 const ServiceSection: React.FC<ServiceSectionProps> = ({
+  serviceId,
   icon,
   title,
   description,
@@ -20,6 +22,8 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({
   index,
 }) => {
   const sectionRef = useRef<HTMLDivElement>(null);
+
+  
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -79,7 +83,7 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({
       </div>
 
       {/* Text content */}
-      <div className={`flex-1 max-w-full md:max-w-[55%]`}>
+      <div id={serviceId} className={`flex-1 max-w-full md:max-w-[55%]`}>
         <h2 className="text-xl font-bold text-blue-800 mb-3 relative pb-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-10 after:h-0.5 after:bg-[#f0b100]">
           {title}
         </h2>

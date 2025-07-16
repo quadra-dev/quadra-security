@@ -22,14 +22,16 @@ const HomeNavbar = () => {
     { name: "Contact Us", path: "/contact-us" },
   ];
 
-const solutionItems = [
-  { name: "Solutions for Apartment and Real Estate", path: "/solutions/apartment-real-estate" },
-  { name: "Solutions for Retail", path: "/solutions/retail" },
-  { name: "Solutions for Campus", path: "/solutions/campus" },
-  { name: "Solutions for Hotels/Resorts", path: "/solutions/hotels-resorts" },
-  { name: "Solutions for Bank", path: "/solutions/bank" },
-];
-
+  const solutionItems = [
+    {
+      name: "Solutions for Apartment and Real Estate",
+      path: "/solutions/apartment-real-estate",
+    },
+    { name: "Solutions for Retail", path: "/solutions/retail" },
+    { name: "Solutions for Campus", path: "/solutions/campus" },
+    { name: "Solutions for Hotels/Resorts", path: "/solutions/hotels-resorts" },
+    { name: "Solutions for Bank", path: "/solutions/bank" },
+  ];
 
   useEffect(() => {
     setIsMenuOpen(false);
@@ -64,13 +66,15 @@ const solutionItems = [
         <div className="flex gap-1 items-center h-full justify-center w-full md:w-auto md:justify-start">
           {/* Mobile Menu Toggle */}
 
-          <Image
-            src="/logo_color.svg"
-            width={24}
-            height={24}
-            alt="Quadra Security Logo"
-            className="md:w-[200px] w-[150px] mt-3"
-          />
+          <Link href={"/"}>
+            <Image
+              src="/logo_color.svg"
+              width={24}
+              height={24}
+              alt="Quadra Security Logo"
+              className="md:w-[200px] w-[150px] mt-3"
+            />
+          </Link>
         </div>
 
         {/* Desktop Nav */}
@@ -133,13 +137,15 @@ const solutionItems = [
             >
               {/* Close Button */}
               <div className="flex  w-full justify-center">
-                <Image
-                  src="/logo_color.svg"
-                  width={24}
-                  height={24}
-                  alt="Quadra Security Logo"
-                  className="md:w-[200px] w-[150px] md:hidden  "
-                />
+                <Link href={"/"}>
+                  <Image
+                    src="/logo_color.svg"
+                    width={24}
+                    height={24}
+                    alt="Quadra Security Logo"
+                    className="md:w-[200px] w-[150px] md:hidden  "
+                  />
+                </Link>
                 <button
                   onClick={() => setIsMenuOpen(false)}
                   aria-label="Close menu"
