@@ -190,7 +190,7 @@ const Services: NextPage = () => {
               solutions tailored to your needs.
             </p>
 
-            <p id="aboveCctv">
+            <p >
               We provide comprehensive security solutions for industrial,
               residential, and commercial properties to protect against
               unauthorized access, theft, and other threats. Whether you want to
@@ -198,11 +198,11 @@ const Services: NextPage = () => {
               covered.
             </p>
 
-            <blockquote className="border-l-4 border-blue-500 pl-4 italic text-blue-500 mb-6">
-              Choosing Quadra Security means choosing peace of mind. We help you
+            <blockquote  className="border-l-4 border-blue-500 pl-4 italic text-blue-500 mb-6">
+              <p id="aboveCctv">Choosing Quadra Security means choosing peace of mind. We help you
               secure your assets and people while ensuring smooth day-to-day
               operations with our efficient and scalable access control systems
-              for office or home use.
+              for office or home use.</p>
             </blockquote>
           </article>
 

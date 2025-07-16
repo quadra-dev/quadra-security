@@ -2,8 +2,7 @@
 import { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { Button } from "@/components/ui/button";
-import { IoCall } from "react-icons/io5";
+import { Button } from "@/components/ui/button";;
 import { MdEmail } from "react-icons/md";
 import { FaLocationDot } from "react-icons/fa6";
 import {
@@ -103,7 +102,7 @@ export default function ContactForm() {
         <HeroBanner title="Contact Us" />
       </div>
 
-      <div className="min-h-screen bg-white flex flex-col justify-center items-center p-6 font-[family-name:var(--font-urbanist)]">
+      <div className="min-h-screen bg-inherit flex flex-col justify-center items-center p-6 font-[family-name:var(--font-urbanist)]">
         <div className="max-w-4xl mt-8 mx-auto px-4 md:px-0 prose prose-lg prose-blue prose-headings:text-[#00246C] prose-headings:font-extrabold prose-headings:mb-4 prose-p:text-gray-700 prose-p:leading-relaxed prose-p:mb-6">
           <p>
             Get in Touch with Quadra Security We’re here to help you secure what
@@ -123,18 +122,20 @@ export default function ContactForm() {
                 </h2>
                 <div className="space-y-5">
                   <div className="flex items-center gap-3">
-                    <IoCall className="text-xl text-white" />
-                    <span className="text-white">+91-9876543210</span>
-                  </div>
-                  <div className="flex items-center gap-3">
                     <MdEmail className="text-xl text-white" />
                     <span className="text-white">
-                      contact@quadrasecurity.in
+                      <a
+                        href="https://mail.google.com/mail/?view=cm&fs=1&to=office@quadrasecurity.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                         office@quadrasecurity.com
+                      </a>
                     </span>
                   </div>
                   <div className="flex items-center gap-3">
                     <FaLocationDot className="text-xl text-white" />
-                    <span className="text-white">Noida, India</span>
+                    <span className="text-white">Gurugram, Delhi NCR, Noida</span>
                   </div>
                 </div>
               </div>
@@ -146,7 +147,7 @@ export default function ContactForm() {
                 </h2>
                 <div className="flex flex-col gap-5 text-white text-sm">
                   <a
-                    href="https://www.facebook.com/QuadraSecurity"
+                    href="https://www.facebook.com/profile.php?id=61577161615068"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 hover:text-gray-300 transition"
@@ -155,7 +156,7 @@ export default function ContactForm() {
                     Facebook
                   </a>
                   <a
-                    href="https://www.instagram.com/QuadraSecurity"
+                    href="https://www.instagram.com/quadra_security?igsh=MWlvb3Q5bTFja2ZmaQ%3D%3D&utm_source=qr"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 hover:text-gray-300 transition"
@@ -164,7 +165,7 @@ export default function ContactForm() {
                     Instagram
                   </a>
                   <a
-                    href="https://www.linkedin.com/company/quadra-security"
+                    href="https://www.linkedin.com/company/quadra-security/posts/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 hover:text-gray-300 transition"

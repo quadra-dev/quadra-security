@@ -41,7 +41,7 @@ export default function Footer() {
           <h3 className="font-semibold text-lg mb-4">OUR SERVICES</h3>
           <ul className="space-y-2 text-sm">
             <li>
-              <Link href="/services#AboveCctv">CCTV & Surveillance</Link>
+              <Link href="/services#aboveCctv">CCTV & Surveillance</Link>
             </li>
             <li>
               <Link href="/services#Cctv">Biometric Systems</Link>
