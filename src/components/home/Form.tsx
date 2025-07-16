@@ -8,7 +8,7 @@ import { toast } from "sonner";
 export default function SiteVisitForm() {
   const [formData, setFormData] = useState({
     name: "",
-    phone: "",
+    phone: "+91",
     service: "",
     area: "",
   });
@@ -25,16 +25,25 @@ export default function SiteVisitForm() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitting(true);
+    const cleanedPhone = formData.phone.replace(/[\s\-]/g, "");
+     console.log("Raw Phone:", formData.phone);
+     console.log("Cleaned Phone:", cleanedPhone);
+    const isValidPhone = /^\+?[0-9\s\-]{9,}$/.test(cleanedPhone);
+      if (!isValidPhone) {
+       toast.error("Please enter a valid phone number");
+       setSubmitting(false);
+       return;
+      }
 
     try {
       const response = await fetch("/api/site-visit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({ ...formData, phone: cleanedPhone }),
       });
 
       const result = await response.json();
-
+      
       if (response.ok) {
         toast.success("Site visit scheduled successfully!");
         setFormData({ name: "", phone: "", service: "", area: "" });
@@ -88,6 +97,8 @@ export default function SiteVisitForm() {
           onChange={handleChange}
           className="px-4 md:py-3 py-1 text-sm rounded-md bg-transparent border border-white placeholder-white/70 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400 transition-all"
           required
+          
+          
         />
         <motion.select
           whileFocus={{ scale: 1.02 }}
@@ -95,7 +106,7 @@ export default function SiteVisitForm() {
           value={formData.service}
           onChange={handleChange}
           className="px-4 md:py-3 py-1 text-sm rounded-md bg-transparent border border-white focus:outline-none focus:ring-2 focus:ring-yellow-400 transition-all"
-          required
+          
         >
           <option value="" className="bg-white" disabled>
             SELECT SERVICE
@@ -143,7 +154,7 @@ export default function SiteVisitForm() {
           value={formData.area}
           onChange={handleChange}
           className="px-4 md:py-3 py-1 rounded-md text-sm bg-transparent border border-white text-white focus:outline-none focus:ring-2 focus:ring-yellow-400 transition-all"
-          required
+          
         >
           <option value="" disabled>
             SELECT AREA/CITY

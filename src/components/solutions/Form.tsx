@@ -24,6 +24,7 @@ export default function SolutionsSiteVisitForm({
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
 
     const toastId = toast.loading("Submitting request...");
 
