@@ -1,6 +1,6 @@
 import {
   FaInstagram,
-  FaYoutube,
+  // FaYoutube,
   FaLinkedin,
   FaMapMarkerAlt,
   FaFacebook
@@ -74,11 +74,11 @@ export default function Footer() {
             </p>
             <p>
               <a
-                href="https://mail.google.com/mail/?view=cm&fs=1&to=office@quadrasecurity.com"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=accounts@quadrasecurity.com"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                ✉️ office@quadrasecurity.com
+                ✉️ accounts@quadrasecurity.com
               </a>
             </p>
 
@@ -106,7 +106,7 @@ export default function Footer() {
             >
               <FaInstagram />
             </a>
-            <a
+            {/* <a
               href="https://youtube.com"
               target="_blank"
               rel="noopener noreferrer"
@@ -114,7 +114,7 @@ export default function Footer() {
               aria-label="YouTube"
             >
               <FaYoutube />
-            </a>
+            </a> */}
             <a
               href="https://www.linkedin.com/company/quadra-security/posts/"
               target="_blank"

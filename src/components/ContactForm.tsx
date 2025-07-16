@@ -9,7 +9,7 @@ import {
   FaFacebookF,
   FaInstagram,
   FaLinkedinIn,
-  FaYoutube,
+  // FaYoutube,
 } from "react-icons/fa";
 import HeroBanner from "./ui/hero-banner";
 
@@ -121,11 +121,11 @@ export default function ContactForm() {
                     <MdEmail className="text-xl text-white" />
                     <span className="text-white">
                       <a
-                        href="https://mail.google.com/mail/?view=cm&fs=1&to=office@quadrasecurity.com"
+                        href="https://mail.google.com/mail/?view=cm&fs=1&to=accounts@quadrasecurity.com"
                         target="_blank"
                         rel="noopener noreferrer"
                       >
-                         office@quadrasecurity.com
+                         accounts@quadrasecurity.com
                       </a>
                     </span>
                   </div>
@@ -169,7 +169,7 @@ export default function ContactForm() {
                     <FaLinkedinIn className="text-xl text-white" />
                     LinkedIn
                   </a>
-                  <a
+                  {/* <a
                     href="https://www.youtube.com/@QuadraSecurity"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -177,7 +177,7 @@ export default function ContactForm() {
                   >
                     <FaYoutube className="text-xl text-white" />
                     YouTube
-                  </a>
+                  </a> */}
                 </div>
               </div>
             </div>
