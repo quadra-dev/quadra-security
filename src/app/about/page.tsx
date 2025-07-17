@@ -7,7 +7,8 @@ import HeroBanner from "@/components/ui/hero-banner";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { FaShieldAlt, FaDesktop, FaBrain, FaCheck } from "react-icons/fa";
-import Canonical from "@/utils/Canonical";
+import Canonical from "@/utils/Canonical";;
+import ConsultationForm from "@/components/blog/ConsultationForm";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -435,6 +436,10 @@ const AboutUs: React.FC = () => {
           </motion.section>
         </main>
       </motion.div>
+      <div className="flex flex-col items-center justify-center m-5">
+        <h1 className="m-4 font-bold text-4xl text-indigo-600">Contact Us</h1>
+        <ConsultationForm  />
+      </div>
     </>
   );
 };
