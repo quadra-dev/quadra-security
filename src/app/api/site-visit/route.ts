@@ -93,7 +93,8 @@ export async function POST(req: Request) {
     });
 
     // Fire and forget email
-    sendEmail({ name, phone, service, area });
+    // possibly env variable errors . For now removing this functionaity
+    // sendEmail({ name, phone, service, area });
 
     return NextResponse.json({
       success: true,
