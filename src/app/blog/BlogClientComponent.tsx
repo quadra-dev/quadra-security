@@ -96,54 +96,60 @@ export default function BlogClientComponent({
                 post.title.toLowerCase().includes(searchQuery.toLowerCase())
               )
               .map((post, index) => (
-                <motion.div
+                <Link
                   key={post._id}
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-white h-fit rounded-lg overflow-hidden shadow-md hover:shadow-lg transform hover:scale-[1.02] transition duration-300 ease-in-out cursor-pointer"
+                  href={`/blog/${post.slug}`}
+                  className="text-indigo-600  text-sm font-medium block "
                 >
-                  <div className="relative h-48 md:h-60">
-                    <Image
-                      src={post.image}
-                      alt={`Cover image for blog post titled "${post.title}"`}
-                      fill
-                      sizes="(max-width: 768px) 100vw , 33vw"
-                      className="object-cover"
-                      onClick={() => {
-                        router.push(`/blog/${post.slug}`);
-                      }}
-                    />
-                    <div className="absolute top-3 left-3 bg-white text-black text-xs px-2 py-1 rounded">
-                      {formatDate(post.publishedAt)}
+                  <motion.div
+                    key={post._id}
+                    initial={{ opacity: 0, y: 30 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    className="bg-white  h-fit rounded-lg overflow-hidden shadow-md hover:shadow-lg transform hover:scale-[1.02] transition duration-300 ease-in-out cursor-pointer"
+                  >
+                    <div className="relative h-48 md:h-60">
+                      <Image
+                        src={post.image}
+                        alt={`Cover image for blog post titled "${post.title}"`}
+                        fill
+                        sizes="(max-width: 768px) 100vw , 33vw"
+                        className="object-cover"
+                        onClick={() => {
+                          router.push(`/blog/${post.slug}`);
+                        }}
+                      />
+                      <div className="absolute top-3 left-3 bg-white text-black text-xs px-2 py-1 rounded">
+                        {formatDate(post.publishedAt)}
+                      </div>
                     </div>
-                  </div>
-                  <div className="p-4">
-                    <h3 className="text-lg font-semibold text-gray-800 mb-2">
-                      {post.title}
-                    </h3>
-                    <Link
-                      href={`/blog/${post.slug}`}
-                      className="text-indigo-600 text-sm font-medium flex items-center"
-                    >
-                      Read More
-                      <svg
-                        className="w-4 h-4 ml-1"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                        xmlns="http://www.w3.org/2000/svg"
+                    <div className="p-4">
+                      <h3 className="text-lg font-semibold text-gray-800 mb-2">
+                        {post.title}
+                      </h3>
+                      <div
+                        
+                        className="text-indigo-600 text-sm font-medium flex items-center"
                       >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth={2}
-                          d="M14 5l7 7m0 0l-7 7m7-7H3"
-                        />
-                      </svg>
-                    </Link>
-                  </div>
-                </motion.div>
+                        Read More
+                        <svg
+                          className="w-4 h-4 ml-1"
+                          fill="none"
+                          stroke="currentColor"
+                          viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M14 5l7 7m0 0l-7 7m7-7H3"
+                          />
+                        </svg>
+                      </div>
+                    </div>
+                  </motion.div>
+                </Link>
               ))}
           </div>
 
@@ -193,8 +199,6 @@ export default function BlogClientComponent({
             >
               <ConsultationForm/>
             </motion.div>
-
-           
           </div>
         </div>
       </div>

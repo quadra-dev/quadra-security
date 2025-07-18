@@ -1,5 +1,4 @@
 "use client";
-
 import Sidebar from "@/components/solutions/Sidebar";
 import React from "react";
 import { motion } from "framer-motion";
@@ -53,7 +52,7 @@ const SolutionsPage = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
           >
             <motion.img
-              src="/solutions/bank-security/bank-security-hero.jpg"
+              src="https://images.pexels.com/photos/29799518/pexels-photo-29799518.jpeg"
               alt="Bank Security Solutions by Quadra Security"
               className="w-full rounded-lg mb-8 object-cover h-64 md:h-80"
               initial={{ scale: 0.9, opacity: 0 }}

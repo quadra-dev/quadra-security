@@ -7,7 +7,8 @@ import HeroBanner from "@/components/ui/hero-banner";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { FaShieldAlt, FaDesktop, FaBrain, FaCheck } from "react-icons/fa";
-import Canonical from "@/utils/Canonical";
+import Canonical from "@/utils/Canonical";;
+import ConsultationForm from "@/components/blog/ConsultationForm";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -65,8 +66,9 @@ const AboutUs: React.FC = () => {
                 Security . Surveillance . Safety . Support .
               </h3>
               <p className="text-gray-600 mb-6">
-                At <strong>Quadra Security</strong>, we believe true peace of mind comes from knowing your world is protected 
-                - not just by systems but by people who care . As a leading{" "}
+                At <strong>Quadra Security</strong>, we believe true peace of
+                mind comes from knowing your world is protected - not just by
+                systems but by people who care . As a leading{" "}
                 <strong>security service provider in Gurgaon</strong>, our
                 mission is to protect your homes, offices, retail spaces, and
                 commercial properties with smart, reliable, and customized{" "}
@@ -318,13 +320,22 @@ const AboutUs: React.FC = () => {
                 transition={{ duration: 0.5 }}
                 viewport={{ once: true }}
               >
-                <Image
-                  src="/images/security-monitoring.png"
-                  alt="Security Monitoring Center"
-                  width={270}
-                  height={400}
-                  className="object-cover rounded-md mt-[-19px] md:ml-[100px]"
-                />
+                <div className="flex flex-col items-center md:items-start">
+                  <Image
+                    src="/images/security-monitoring.png"
+                    alt="Security Monitoring Center"
+                    width={270}
+                    height={400}
+                    className="object-cover rounded-md m-3 mt-[-19px] md:ml-[100px]"
+                  />
+                  <Image
+                    src="/images/security-monitoring.png"
+                    alt="Security Monitoring Center"
+                    width={270}
+                    height={400}
+                    className="object-cover rounded-md hidden md:block m-3 md:ml-[100px]"
+                  />
+                </div>
               </motion.div>
 
               <motion.div
@@ -425,6 +436,10 @@ const AboutUs: React.FC = () => {
           </motion.section>
         </main>
       </motion.div>
+      <div className="flex flex-col items-center justify-center m-5">
+        <h1 className="m-4 font-bold text-4xl text-indigo-600">Contact Us</h1>
+        <ConsultationForm  />
+      </div>
     </>
   );
 };
