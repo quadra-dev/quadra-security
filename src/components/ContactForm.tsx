@@ -123,7 +123,7 @@ export default function ContactForm() {
                 <h2 className="text-2xl font-semibold mb-4 text-white">
                   GET IN TOUCH
                 </h2>
-                <div className="space-y-6">
+                <div className="space-y-5">
                  
                   <div className="flex items-center gap-3">
                     <MdEmail className="text-xl text-white" />

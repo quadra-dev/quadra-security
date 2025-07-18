@@ -191,7 +191,7 @@ export default function BlogClientComponent({
               transition={{ duration: 0.6, delay: 0.2 }}
               className="p-6 md:p-0"
             >
-              <ConsultationForm />
+              <ConsultationForm/>
             </motion.div>
 
            
