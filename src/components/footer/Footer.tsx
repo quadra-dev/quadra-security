@@ -9,6 +9,7 @@ import {
 import logo from "/public/logo_white.svg"; // replace with actual path if different
 import Link from "next/link"; // if using Next.js
 import { FaLocationDot } from "react-icons/fa6";
+import { MdEmail } from "react-icons/md";
 
 export default function Footer() {
   return (
@@ -72,14 +73,18 @@ export default function Footer() {
             <p className="flex items-center gap-2">
               <FaLocationDot /> Gurugram, Delhi NCR, Noida
             </p>
-            <p>
-              <a
+            <p className="flex items-center gap-2">
+              <MdEmail className=" text-white" />
+              <span>
+                <a
                 href="https://mail.google.com/mail/?view=cm&fs=1&to=accounts@quadrasecurity.com"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                ✉️ accounts@quadrasecurity.com
+                accounts@quadrasecurity.com
               </a>
+              </span>
+              
             </p>
 
             <a
