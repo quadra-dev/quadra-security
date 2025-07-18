@@ -16,7 +16,7 @@ export default function ContactUsPage() {
         />
       </Head>
          <Canonical />
-      <main className="min-h-screen bg-gray-100">
+      <main className="min-h-screen bg-gray-300">
         <ContactForm />
       </main>
     </>

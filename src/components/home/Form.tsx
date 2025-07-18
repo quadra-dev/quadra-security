@@ -157,7 +157,7 @@ export default function SiteVisitForm() {
           
         >
           <option value="" disabled>
-            SELECT AREA
+            SELECT AREA/CITY
           </option>
           <optgroup label="North Gurgaon" className="text-black">
             <option value="palam-vihar" className="text-black">

@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
-"use client";
+ "use client";
 
 import { useState } from "react";
 import { toast } from "sonner";
@@ -76,9 +76,45 @@ export default function ConsultationForm() {
           className="bg-white p-2 w-full rounded text-[#393535] focus:outline-none focus:ring-2 focus:ring-blue-200"
           required
         >
-          <option value="">Select Service</option>
-          <option value="Business Surveillance">Business Surveillance</option>
-          <option value="Home CCTV & Safety">Home CCTV & Safety</option>
+          <option value="" className="bg-white" disabled>
+            Select Service
+          </option>
+          <option value="cctv-surveillance" >
+            CCTV & Surveillance
+          </option>
+          <option value="biometric-systems" >
+            Biometric Systems
+          </option>
+          <option value="anpr" >
+            ANPR (Automatic Number Plate Recognition)
+          </option>
+          <option value="epabx-systems" >
+            EPABX Systems
+          </option>
+          <option value="interactive-display-panels" >
+            Interactive Display Panels
+          </option>
+          <option value="video-door-phones" >
+            Video Door Phones
+          </option>
+          <option value="baggage-scanners" >
+            Baggage Scanners
+          </option>
+          <option value="alarm-systems" >
+            Alarm Systems
+          </option>
+          <option value="metal-detectors" >
+            Metal Detectors
+          </option>
+          <option value="access-control-systems" >
+            Access Control Systems
+          </option>
+          <option value="boom-barriers-toll-solutions" >
+            Boom Barriers & Toll Solutions
+          </option>
+          <option value="electronic-door-locks" >
+            Electronic Door Locks
+          </option>
         </select>
         <select
           name="area"
@@ -89,7 +125,7 @@ export default function ConsultationForm() {
         >
           <option value="">Select Area</option>
           <option value="Gurgaon">Gurgaon</option>
-          <option value="Delhi">Delhi</option>
+          <option value="Delhi">Delhi NCR</option>
         </select>
         <button
           type="submit"

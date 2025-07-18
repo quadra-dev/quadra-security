@@ -1,6 +1,6 @@
 import {
   FaInstagram,
-  FaYoutube,
+  // FaYoutube,
   FaLinkedin,
   FaMapMarkerAlt,
   FaFacebook
@@ -41,7 +41,7 @@ export default function Footer() {
           <h3 className="font-semibold text-lg mb-4">OUR SERVICES</h3>
           <ul className="space-y-2 text-sm">
             <li>
-              <Link href="/services#AboveCctv">CCTV & Surveillance</Link>
+              <Link href="/services#aboveCctv">CCTV & Surveillance</Link>
             </li>
             <li>
               <Link href="/services#Cctv">Biometric Systems</Link>
@@ -74,11 +74,11 @@ export default function Footer() {
             </p>
             <p>
               <a
-                href="https://mail.google.com/mail/?view=cm&fs=1&to=office@quadrasecurity.com"
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=accounts@quadrasecurity.com"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                ✉️ office@quadrasecurity.com
+                ✉️ accounts@quadrasecurity.com
               </a>
             </p>
 
@@ -106,7 +106,7 @@ export default function Footer() {
             >
               <FaInstagram />
             </a>
-            <a
+            {/* <a
               href="https://youtube.com"
               target="_blank"
               rel="noopener noreferrer"
@@ -114,7 +114,7 @@ export default function Footer() {
               aria-label="YouTube"
             >
               <FaYoutube />
-            </a>
+            </a> */}
             <a
               href="https://www.linkedin.com/company/quadra-security/posts/"
               target="_blank"

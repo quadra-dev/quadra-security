@@ -83,7 +83,7 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({
       </div>
 
       {/* Text content */}
-      <div id={serviceId} className={`flex-1 max-w-full md:max-w-[55%]`}>
+      <div  className={`flex-1 max-w-full md:max-w-[55%]`}>
         <h2 className="text-xl font-bold text-blue-800 mb-3 relative pb-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-10 after:h-0.5 after:bg-[#f0b100]">
           {title}
         </h2>
@@ -102,6 +102,7 @@ const ServiceSection: React.FC<ServiceSectionProps> = ({
       {/* Image container */}
       <div className="w-full md:w-[40%] rounded-lg overflow-hidden shadow-md min-h-[240px] relative">
         <Image
+        id={serviceId}
           src={imageUrl}
           alt={title}
           fill
