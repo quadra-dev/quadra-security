@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import nodemailer from "nodemailer";
+//import nodemailer from "nodemailer";
 import { google } from "googleapis";
 
 export async function POST(req: Request) {
@@ -14,17 +14,18 @@ export async function POST(req: Request) {
 
     const serviceAccount = JSON.parse(decodedBase64);
 
+    // hanging mail functionality 
     // --- Send email ---
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: process.env.GMAIL_USER,
-        pass: process.env.GMAIL_APP_PASSWORD,
-      },
-    });
+    //const transporter = nodemailer.createTransport({
+     // service: "gmail",
+     // auth: {
+      //  user: process.env.GMAIL_USER,
+      //  pass: process.env.GMAIL_APP_PASSWORD,
+    //  },
+   // });
 
     // Admin email
-    const adminMailOptions = {
+    /**const adminMailOptions = {
       from: `"Quadra Booking" <${process.env.GMAIL_USER}>`,
       to: process.env.GMAIL_USER,
       replyTo: body.email,
@@ -62,9 +63,10 @@ export async function POST(req: Request) {
       `,
     };
 
-    await transporter.sendMail(adminMailOptions);
-    await transporter.sendMail(clientMailOptions);
-
+    // hanging the mail integartion for now
+    //await transporter.sendMail(adminMailOptions);
+    //await transporter.sendMail(clientMailOptions);
+*/
     // --- Google Sheets integration ---
     const auth = new google.auth.JWT(
       serviceAccount.client_email,
