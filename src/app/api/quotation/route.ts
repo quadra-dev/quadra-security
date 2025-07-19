@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import nodemailer from "nodemailer";
+//import nodemailer from "nodemailer";
 import { google } from "googleapis";
 import { JWT } from "google-auth-library";
 
@@ -37,7 +37,7 @@ export async function POST(req: Request) {
   try {
     const { name, phone } = await req.json();
 
-    const transporter = nodemailer.createTransport({
+    /**const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
         user: process.env.GMAIL_USER,
@@ -67,7 +67,7 @@ export async function POST(req: Request) {
     //     <p>We've received your request and will contact you shortly at ${phone}.</p>
     //     <p>– The Quadra Booking Team</p>
     //   `,
-    // });
+    // });*/
 
     appendToSheet(name,phone)
 
