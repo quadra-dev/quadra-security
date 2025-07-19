@@ -18,11 +18,12 @@ import { toast } from "sonner";
 export default function ContactForm() {
   const [formData, setFormData] = useState({
     name: "",
-    mobile: "+91",
+    mobile: "",
     email: "",
     service: "CCTV Installation",
     address: "",
     city: "Gurgaon",
+    
   });
 
   const [loading, setLoading] = useState(false);
@@ -37,15 +38,7 @@ export default function ContactForm() {
       [e.target.name]: e.target.value,
     });
   };
-
-  // Validate Indian mobile number: must start with 7,8 or 9 and exactly 10 digits
-  const isValidMobile = (number: string) => {
-    const mobileRegex = /^\+?[0-9\s\-]{9,}$/;
-    return mobileRegex.test(number);
-  };
-  
-
-  const handleSubmit = async (e: React.FormEvent) => {
+    const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
      // Validate required fields and mobile format
@@ -54,6 +47,14 @@ export default function ContactForm() {
       toast.error("Please enter a valid name (letters and spaces only)");
       return;
   }
+  const fullMobile = `+91${formData.mobile.trim()}`;
+  const mobileRegex = /^\+91[7-9][0-9]{9}$/;
+  if (!mobileRegex.test(fullMobile)) {
+    toast.error("Please enter a valid 10-digit Indian mobile number.");
+    return;
+  }
+  
+  const payload = { ...formData, mobile: fullMobile };
     if (!formData.name.trim()) {
       toast.error("Name is required");
       return;
@@ -62,17 +63,15 @@ export default function ContactForm() {
       toast.error("Mobile number is required");
       return;
     }
-    if (!isValidMobile(formData.mobile.trim())) {
-      toast.error("Invalid mobile number.");
-      return;
-    }
-    
+   
     setLoading(true);
+    
     try {
+
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(payload),
       });
 
       const data = await res.json();
@@ -86,6 +85,7 @@ export default function ContactForm() {
           service: "CCTV Installation",
           address: "",
           city: "Gurgaon",
+          
         });
       } else {
         toast.error("Something went wrong. Please try again.");
@@ -200,14 +200,23 @@ export default function ContactForm() {
                   placeholder="Your Name"
                   required
                 />
-                <Input
-                  name="mobile"
-                  value={formData.mobile}
-                  onChange={handleChange}
-                  placeholder="Mobile Number"
-                  
-                  required
-                />
+                <div className="flex gap-2">
+  <div className="flex items-center px-3 border border-slate-300 rounded-md bg-gray-100 text-gray-600">
+    +91
+  </div>
+  <Input
+    type="tel"
+    name="mobile"
+    maxLength={10}
+    pattern="[0-9]{10}"
+    value={formData.mobile}
+    onChange={handleChange}
+    placeholder="Enter 10-digit number"
+    required
+    className="flex-1"
+  />
+</div>
+
               </div>
               <Input
                 name="email"
@@ -224,9 +233,48 @@ export default function ContactForm() {
                 className="w-full h-10 px-3 py-2 rounded-md border border-slate-300 focus:outline-none"
                 required
               >
-                <option value="CCTV Installation">CCTV Installation</option>
-                <option value="Maintenance">Maintenance</option>
-                <option value="Other">Other</option>
+                <option value="CCTV Installation" className="text-black">
+                  CCTV Installation
+                  </option>
+                <option value="biometric-systems" className="text-black">
+                  Biometric Systems
+                </option>
+                <option value="anpr" className="text-black">
+                  ANPR (Automatic Number Plate Recognition)
+                </option>
+                <option value="epabx-systems" className="text-black">
+                  EPABX Systems
+                </option>
+                <option value="interactive-display-panels" className="text-black">
+                  Interactive Display Panels
+                </option>
+                <option value="video-door-phones" className="text-black">
+                  Video Door Phones
+                </option>
+                <option value="baggage-scanners" className="text-black">
+                  Baggage Scanners
+                </option>
+                <option value="alarm-systems" className="text-black">
+                  Alarm Systems
+                </option>
+                <option value="metal-detectors" className="text-black">
+                  Metal Detectors
+                </option>
+                <option value="access-control-systems" className="text-black">
+                  Access Control Systems
+                </option>
+                <option value="boom-barriers-toll-solutions" className="text-black">
+                  Boom Barriers & Toll Solutions
+                </option>
+                <option value="electronic-door-locks" className="text-black">
+                  Electronic Door Locks
+                </option>
+                <option value="Maintenance" className="text-black">
+                  Maintenance
+                </option>
+                <option value="Other" className="text-black">
+                  Other
+                </option>
               </select>
               <Textarea
                 name="address"
@@ -246,9 +294,11 @@ export default function ContactForm() {
                 <option value="Gurgaon">Gurgaon</option>
                 <option value="Delhi">Delhi</option>
                 <option value="Noida">Noida</option>
-              </select>
-
-              <Button
+                <option value="DelhiNCR">Delhi-NCR</option>
+                <option value="Others">Others</option>
+                </select>
+               
+                <Button
                 type="submit"
                 disabled={loading}
                 className="w-full bg-[#2B388F] hover:bg-[#232743]"

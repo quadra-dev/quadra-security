@@ -8,7 +8,7 @@ import { toast } from "sonner";
 export default function SiteVisitForm() {
   const [formData, setFormData] = useState({
     name: "",
-    phone: "+91",
+    phone: "",
     service: "",
     area: "",
   });
@@ -26,13 +26,15 @@ export default function SiteVisitForm() {
     e.preventDefault();
     setSubmitting(true);
 
-    const cleanedPhone = formData.phone.replace(/[\s\-]/g, "");
-    const isValidPhone = /^\+?[0-9\s\-]{9,}$/.test(cleanedPhone);
-      if (!isValidPhone) {
-       toast.error("Please enter a valid phone number");
-       setSubmitting(false);
-       return;
-      }
+   
+      const fullPhone = `+91${formData.phone.trim()}`;
+      const isValidPhone = /^\+91[6-9][0-9]{9}$/.test(fullPhone);
+
+  if (!isValidPhone) {
+    toast.error("Please enter a valid 10-digit Indian mobile number");
+    setSubmitting(false);
+    return;
+  }
         const nameRegex = /^[A-Za-z\s]+$/;
         if (!nameRegex.test(formData.name.trim())) {
            toast.error("Please enter a valid name (letters and spaces only)");
@@ -45,7 +47,7 @@ export default function SiteVisitForm() {
       const response = await fetch("/api/site-visit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ ...formData, phone: cleanedPhone }),
+        body: JSON.stringify({ ...formData, phone: fullPhone }),
       });
 
       const result = await response.json();
@@ -94,18 +96,24 @@ export default function SiteVisitForm() {
           className="px-4 md:py-3 py-1 text-sm rounded-md bg-transparent border border-white placeholder-white/70 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400 transition-all"
           required
         />
-        <motion.input
-          whileFocus={{ scale: 1.02 }}
-          type="tel"
-          name="phone"
-          placeholder="PHONE NO"
-          value={formData.phone}
-          onChange={handleChange}
-          className="px-4 md:py-3 py-1 text-sm rounded-md bg-transparent border border-white placeholder-white/70 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400 transition-all"
-          required
-          
-          
-        />
+       <div className="flex gap-2">
+  <div className="flex items-center px-3 border border-white rounded-md bg-white/10 text-white text-sm">
+    +91
+  </div>
+  <motion.input
+    whileFocus={{ scale: 1.02 }}
+    type="tel"
+    name="phone"
+    maxLength={10}
+    pattern="[0-9]{10}"
+    placeholder="Phone Number"
+    value={formData.phone}
+    onChange={handleChange}
+    className="flex-1 px-4 py-1 md:py-3 text-sm rounded-md bg-transparent border border-white placeholder-white/70 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400 transition-all"
+    required
+  />
+</div>
+
         <motion.select
           whileFocus={{ scale: 1.02 }}
           name="service"
@@ -165,7 +173,26 @@ export default function SiteVisitForm() {
           <option value="" disabled>
             SELECT AREA/CITY
           </option>
-          <optgroup label="North Gurgaon" className="text-black">
+          <option value="Gurgaon" className="text-black">
+              Gurgaon
+          </option>
+           <option value="Delhi" className="text-black">
+              Delhi
+          </option>
+          <option value="Noida" className="text-black">
+              Noida
+          </option>
+          <option value="DelhiNCR" className="text-black">
+              Delhi-NCR
+          </option>
+          <option value="Others" className="text-black">
+              Others
+          </option>
+         
+          
+          
+          
+          {/* <optgroup label="North Gurgaon" className="text-black">
             <option value="palam-vihar" className="text-black">
               Palam Vihar
             </option>
@@ -234,7 +261,8 @@ export default function SiteVisitForm() {
             <option value="sector-15" className="text-black">
               Sector 15
             </option>
-          </optgroup>
+          </optgroup> */}
+          
         </motion.select>
 
         <motion.button
