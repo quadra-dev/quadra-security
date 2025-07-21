@@ -23,7 +23,6 @@ export default function ContactForm() {
     service: "CCTV Installation",
     address: "",
     city: "Gurgaon",
-    
   });
 
   const [loading, setLoading] = useState(false);
@@ -85,7 +84,6 @@ export default function ContactForm() {
           service: "CCTV Installation",
           address: "",
           city: "Gurgaon",
-          
         });
       } else {
         toast.error("Something went wrong. Please try again.");
