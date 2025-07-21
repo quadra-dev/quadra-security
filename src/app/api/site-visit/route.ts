@@ -33,6 +33,10 @@ async function sendEmail({
   }
 }
 
+function getISTDateTime() {
+  return new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" });
+}
+
 export async function POST(req: Request) {
   const body = await req.json();
   const {
@@ -73,20 +77,37 @@ export async function POST(req: Request) {
 
     const sheets = google.sheets({ version: "v4", auth });
 
+    const spreadsheetId = process.env.GOOGLE_SHEET_ID!;
+
+    // ---- NEW: Get next S. No. ----
+    // Assuming header is in row 1, so data starts at row 2
+    const sNoRange = "Sheet1!A:A"; // Column A is for S.No.
+    const sNoRes = await sheets.spreadsheets.values.get({
+      spreadsheetId,
+      range: sNoRange,
+    });
+    // If sNoRes.data.values is undefined, set it as empty array
+    const count = (sNoRes.data.values ? sNoRes.data.values.length : 0);
+    // count will be 1 for just header, so next S.No. is count if header, or count+1 if not
+    const nextSerial = count; // If you have a header row, this works fine
+
+    // ---- /NEW: S. No. calculated ----
+
     await sheets.spreadsheets.values.append({
-      spreadsheetId: process.env.GOOGLE_SHEET_ID!,
-      range: "Sheet1!A1",
+      spreadsheetId,
+      range: "Sheet1!A2", // start at A2 if header in row 1
       valueInputOption: "USER_ENTERED",
       requestBody: {
         values: [
           [
+            nextSerial,
             name,
             phone,
             service,
             area,
             email,
             message,
-            new Date().toLocaleString(),
+            getISTDateTime(),
           ],
         ],
       },
