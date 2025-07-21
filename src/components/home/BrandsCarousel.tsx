@@ -34,16 +34,16 @@ export default function BrandsGrid() {
       {/* Title */}
       <div className="flex items-center space-x-4 mb-8">
         <div className="w-0 h-0 border-t-[15px] border-t-transparent border-b-[15px] border-b-transparent border-l-[20px] border-l-purple-500" />
-        <h2 className="text-white md:text-3xl text-xl font-semibold">
-          Brands We DEAL IN
+        <h2 className="text-white md:text-3xl text-xl font-semibold font-serif">
+          Brands we Deal In
         </h2>
       </div>
 
       {/* Authorized Sellers */}
-      <h3 className="text-base text-white font-medium mb-3">
+      {/* <h3 className="text-base text-white font-medium mb-3">
         Authorized Sellers
-      </h3>
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-8">
+      </h3> */}
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-4">
         {authorizedBrands.map((brand, index) => (
           <motion.div
             key={index}
@@ -59,15 +59,15 @@ export default function BrandsGrid() {
               height={100}
               className="object-contain w-full h-full"
             />
-            <span className="absolute top-1.5 right-1.5 bg-green-600 text-white text-[9px] md:text-[10px] px-1.5 py-[1px] rounded-full">
+            {/* <span className="absolute top-1.5 right-1.5 bg-green-600 text-white text-[9px] md:text-[10px] px-1.5 py-[1px] rounded-full">
               Authorized Seller
-            </span>
+            </span> */}
           </motion.div>
         ))}
       </div>
 
       {/* Other Brands */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
         {otherBrands.map((src, index) => (
           <motion.div
             key={index}
@@ -83,6 +83,8 @@ export default function BrandsGrid() {
               height={100}
               className="object-contain w-full h-full"
             />
+            
+            
           </motion.div>
         ))}
       </div>
