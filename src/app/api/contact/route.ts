@@ -2,6 +2,14 @@ import { NextResponse } from "next/server";
 //import nodemailer from "nodemailer";
 import { google } from "googleapis";
 
+function getISTDate() {
+  return new Date().toLocaleDateString('en-IN', { timeZone: 'Asia/Kolkata' });
+}
+
+function getISTTime() {
+  return new Date().toLocaleTimeString('en-IN', { timeZone: 'Asia/Kolkata' });
+}
+
 export async function POST(req: Request) {
   try {
     const body = await req.json();
@@ -38,8 +46,8 @@ export async function POST(req: Request) {
         <p><strong>Service:</strong> ${body.service}</p>
         <p><strong>Address:</strong> ${body.address}</p>
         <p><strong>Pincode:</strong> ${body.pincode}</p>
-        <p><strong>Date:</strong> ${body.date}</p>
-        <p><strong>Time Slot:</strong> ${body.timeSlot}</p>
+        <p><strong>Date:</strong> ${getISTDate()}</p>
+        <p><strong>Time Slot:</strong> ${getISTTime()}</p>
       `,
     };
 
@@ -54,8 +62,8 @@ export async function POST(req: Request) {
         <p>Here's a summary of your request:</p>
         <ul>
           <li><strong>Service:</strong> ${body.service}</li>
-          <li><strong>Date:</strong> ${body.date}</li>
-          <li><strong>Time Slot:</strong> ${body.timeSlot}</li>
+          <li><strong>Date:</strong> ${getISTDate()}</li>
+          <li><strong>Time Slot:</strong> ${getISTTime()}</li>
           <li><strong>Address:</strong> ${body.address}</li>
         </ul>
         <p>Need to reach us sooner? Just reply to this email.</p>
@@ -78,16 +86,23 @@ export async function POST(req: Request) {
     const sheets = google.sheets({ version: "v4", auth });
 
     const spreadsheetId = process.env.GOOGLE_SHEET_ID!;
+    const range = "Sheet1!A:A"; // S. No. column
+    const res = await sheets.spreadsheets.values.get({
+      spreadsheetId,
+      range,
+    });
+    const nextSerial = res.data.values ? res.data.values.length : 1;
     const values = [
       [
+        nextSerial,
         body.name,
         body.mobile,
         body.email,
         body.service,
         body.address,
         body.pincode,
-        body.date,
-        body.timeSlot,
+        getISTDate(),
+        getISTTime(),
       ],
     ];
 
