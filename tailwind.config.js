@@ -13,7 +13,7 @@ export default defineConfig({
         secondary: "#F59E0B", // Example secondary color
       },
       fontFamily: {
-        urbanist: ["Urbanist", "sans-serif"], // Custom font
+        urbanist: ["Urbanist", "sans-serif","poppins"], // Custom font
       },
       spacing: {
         128: "32rem", // Custom spacing (for example, for larger margins/padding)

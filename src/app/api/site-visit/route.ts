@@ -124,7 +124,7 @@ export async function POST(req: Request) {
   } catch (error) {
     console.error("Sheet error:", error);
     return NextResponse.json(
-      { success: false, error: "Sheet append failed"  },
+      { success: false, error: "Sheet append failed" },
       { status: 500 }
     );
   }
