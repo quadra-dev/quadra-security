@@ -16,7 +16,7 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
   rating,
 }) => {
   return (
-    <div className="bg-white rounded-2xl overflow-hidden flex flex-col shadow-md w-full max-w-[250px]">
+    <div className="bg-white rounded-2xl overflow-hidden flex flex-col shadow-md h-full w-full max-w-[250px]">
       {/* Star Rating Section (instead of image) */}
       <div className="flex justify-center items-center gap-1 bg-gray-100 py-2">
         {Array.from({ length: rating }, (_, i) => (
@@ -25,14 +25,14 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
       </div>
 
       {/* Quote + description */}
-      <div className="p-3 flex flex-col">
+      <div className="p-3 flex flex-col flex-1 justify-between">
         {/* Quote icon */}
         <div className="text-white flex justify-center items-center bg-blue-500 w-10 h-10 rounded-full relative z-30 -top-9 mx-auto">
           <FaQuoteLeft />
         </div>
 
         {/* Description */}
-        <p className="text-gray-700 text-xs leading-relaxed text-center -mt-4">
+        <p className="text-gray-700 text-xs leading-relaxed text-center -mt-4 flex-1">
           &quot;{description}&quot;
         </p>
 

@@ -35,7 +35,7 @@ const testimonials = [
     name: "Gargi",
     location: "DLF Phase 2",
     description:
-      "Quality products at affordable rates . Highly recommend !",
+      "Quality products at affordable rates. Highly recommend!",
     rating: 5,
   },
       {
@@ -87,7 +87,7 @@ export function TestimonialsCarousel() {
         <CarouselContent>
           {testimonials.map((testimonial, index) => (
             <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
-              <div className="p-2">
+              <div className="p-2 md:h-55 lg:h-60">
                 <TestimonialCard {...testimonial} />
               </div>
             </CarouselItem>
