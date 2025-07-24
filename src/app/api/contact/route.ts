@@ -97,12 +97,11 @@ export async function POST(req: Request) {
         nextSerial,
         body.name,
         body.mobile,
-        body.email,
         body.service,
         body.address,
-        body.pincode,
-        getISTDate(),
-        getISTTime(),
+        body.email,
+        body.message,
+        `${getISTDate()}, ${getISTTime()}`
       ],
     ];
 
