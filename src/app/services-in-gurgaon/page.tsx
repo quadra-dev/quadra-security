@@ -231,16 +231,10 @@ export default function CCTVInstallationGurgaon() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a
-                href="#contact"
+                href="/contact-us"
                 className="bg-yellow-500 hover:bg-yellow-600 text-blue-900 font-bold py-3 px-6 rounded-lg text-center transition duration-300"
               >
                 Get Free Consultation
-              </a>
-              <a
-                href="tel:+911234567890"
-                className="bg-white hover:bg-gray-100 text-blue-900 font-bold py-3 px-6 rounded-lg text-center transition duration-300"
-              >
-                Call Now: +91 1234567890
               </a>
             </div>
           </div>
