@@ -247,9 +247,9 @@ export default function CCTVInstallationGurgaon() {
               Services Provided by Quadra Security
             </h2>
             <p className="mb-4">
-              At <strong>Quadra Security</strong>, we are proud to be the most
+              At Quadra Security, we are proud to be the most
               trusted name when it comes to{" "}
-              <strong>CCTV Distributor in Gurgaon</strong>, offering an
+              CCTV Distributor in Gurgaon, offering an
               unmatched range of CCTV Camera Systems, surveillance technologies,
               and end-to-end security solutions.
             </p>
@@ -257,9 +257,9 @@ export default function CCTVInstallationGurgaon() {
               Our services are designed to cater to the ever-evolving needs of
               urban societies, commercial businesses, and industrial setups.
               Whether you are looking for{" "}
-              <strong>CCTV installation near me</strong> for a small residence
+              CCTV installation near me for a small residence
               or a complete{" "}
-              <strong>CCTV camera security system in Gurgaon</strong> for a
+              CCTV camera security system in Gurgaon for a
               large commercial project, our expert team delivers quality
               products, professional consultations, and reliable post-sales
               service.
@@ -279,51 +279,51 @@ export default function CCTVInstallationGurgaon() {
               Comprehensive CCTV Solutions in Gurgaon
             </h2>
             <p className="mb-4">
-              At <strong>Quadra Security</strong>, we specialize in
-              full-spectrum <strong>CCTV camera installation in Gurgaon</strong>
+              At Quadra Security, we specialize in
+              full-spectrum CCTV camera installation in Gurgaon
               , ranging from basic home setups to complex multi-site industrial
-              surveillance. We offer both <strong>wired CCTV cameras</strong>{" "}
+              surveillance. We offer both wired CCTV cameras{" "}
               known for their reliability and{" "}
-              <strong>wireless CCTV cameras</strong> for flexible installation
+              wireless CCTV cameras for flexible installation
               and remote access.
             </p>
             <p className="mb-4">Our diverse product catalog includes:</p>
             <ul className="list-disc pl-6 space-y-2">
               <li>
-                <strong>Outdoor CCTV camera systems</strong> with weatherproof
+                Outdoor CCTV camera systems with weatherproof
                 casings and wide-angle lenses
               </li>
               <li>
-                <strong>Indoor CCTV camera setups</strong> designed for discreet
+                Indoor CCTV camera setups designed for discreet
                 surveillance
               </li>
               <li>
-                <strong>Night vision CCTV camera models</strong> equipped with
+                Night vision CCTV camera models equipped with
                 infrared sensors for 24/7 protection
               </li>
               <li>
-                <strong>CCTV camera for home security</strong> with mobile
+                CCTV camera for home security with mobile
                 viewing features
               </li>
               <li>
-                <strong>CCTV camera for office premises</strong> with motion
+                CCTV camera for office premises with motion
                 detection and cloud backup
               </li>
               <li>
-                <strong>CCTV camera for factory spaces</strong> with rugged
+                CCTV camera for factory spaces with rugged
                 build and AI alerting systems
               </li>
               <li>
-                <strong>CCTV camera system in Gurgaon</strong> suitable for all
+                CCTV camera system in Gurgaon suitable for all
                 property types — from apartments to business parks
               </li>
             </ul>
             <p className="mt-6">
-              As a dedicated <strong>CCTV service provider near me</strong>, we
+              As a dedicated CCTV service provider near me, we
               serve across Gurgaon’s prime areas, including{" "}
-              <strong>DLF Phase 1/2/3</strong>,{" "}
-              <strong>Golf Course Road</strong>, <strong>Cyber City</strong>,{" "}
-              <strong>Sohna Road</strong>, and <strong>Manesar</strong>,
+              DLF Phase 1/2/3,{" "}
+              Golf Course Road, Cyber City,{" "}
+              Sohna Road, and Manesar,
               ensuring each client receives local expertise and prompt on-site
               service.
             </p>
@@ -338,7 +338,7 @@ export default function CCTVInstallationGurgaon() {
             </h2>
             <p className="mb-4">
               Recognized as a leading{" "}
-              <strong>CCTV Camera Dealer in Gurgaon</strong>, Quadra Security
+              CCTV Camera Dealer in Gurgaon, Quadra Security
               proudly offers surveillance systems from the most reliable and
               reputed global brands. Our partnerships with top manufacturers
               allow us to deliver high-performance solutions with guaranteed
@@ -347,21 +347,21 @@ export default function CCTVInstallationGurgaon() {
             <p className="mb-4">We provide:</p>
             <ul className="list-disc pl-6 space-y-2">
               <li>
-                <strong>Genuine Hikvision CCTV camera systems</strong> for both
+                Genuine Hikvision CCTV camera systems for both
                 home and enterprise applications
               </li>
               <li>
-                <strong>Advanced CP Plus CCTV camera options</strong> featuring
+                Advanced CP Plus CCTV camera options featuring
                 smart video analytics
               </li>
               <li>
-                <strong>Robust Dahua CCTV camera installations</strong> for
+                Robust Dahua CCTV camera installations for
                 industry-grade surveillance requirements
               </li>
             </ul>
             <p className="mt-6">
-              As an <strong>authorized Hikvision Dealer in Gurgaon</strong> and
-              official <strong>Hikvision Distributor in Gurgaon</strong>, we
+              As an authorized Hikvision Dealer in Gurgaon and
+              official Hikvision Distributor in Gurgaon, we
               ensure:
             </p>
             <ul className="list-disc pl-6 space-y-2">
@@ -371,8 +371,8 @@ export default function CCTVInstallationGurgaon() {
             </ul>
             <p className="mt-6">
               Whether youre comparing{" "}
-              <strong>Hikvision Camera Price in Gurgaon</strong> or need the
-              latest <strong>Hikvision Camera Price List in Gurgaon</strong>,
+              Hikvision Camera Price in Gurgaon or need the
+              latest Hikvision Camera Price List in Gurgaon,
               Quadra Security is your one-stop solution — backed by certified
               professionals, expert recommendations, and local support.
             </p>
@@ -386,32 +386,32 @@ export default function CCTVInstallationGurgaon() {
               Local Search Experts – Always Near You
             </h2>
             <p className="mb-4">
-              Are you searching for <strong>CCTV camera near me</strong>,{" "}
-              <strong>CCTV camera shop near me</strong>,{" "}
-              <strong>CCTV repair near me</strong>, or{" "}
-              <strong>CCTV installer near me</strong>? Your search ends here!
+              Are you searching for CCTV camera near me,{" "}
+              CCTV camera shop near me,{" "}
+              CCTV repair near me, or{" "}
+              CCTV installer near me? Your search ends here!
             </p>
             <p className="mb-4">
-              At <strong>Quadra Security</strong>, we take pride in being your
+              At Quadra Security, we take pride in being your
               trusted, local security solution provider in Gurgaon. We serve as:
             </p>
             <ul className="list-disc pl-6 space-y-2">
               <li>
-                A premium <strong>CCTV Camera Shop in Gurgaon</strong>
+                A premium CCTV Camera Shop in Gurgaon
               </li>
               <li>
-                A reliable <strong>CCTV Camera Company in Gurgaon</strong>
+                A reliable CCTV Camera Company in Gurgaon
               </li>
               <li>
-                An experienced <strong>CCTV Camera Provider</strong> with quick
+                An experienced CCTV Camera Provider with quick
                 turnarounds
               </li>
               <li>
-                Trusted <strong>CCTV Camera Suppliers in Gurgaon</strong> and
-                verified <strong>CCTV Dealers in Gurgaon</strong>
+                Trusted CCTV Camera Suppliers in Gurgaon and
+                verified CCTV Dealers in Gurgaon
               </li>
               <li>
-                A leading <strong>CCTV Camera Distributor in Gurgaon</strong>{" "}
+                A leading CCTV Camera Distributor in Gurgaon{" "}
                 with direct sourcing and bulk availability
               </li>
             </ul>
@@ -430,13 +430,13 @@ export default function CCTVInstallationGurgaon() {
               Services Provided by Quadra Security in Gurgaon
             </h2>
             <p className="mb-4">
-              At <strong>Quadra Security</strong>, we are the most trusted{" "}
-              <strong>CCTV Distributor in Gurgaon</strong>, providing
+              At Quadra Security, we are the most trusted{" "}
+              CCTV Distributor in Gurgaon, providing
               comprehensive security solutions including{" "}
               <Link href="/brands/hikvision">Hikvision</Link>,{" "}
               <Link href="/brands/cp-plus">CP Plus</Link>, and{" "}
               <Link href="/brands/dahua">Dahua</Link> systems. Whether you need{" "}
-              <strong>CCTV installation near me</strong> for home or advanced
+              CCTV installation near me for home or advanced
               industrial surveillance, we provide full support — from selection
               to installation and after-sales service.
             </p>
@@ -450,7 +450,7 @@ export default function CCTVInstallationGurgaon() {
             <p>
               Our expertise covers residential homes, corporate offices, retail
               spaces, factories, and educational institutions. We ensure each{" "}
-              <strong>CCTV security system in Gurgaon</strong> is tailored for
+              CCTV security system in Gurgaon is tailored for
               optimal coverage and future scalability.
             </p>
           </div>
@@ -845,8 +845,8 @@ export default function CCTVInstallationGurgaon() {
               Installation and Services in Every Sector
             </h2>
             <p className="mb-4">
-              At <strong>Quadra Security</strong>, we provide professional-grade{" "}
-              <strong>CCTV Camera in Gurgaon</strong> solutions for both
+              At Quadra Security, we provide professional-grade{" "}
+              CCTV Camera in Gurgaon solutions for both
               residential and commercial environments. Our expert installation
               team ensures precise camera placement, complete system
               configuration, and user training for optimal usage and security.
@@ -868,7 +868,7 @@ export default function CCTVInstallationGurgaon() {
               Full Sector Coverage Across Gurgaon:
             </h3>
             <p className="mb-4">
-              From <strong>Sector-1 to Sector-116</strong>, we provide quick and
+              From Sector-1 to Sector-116, we provide quick and
               professional service across key locations such as:
             </p>
             <ul className="list-disc pl-6 space-y-1">
@@ -878,7 +878,7 @@ export default function CCTVInstallationGurgaon() {
             </ul>
             <p className="mt-4">
               Our dedicated sector-wise deployment teams help us meet{" "}
-              <strong>urgent surveillance requirements</strong> with speed and
+              urgent surveillance requirements with speed and
               reliability.
             </p>
 
@@ -890,16 +890,16 @@ export default function CCTVInstallationGurgaon() {
             </p>
             <ul className="list-disc pl-6 space-y-1">
               <li>
-                <strong>CCTV Camera in Delhi</strong>,{" "}
-                <strong>Faridabad</strong>, and <strong>Manesar</strong>
+                CCTV Camera in Delhi,{" "}
+                Faridabad, and Manesar
               </li>
               <li>
                 Also serving Neemrana, Bawal, Dharuhera, Rewari, Udyog Vihar,
                 Sohna Road
               </li>
               <li>
-                <strong>CCTV Dealer in Faridabad</strong> and{" "}
-                <strong>CCTV Camera Dealer in Sohna Road</strong>
+                CCTV Dealer in Faridabad and{" "}
+                CCTV Camera Dealer in Sohna Road
               </li>
             </ul>
             <p className="mt-4">
@@ -917,36 +917,36 @@ export default function CCTVInstallationGurgaon() {
               Specialized Offerings by Quadra Security
             </h2>
             <p className="mb-4">
-              As a trusted <strong>CCTV Camera Service Provider</strong> in
-              Gurgaon, <strong>Quadra Security</strong> goes beyond basic
+              As a trusted CCTV Camera Service Provider in
+              Gurgaon, Quadra Security goes beyond basic
               product delivery. We offer an all-inclusive suite of services to
               make your surveillance journey simple, secure, and seamless.
             </p>
             <ul className="list-disc pl-6 space-y-2">
               <li>
-                <strong>CCTV Camera Online in Gurgaon</strong> – Enjoy doorstep
+                CCTV Camera Online in Gurgaon – Enjoy doorstep
                 delivery with complete setup assistance.
               </li>
               <li>
-                Easy-to-understand <strong>CCTV Camera Price List</strong> with
+                Easy-to-understand CCTV Camera Price List with
                 expert advice on choosing the right system.
               </li>
               <li>
-                <strong>Professional CCTV Camera Installation</strong> handled
+                Professional CCTV Camera Installation handled
                 by our certified, skilled technicians.
               </li>
               <li>
-                Fast-response <strong>CCTV Installer near me</strong> teams
+                Fast-response CCTV Installer near me teams
                 available for local and urgent installations.
               </li>
               <li>
-                Reliable <strong>CCTV Repair near me</strong> support for quick
+                Reliable CCTV Repair near me support for quick
                 issue resolution and minimal downtime.
               </li>
             </ul>
             <p className="mt-4">
               Whether youre setting up a new system, upgrading an old one, or
-              need maintenance support, <strong>Quadra Security</strong> ensures
+              need maintenance support, Quadra Security ensures
               hassle-free service across the full lifecycle of your CCTV setup.
             </p>
           </div>
@@ -959,7 +959,7 @@ export default function CCTVInstallationGurgaon() {
               Why Choose Quadra Security?
             </h2>
             <p className="mb-4">
-              As a leading <strong>CCTV Camera Supplier in Gurgaon</strong>,
+              As a leading CCTV Camera Supplier in Gurgaon,
               Quadra Security has built a reputation for trust, quality, and
               service excellence. Here’s why we’re the preferred partner for
               thousands of clients across residential, commercial, and
@@ -967,24 +967,24 @@ export default function CCTVInstallationGurgaon() {
             </p>
             <ul className="list-disc pl-6 space-y-2">
               <li>
-                <strong>Free on-site inspection</strong> and expert consultation
+                Free on-site inspection and expert consultation
                 — with zero hidden charges.
               </li>
               <li>
-                <strong>Authorized distributorship</strong> for brands like{" "}
-                <strong>Hikvision Gurgaon</strong>, including full technical and
+                Authorized distributorship for brands like{" "}
+                Hikvision Gurgaon, including full technical and
                 software support.
               </li>
               <li>
-                <strong>Certified engineers</strong> ensuring correct placement,
+                Certified engineers ensuring correct placement,
                 configuration, and compliance with security standards.
               </li>
               <li>
-                Affordable <strong>maintenance and repair packages</strong> for
+                Affordable maintenance and repair packages for
                 long-term performance and reliability.
               </li>
               <li>
-                <strong>Tailored security systems</strong> for homes, offices,
+                Tailored security systems for homes, offices,
                 factories, schools, societies, and warehouses.
               </li>
             </ul>
@@ -1002,20 +1002,20 @@ export default function CCTVInstallationGurgaon() {
             <h2 className="text-3xl font-bold mb-4">Book Now</h2>
             <p className="mb-4">
               Looking to secure your property with the most trusted{" "}
-              <strong>CCTV Camera in Gurgaon</strong>? Choose Quadra Security —
+              CCTV Camera in Gurgaon? Choose Quadra Security —
               the go-to name trusted by thousands across homes, businesses, and
               industrial setups.
             </p>
             <p className="mb-6">
-              As established <strong>CCTV Dealers in Gurgaon</strong>, certified{" "}
-              <strong>CCTV Camera Dealers in Gurgaon</strong>, and verified{" "}
-              <strong>CCTV Camera Distributors in Gurgaon</strong>, we bring
+              As established CCTV Dealers in Gurgaon, certified{" "}
+              CCTV Camera Dealers in Gurgaon, and verified{" "}
+              CCTV Camera Distributors in Gurgaon, we bring
               everything under one roof — from product selection to
               post-installation support.
             </p>
             <p className="mb-6 font-medium">
               Secure your home. Safeguard your business. Protect what matters
-              most — with <strong>Quadra Security</strong>, your local experts
+              most — with Quadra Security, your local experts
               in surveillance solutions.
             </p>
             <Link
