@@ -96,10 +96,10 @@ export default function SiteVisitForm() {
           className="px-4 md:py-3 py-1 text-sm rounded-md bg-transparent border border-white placeholder-white/70 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400 transition-all"
           required
         />
-       <div className="flex gap-2">
-  <div className="flex items-center px-3 border border-white rounded-md bg-white/10 text-white text-sm">
+ <div className="relative w-full">
+  <span className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white text-sm font-semibold pointer-events-none">
     +91
-  </div>
+  </span>
   <motion.input
     whileFocus={{ scale: 1.02 }}
     type="tel"
@@ -109,10 +109,11 @@ export default function SiteVisitForm() {
     placeholder="Phone Number"
     value={formData.phone}
     onChange={handleChange}
-    className="flex-1 px-4 py-1 md:py-3 text-sm rounded-md bg-transparent border border-white placeholder-white/70 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400 transition-all"
+    className="pl-12 md:py-3 py-1 text-sm rounded-md bg-transparent border border-white placeholder-white/70 text-white focus:outline-none focus:ring-2 focus:ring-yellow-400 transition-all w-full"
     required
   />
 </div>
+
 
         <motion.select
           whileFocus={{ scale: 1.02 }}

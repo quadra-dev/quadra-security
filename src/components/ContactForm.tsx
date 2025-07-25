@@ -198,10 +198,10 @@ export default function ContactForm() {
                   placeholder="Your Name"
                   required
                 />
-                <div className="flex gap-2">
-  <div className="flex items-center px-3 border border-slate-300 rounded-md bg-gray-100 text-gray-600">
+               <div className="relative w-full">
+  <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500 text-sm font-semibold pointer-events-none">
     +91
-  </div>
+  </span>
   <Input
     type="tel"
     name="mobile"
@@ -211,9 +211,10 @@ export default function ContactForm() {
     onChange={handleChange}
     placeholder="Enter 10-digit number"
     required
-    className="flex-1"
+    className="pl-12"
   />
 </div>
+
 
               </div>
               <Input

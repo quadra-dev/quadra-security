@@ -84,13 +84,23 @@ const getHeading = (type?: string) => {
           className="p-2 rounded bg-[#e5e7eb] border border-white text-sm placeholder:text-gray-600"
           onChange={handleChange}
         />
-        <input
-          name="phone"
-          type="tel"
-          placeholder="Phone"
-          className="p-2 rounded bg-[#e5e7eb] border border-white text-sm placeholder:text-gray-600"
-          onChange={handleChange}
-        />
+       <div className="relative">
+  <span className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-600 text-sm font-semibold pointer-events-none">
+    +91
+  </span>
+  <input
+    name="phone"
+    type="tel"
+    maxLength={10}
+    pattern="[0-9]{10}"
+    placeholder="Phone Number"
+    value={formData.phone}
+    onChange={handleChange}
+    className="pl-12 p-2 w-full rounded bg-[#e5e7eb] border border-white text-sm placeholder:text-gray-600"
+    required
+  />
+</div>
+
         <button
           type="submit"
           className="bg-[#2b388f] hover:bg-[#2b388f]/80 transition text-white py-2 rounded mt-2 text-sm font-medium"
