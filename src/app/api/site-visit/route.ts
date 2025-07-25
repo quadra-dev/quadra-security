@@ -1,10 +1,10 @@
 import { NextResponse } from "next/server";
-import nodemailer from "nodemailer";
+//import nodemailer from "nodemailer";
 import { google } from "googleapis";
 import { JWT } from "google-auth-library";
 
 // Helper function for sending email (called in background)
-async function sendEmail({
+/**async function sendEmail({
   name,
   phone,
   service,
@@ -31,7 +31,7 @@ async function sendEmail({
   } catch (error) {
     console.error("Email error:", error);
   }
-}
+}*/
 
 function getISTDateTime() {
   return new Date().toLocaleString("en-IN", { timeZone: "Asia/Kolkata" });
@@ -114,7 +114,8 @@ export async function POST(req: Request) {
     });
 
     // Fire and forget email
-    sendEmail({ name, phone, service, area });
+    // possibly env variable errors . For now removing this functionaity
+    // sendEmail({ name, phone, service, area });
 
     return NextResponse.json({
       success: true,
