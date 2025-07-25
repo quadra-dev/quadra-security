@@ -209,7 +209,7 @@ export default function ContactForm() {
     pattern="[0-9]{10}"
     value={formData.mobile}
     onChange={handleChange}
-    placeholder="Enter 10-digit number"
+    placeholder="Phone number"
     required
     className="pl-12"
   />

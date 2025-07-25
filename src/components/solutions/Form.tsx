@@ -24,15 +24,36 @@ export default function SolutionsSiteVisitForm({
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+    const { name, email, phone } = formData;
+
+    // Name validation: Only letters and spaces
+    const nameRegex = /^[A-Za-z\s]+$/;
+    if (!nameRegex.test(name.trim())) {
+      toast.error("Name should contain only letters and spaces.");
+      return;
+    }
+
+    // Phone validation: starts with 7/8/9 and exactly 10 digits
+    const phoneRegex = /^[7-9][0-9]{9}$/;
+    if (!phoneRegex.test(phone)) {
+      toast.error("Phone number must start with 7/8/9 and be 10 digits.");
+      return;
+    }
+
 
     const toastId = toast.loading("Submitting request...");
+    
 
     try {
+      const payload = {
+        name,
+        email,
+        phone: `+91${phone}`,
+      };
       const response = await fetch("/api/site-visit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+        body: JSON.stringify(payload),
       });
 
       const result = await response.json();
