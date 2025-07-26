@@ -7,7 +7,6 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
-
   },
   "dependencies": {
     "@portabletext/react": "^3.2.1",
@@ -27,6 +26,7 @@
     "framer-motion": "^12.9.2",
     "google-auth-library": "^9.15.1",
     "googleapis": "^148.0.0",
+    "keen-slider": "^6.8.6",
     "leaflet": "^1.9.4",
     "lucide-react": "^0.488.0",
     "mongoose": "^8.14.0",

@@ -83,7 +83,7 @@ export default function ContactForm() {
           email: "",
           service: "CCTV Installation",
           address: "",
-          city: "Gurgaon",
+          city: "Gurugram",
         });
       } else {
         toast.error("Something went wrong. Please try again.");

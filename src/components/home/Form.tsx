@@ -172,10 +172,10 @@ export default function SiteVisitForm() {
           
         >
           <option value="" disabled>
-            SELECT AREA/CITY
+            SELECT LOCATION
           </option>
-          <option value="Gurgaon" className="text-black">
-              Gurgaon
+          <option value="Gurugram" className="text-black">
+              Gurugram
           </option>
            <option value="Delhi" className="text-black">
               Delhi
