@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import nodemailer from "nodemailer";
+//import nodemailer from "nodemailer";
 import { google } from "googleapis";
 import { JWT } from "google-auth-library";
 
@@ -77,7 +77,7 @@ export async function POST(req: Request) {
     const email = data.email || "Not specified";
     const message = data.message || "Not specified";
 
-    const transporter = nodemailer.createTransport({
+    /**const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
         user: process.env.GMAIL_USER,
@@ -101,6 +101,7 @@ export async function POST(req: Request) {
       `,
     });
 
+
     // Optional: Client confirmation email
     // if (email !== "Not specified") {
     //   await transporter.sendMail({
@@ -113,9 +114,10 @@ export async function POST(req: Request) {
     //       <p>– The Quadra Booking Team</p>
     //     `,
     //   });
-    // }
+    // }*/
 
     await appendToSheet(name, phone, service, area, email, message);
+
 
     return NextResponse.json({ success: true });
   } catch (error) {
