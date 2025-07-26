@@ -42,7 +42,7 @@ export default function Testimonials() {
           </h1>
           <p className="lg:text-xl hidden md:block">
             From gated societies to local businesses,
-            <br /> our clients across Gurgaon trust us for fast, reliable,{" "}
+            <br /> our clients across Gurugram trust us for fast, reliable,{" "}
             <br />
             and secure CCTV installations.
           </p>

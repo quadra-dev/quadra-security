@@ -22,7 +22,7 @@ export default function ContactForm() {
     email: "",
     service: "CCTV Installation",
     address: "",
-    city: "Gurgaon",
+    city: "Gurugram",
   });
 
   const [loading, setLoading] = useState(false);
@@ -79,7 +79,7 @@ export default function ContactForm() {
           email: "",
           service: "CCTV Installation",
           address: "",
-          city: "Gurgaon",
+          city: "Gurugram",
         });
       } else {
         toast.error("Something went wrong. Please try again.");
@@ -237,7 +237,7 @@ export default function ContactForm() {
                 className="w-full h-10 px-3 py-2 rounded-md border border-slate-300 focus:outline-none"
                 
               >
-                <option value="Gurgaon">Gurgaon</option>
+                <option value="Gurugram">Gurugram</option>
                 <option value="Delhi">Delhi</option>
                 <option value="Noida">Noida</option>
               </select>

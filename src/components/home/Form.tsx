@@ -66,7 +66,7 @@ export default function SiteVisitForm() {
       ref={ref}
       initial={{ opacity: 0, scale: 0.8 }}
       animate={isInView ? { opacity: 1, scale: 1 } : {}}
-      transition={{ duration: 0.7, ease: "easeOut" }}
+      transition={{ duration: 0.3, ease: "easeOut" }}
       className="block w-5/7 bg-white/10 md:p-6 p-4 md:rounded-3xl rounded-2xl shadow-2xl text-center md:w-[400px]  h-[300px] md:h-auto text-white relative backdrop-blur-xl"
     >
       <div className="absolute -top-5 left-1/2 transform -translate-x-1/2 bg-white rounded-full p-2 shadow-md">
@@ -159,7 +159,7 @@ export default function SiteVisitForm() {
           <option value="" disabled>
             SELECT AREA/CITY
           </option>
-          <optgroup label="North Gurgaon" className="text-black">
+          <optgroup label="North Gurugram" className="text-black">
             <option value="palam-vihar" className="text-black">
               Palam Vihar
             </option>
@@ -173,7 +173,7 @@ export default function SiteVisitForm() {
               MG Road
             </option>
           </optgroup>
-          <optgroup label="South Gurgaon" className="text-black">
+          <optgroup label="South Gurugram" className="text-black">
             <option value="sohna" className="text-black">
               Sohna
             </option>
@@ -187,7 +187,7 @@ export default function SiteVisitForm() {
               Vatika City
             </option>
           </optgroup>
-          <optgroup label="East Gurgaon" className="text-black">
+          <optgroup label="East Gurugram" className="text-black">
             <option value="sector-56" className="text-black">
               Sector 56
             </option>
@@ -201,7 +201,7 @@ export default function SiteVisitForm() {
               Ghata Village
             </option>
           </optgroup>
-          <optgroup label="West Gurgaon" className="text-black">
+          <optgroup label="West Gurugram" className="text-black">
             <option value="sector-9" className="text-black">
               Sector 9
             </option>
@@ -215,7 +215,7 @@ export default function SiteVisitForm() {
               IFFCO Chowk
             </option>
           </optgroup>
-          <optgroup label="Central Gurgaon" className="text-black">
+          <optgroup label="Central Gurugram" className="text-black">
             <option value="civil-lines" className="text-black">
               Civil Lines
             </option>

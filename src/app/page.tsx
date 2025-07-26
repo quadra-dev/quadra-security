@@ -8,10 +8,10 @@ import BrandsCarousel from "@/components/home/BrandsCarousel";
 import WhyChooseUs from "@/components/home/WhyChooseUs";
 import Testimonials from "@/components/home/Testimonials";
 import { useRouter } from "next/navigation";
-import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import Chatbot from "@/components/Chatbot";
 import Canonical from "@/utils/Canonical";
 import Head from "next/head";
+import  Link  from "next/link";
 
 export default function Home() {
   const router = useRouter();
@@ -19,17 +19,15 @@ export default function Home() {
     router.push("/contact-us");
   };
 
-  const words1 = `Your Trusted Partner for CCTV, Biometric & Security Systems in Gurgaon`;
-
   return (
     <>
       <Head>
         <title>
-          CCTV Installation in Gurgaon | CCTV Cameras & Security Services
+          CCTV Installation in Gurugram | CCTV Cameras & Security Services
         </title>
         <meta
           name="description"
-          content="Quadra Security offers expert CCTV installation in Gurgaon, high-quality CCTV cameras, and complete security services for homes, offices, and commercial spaces."
+          content="Quadra Security offers expert CCTV installation in Gurugram, high-quality CCTV cameras, and complete security services for homes, offices, and commercial spaces."
         />
         <Canonical />
       </Head>
@@ -45,12 +43,12 @@ export default function Home() {
                 transition={{ duration: 0.1 }}
               >
                 <h1 className="md:hidden text-white text-center text-xl font-semibold px-4">
-                  <TextGenerateEffect words={words1} className="p-2" />
+                  Your Trusted Partner for CCTV, Biometric & Security Systems in Gurgao`
                 </h1>
                 <h1 className="hidden md:block text-white lg:text-5xl font-semibold">
                   Complete Security Solutions for Your <br /> Home & Office in
                   <span className="ml-2 font-bold text-yellow-500">
-                    Gurgaon
+                    Gurugram
                   </span>
                 </h1>
               </motion.div>
@@ -58,7 +56,7 @@ export default function Home() {
               <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: 1 }}
+                transition={{ duration: 0.3, delay: 0.4 }}
               >
                 <h2 className="md:hidden text-white text-lg text-center px-4">
                   CCTV, Biometric Systems, Video Door Phones <br /> and More —
@@ -66,7 +64,7 @@ export default function Home() {
                 </h2>
                 <h2 className="hidden md:block text-white text-3xl">
                   Professional CCTV & Biometric Installation <br /> with Free
-                  Site Visit in Gurgaon
+                  Site Visit in Gurugram
                 </h2>
               </motion.div>
             </div>
@@ -75,7 +73,7 @@ export default function Home() {
               className="flex w-full justify-center items-center md:w-auto md:block md:justify-start md:items-start"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 2 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
             >
               <FancyButton
                 className="py-2 md:py-4 px-8 md:px-10"
@@ -124,7 +122,7 @@ export default function Home() {
             <p className="text-white text-center md:text-start">
               We handle everything — from product recommendation and planning to
               installation, repair, and ongoing maintenance. Get peace of mind
-              with Quadra Security’s trusted services in Gurgaon.
+              with Quadra Security’s trusted services in <Link href="/services-in-gurgaon"></Link> Gurugram.
             </p>
           </motion.div>
           <div className="flex justify-center w-full px-4 md:px-0">

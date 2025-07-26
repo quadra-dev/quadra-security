@@ -9,6 +9,7 @@ import { motion } from "framer-motion";
 import { FaShieldAlt, FaDesktop, FaBrain, FaCheck } from "react-icons/fa";
 import Canonical from "@/utils/Canonical";;
 import ConsultationForm from "@/components/blog/ConsultationForm";
+import  Link  from "next/link";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 30 },
@@ -27,7 +28,7 @@ const AboutUs: React.FC = () => {
         <title>About Us | Quadra Security</title>
         <meta
           name="description"
-          content="Learn about Quadra Security – your trusted partner in home and commercial surveillance, offering innovative and reliable security solutions in Gurgaon."
+          content="Learn about Quadra Security – your trusted partner in home and commercial surveillance, offering innovative and reliable security solutions in Gurugram."
         />
         <Canonical />
       </Head>
@@ -69,7 +70,7 @@ const AboutUs: React.FC = () => {
                 At <strong>Quadra Security</strong>, we believe true peace of
                 mind comes from knowing your world is protected - not just by
                 systems but by people who care . As a leading{" "}
-                <strong>security service provider in Gurgaon</strong>, our
+                <strong>security <Link href="/services-in-gurgaon">provider in Gurugram</Link> </strong>, our
                 mission is to protect your homes, offices, retail spaces, and
                 commercial properties with smart, reliable, and customized{" "}
                 <strong>security solutions</strong>. Whether you&apos;re looking
@@ -117,7 +118,7 @@ const AboutUs: React.FC = () => {
                 Choose <strong>Quadra Security</strong> — your trusted partner
                 for <strong>home security cameras</strong>,{" "}
                 <strong>commercial surveillance systems</strong>, and expert{" "}
-                <strong>security services in Gurgaon</strong>. With our blend of
+                <strong>security services in Gurugram</strong>. With our blend of
                 technology, strategy, and genuine care, we protect what you
                 value most.
               </p>
@@ -220,7 +221,7 @@ const AboutUs: React.FC = () => {
                 ],
                 [
                   "Free Consultation & Site Visit",
-                  "Our experts offer free site surveys and consultations to determine the most effective CCTV solutions — including services in Gurgaon, DLF Phase 1, and more.",
+                  "Our experts offer free site surveys and consultations to determine the most effective CCTV solutions — including services in Gurugram, DLF Phase 1, and more.",
                 ],
                 [
                   "Transparent Pricing",

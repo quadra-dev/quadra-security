@@ -12,7 +12,7 @@ export default function ContactUsPage() {
         <title>Contact Us | Quadra Security</title>
         <meta
           name="description"
-          content="Contact us to better understand your security needs Or visit us in Gurgaon at our store . "
+          content="Contact us to better understand your security needs Or visit us in Gurugram at our store . "
         />
       </Head>
          <Canonical />
