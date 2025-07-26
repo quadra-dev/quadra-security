@@ -124,7 +124,7 @@ export default function ConsultationForm() {
           required
         >
           <option value="">Select Area</option>
-          <option value="Gurgaon">Gurgaon</option>
+          <option value="Gurugram">Gurugram</option>
           <option value="Delhi">Delhi NCR</option>
         </select>
         <button

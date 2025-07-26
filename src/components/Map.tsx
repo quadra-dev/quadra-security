@@ -3,7 +3,7 @@
 import { GoogleMap, useLoadScript, Marker } from "@react-google-maps/api";
 
 const center = { lat: 28.4595, lng: 77.0266 };
-// Example: Gurgaon location
+// Example: Gurugram location
 
 export default function Map() {
   const { isLoaded } = useLoadScript({

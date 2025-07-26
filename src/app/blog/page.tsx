@@ -37,7 +37,7 @@ export default async function BlogPage() {
         <title>Blog - Quadra Security</title>
         <meta
           name="description"
-          content="Read the latest news and updates on CCTV surveillance, security installations, biometrics, and other security services in Gurgaon."
+          content="Read the latest news and updates on CCTV surveillance, security installations, biometrics, and other security services in Gurugram."
         />
         <Canonical />
       </Head>

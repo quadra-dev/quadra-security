@@ -433,9 +433,9 @@ export default function CCTVInstallationGurgaon() {
               At Quadra Security, we are the most trusted{" "}
               CCTV Distributor in Gurgaon, providing
               comprehensive security solutions including{" "}
-              <Link href="/brands/hikvision">Hikvision</Link>,{" "}
-              <Link href="/brands/cp-plus">CP Plus</Link>, and{" "}
-              <Link href="/brands/dahua">Dahua</Link> systems. Whether you need{" "}
+              <Link href="/">Hikvision</Link>,{" "}
+              <Link href="/">CP Plus</Link>, and{" "}
+              <Link href="/">Dahua</Link> systems. Whether you need{" "}
               CCTV installation near me for home or advanced
               industrial surveillance, we provide full support — from selection
               to installation and after-sales service.

@@ -21,6 +21,7 @@ import {
 } from "react-icons/fa";
 import Canonical from "@/utils/Canonical";
 import Head from "next/head";
+import Link from "next/link";
 
 interface ServiceItem {
   serviceId : string;
@@ -185,7 +186,7 @@ const Services: NextPage = () => {
             <p>
               Quadra Security is dedicated to delivering cutting-edge security
               systems designed for reliability, efficiency, and peace of mind.
-              Serving Gurgaon and nearby regions, we specialize in the design,
+              Serving Gurugram and nearby regions, we specialize in the design,
               installation, and maintenance of state-of-the-art security
               solutions tailored to your needs.
             </p>
@@ -232,7 +233,7 @@ const Services: NextPage = () => {
               <strong>
                 Not sure which security solution is right for you?
               </strong>{" "}
-              Our team is here to help. Reach out for a free consultation or
+              Our <Link href="/services-in-gurgaon">team</Link>  is here to help. Reach out for a free consultation or
               on-site assessment, and let us recommend a tailored solution that
               fits your unique needs.
             </p>

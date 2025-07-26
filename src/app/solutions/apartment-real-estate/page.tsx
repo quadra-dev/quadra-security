@@ -30,7 +30,7 @@ const SolutionsPage = () => {
         </title>
         <meta
           name="description"
-          content="Explore comprehensive apartment and real estate security solutions including CCTV surveillance, biometric access control, and 24/7 monitoring by Quadra Security in Gurgaon."
+          content="Explore comprehensive apartment and real estate security solutions including CCTV surveillance, biometric access control, and 24/7 monitoring by Quadra Security in Gurugram."
         />
         <Canonical />
       </Head>
