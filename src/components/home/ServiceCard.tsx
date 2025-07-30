@@ -16,7 +16,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
   features,
 }) => {
   return (
-    <div className="bg-[#06044E] rounded-2xl overflow-hidden shadow-lg w-[250px] md:w-[300px] h-[420px] flex flex-col">
+    <div className="bg-[#06044E] rounded-2xl overflow-hidden shadow-lg w-[250px] md:w-[300px] h-[480px] flex flex-col">
       {/* Image section */}
       <div className="w-full h-36 md:h-[180px] relative shrink-0">
         <img
@@ -32,7 +32,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
         <h3 className="text-yellow-400 font-bold text-lg">{title}</h3>
         <p className="text-white text-sm mt-1 line-clamp-3">{description}</p>
 
-        <ul className="text-white text-sm mt-2 overflow-auto flex-grow space-y-1 pr-1">
+        <ul className="text-white text-sm mt-2 flex-grow space-y-1 pr-1">
           {features.map((feature, idx) => (
             <li key={idx}>✔ {feature}</li>
           ))}
