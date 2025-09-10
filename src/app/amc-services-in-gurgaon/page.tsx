@@ -1,5 +1,3 @@
-import { Card, CardContent } from "@/components/ui/card";
-
 export default function CctvAmcGurugram() {
   return (
     <div className="bg-gray-50 text-gray-900">
