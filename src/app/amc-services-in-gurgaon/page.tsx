@@ -1,3 +1,5 @@
+// import { Link } from "lucide-react";
+import Link from "next/link"
 export default function CctvAmcGurugram() {
   return (
     <div className="bg-gray-50 text-gray-900">
@@ -147,12 +149,12 @@ export default function CctvAmcGurugram() {
         <p className="mb-6 max-w-2xl mx-auto">
           Because choosing us means we will take care of your security systems.
         </p>
-        <a
-          href="/contact"
+        <Link
+          href="/contact-us"
           className="inline-block bg-white text-indigo-800 font-semibold px-6 py-3 rounded-xl shadow-md hover:bg-gray-200"
         >
           Book Your AMC Now
-        </a>
+        </Link>
       </section>
     </div>
   );
