@@ -1,6 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import Head from "next/head";
-
+import Link from "next/link"
 export default function ServicesFaridabad() {
   return (
     <div className="bg-gray-50 text-gray-900">
@@ -215,12 +215,12 @@ export default function ServicesFaridabad() {
           Book a free site inspection in Faridabad today and get a customized
           security solution designed for your needs.
         </p>
-        <a
-          href="/contact"
+        <Link
+          href="/contact-us"
           className="inline-block bg-white text-indigo-800 font-semibold px-6 py-3 rounded-xl shadow-md hover:bg-gray-200"
         >
           Book Free Site Inspection
-        </a>
+        </Link>
       </section>
     </div>
   );
