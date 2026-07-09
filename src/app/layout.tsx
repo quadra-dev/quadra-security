@@ -169,8 +169,8 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta
-          name="google-site-verification"
-          content="-UWjIyWB-EVL-C8zjlw6VEcPR5uzG94QSbTzc7_FRD0"
+           name="google-site-verification"
+           content="-UWjIyWB-EVL-C8zjlw6VEcPR5uzG94QSbTzc7_FRD0"
         />
       </head>
       <body className={`${urbanist.variable} antialiased`}>
