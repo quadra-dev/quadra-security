@@ -170,7 +170,7 @@ export default function RootLayout({
       <head>
         <meta
           name="google-site-verification"
-          content="4SZyundM086TBwsSBgTjzQ2x29phDN6SJFUuDhb87WY"
+          content="-UWjIyWB-EVL-C8zjlw6VEcPR5uzG94QSbTzc7_FRD0"
         />
       </head>
       <body className={`${urbanist.variable} antialiased`}>
