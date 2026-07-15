@@ -1,5 +1,4 @@
 // app/cctv-camera-installation-gurgaon/page.jsx
-import Head from "next/head";
 import Link from "next/link";
 
 export const metadata = {
@@ -188,7 +187,7 @@ export default function CCTVInstallationGurgaon() {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     name: "Quadra Security",
-    image: "https://www.quadrasecurity.com/images/logo.jpg",
+    image: "https://www.quadrasecurity.in/images/logo.jpg",
     description: "Professional CCTV camera installation services in Gurgaon",
     address: {
       "@type": "PostalAddress",
@@ -203,7 +202,7 @@ export default function CCTVInstallationGurgaon() {
       latitude: "28.4595",
       longitude: "77.0266",
     },
-    url: "https://www.quadrasecurity.com/cctv-camera-installation-gurgaon",
+    url: "https://www.quadrasecurity.in/services-in-gurgaon",
     telephone: "+911234567890",
     openingHours: "Mo,Tu,We,Th,Fr,Sa 09:00-18:00",
     priceRange: "₹₹",
@@ -215,9 +214,10 @@ export default function CCTVInstallationGurgaon() {
 
   return (
     <>
-      <Head>
-        <script type="application/ld+json">{JSON.stringify(schemaData)}</script>
-      </Head>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
 
       <main className="bg-gray-50 font-[family-name:var(--font-urbanist)]">
         {/* Hero Section */}

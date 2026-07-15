@@ -6,8 +6,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import HeroBanner from "@/components/ui/hero-banner";
 import { useRouter } from "next/navigation";
-import Canonical from "@/utils/Canonical";
-import Head from "next/head";
+
 
 const SolutionsPage = () => {
   const router = useRouter();
@@ -24,14 +23,7 @@ const SolutionsPage = () => {
 
   return (
     <>
-      <Head>
-        <title>Campus Security Solutions | Quadra Security</title>
-        <meta
-          name="description"
-          content="Protect your educational institution with Quadra Security's comprehensive campus security solutions including AI monitoring, face recognition, GPS tracking, and more."
-        />
-        <Canonical/>
-      </Head>
+
       <div className="bg-white font-[family-name:var(--font-urbanist)] text-gray-800 min-h-screen">
         <HeroBanner title="Campus Security Solutions" />
 

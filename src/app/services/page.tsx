@@ -19,8 +19,7 @@ import {
   FaRoad,
   FaLock,
 } from "react-icons/fa";
-import Canonical from "@/utils/Canonical";
-import Head from "next/head";
+
 import Link from "next/link";
 
 interface ServiceItem {
@@ -161,14 +160,8 @@ const Services: NextPage = () => {
 
   return (
     <>
-      <Head>
-        <title>Our Services | Quadra Security</title>
-        <meta
-          name="description"
-          content="Explore Quadra Security's advanced security solutions including CCTV installation, biometric systems, video door phones, and more."
-        />
-        <Canonical />
-      </Head>
+
+
 
       <main
         className="w-full font-[family-name:var(--font-urbanist)]"

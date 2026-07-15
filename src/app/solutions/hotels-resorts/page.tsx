@@ -6,8 +6,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import HeroBanner from "@/components/ui/hero-banner";
 import { useRouter } from "next/navigation";
-import Canonical from "@/utils/Canonical";
-import Head from "next/head";
+
 
 const SolutionsPage = () => {
   const router = useRouter();
@@ -24,15 +23,6 @@ const SolutionsPage = () => {
 
   return (
     <>
-      <Head>
-        <title>Hotels & Resorts Security Solutions | Quadra Security</title>
-        <meta
-          name="description"
-          content="Protect your hotels and resorts with Quadra Security’s advanced surveillance and AI-powered security solutions for 24/7 safety and peace of mind."
-        />
-        <Canonical />
-      </Head>
-
       <div className="bg-white font-[family-name:var(--font-urbanist)] text-gray-800 min-h-screen">
         <HeroBanner title="Hotels/Resorts Security" />
 

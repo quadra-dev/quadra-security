@@ -1,20 +1,16 @@
 import { Card, CardContent } from "@/components/ui/card";
-import Head from "next/head";
-import Link from "next/link"
+import type { Metadata } from "next";
+import Link from "next/link";
+
+export const metadata: Metadata = {
+  title: "CCTV Camera Installation & Security Solutions in Faridabad",
+  description:
+    "Quadra Security offers CCTV installation, biometric access, alarms, video door phones & more in Faridabad. Get a reliable and affordable security solution today!",
+};
+
 export default function ServicesFaridabad() {
   return (
     <div className="bg-gray-50 text-gray-900">
-      {/* SEO Meta Tags */}
-      <Head>
-        <title>
-          CCTV Camera Installation & Security Solutions in Faridabad | Quadra Security
-        </title>
-        <meta
-          name="description"
-          content="Quadra Security offers CCTV installation, biometric access, alarms, video door phones & more in Faridabad. Get a reliable and affordable security solution today!"
-        />
-      </Head>
-
       {/* Hero Section */}
       <section className="bg-indigo-800 pt-20 md:pt-30 text-white py-12 px-6 text-center">
         <h1 className="text-3xl md:text-5xl font-bold mb-4">

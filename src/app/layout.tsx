@@ -50,13 +50,11 @@ themeColor: "#1e1e1e",
 
     // Local SEO Keywords (Delhi NCR focus)
     "CCTV installation in Gurugram",
-    "CCTV installation in Gurugram",
     "CCTV installation in Noida",
     "CCTV installation in Delhi",
     "CCTV installation in New Delhi",
     "CCTV installation in Delhi NCR",
 
-    "Best security system provider in Gurugram",
     "Best security system provider in Gurugram",
     "Best security system provider in Noida",
     "Best security system provider in Delhi",
@@ -64,13 +62,11 @@ themeColor: "#1e1e1e",
     "Best security system provider in Delhi NCR",
 
     "Biometric attendance system in Gurugram",
-    "Biometric attendance system in Gurugram",
     "Biometric attendance system in Noida",
     "Biometric attendance system in Delhi",
     "Biometric attendance system in New Delhi",
     "Biometric attendance system in Delhi NCR",
 
-    "Video surveillance setup in Gurugram",
     "Video surveillance setup in Gurugram",
     "Video surveillance setup in Noida",
     "Video surveillance setup in Delhi",
@@ -79,20 +75,17 @@ themeColor: "#1e1e1e",
 
     "Security camera installers near me",
     "Affordable CCTV installation in Gurugram",
-    "Affordable CCTV installation in Gurugram",
     "Affordable CCTV installation in Noida",
     "Affordable CCTV installation in Delhi",
     "Affordable CCTV installation in New Delhi",
     "Affordable CCTV installation in Delhi NCR",
 
     "Residential CCTV installation in Gurugram",
-    "Residential CCTV installation in Gurugram",
     "Residential CCTV installation in Noida",
     "Residential CCTV installation in Delhi",
     "Residential CCTV installation in New Delhi",
     "Residential CCTV installation in Delhi NCR",
 
-    "Commercial security systems in Gurugram",
     "Commercial security systems in Gurugram",
     "Commercial security systems in Noida",
     "Commercial security systems in Delhi",
@@ -124,17 +117,17 @@ themeColor: "#1e1e1e",
     "Which is better — wired or wireless CCTV?",
   ],
 
-  authors: [{ name: "Quadra Security", url: "https://www.quadrasecurity.com" }],
-  metadataBase: new URL("https://www.quadrasecurity.com"),
+  authors: [{ name: "Quadra Security", url: "https://www.quadrasecurity.in" }],
+  metadataBase: new URL("https://www.quadrasecurity.in"),
   openGraph: {
     title: "Quadra Security | Complete Security Solutions",
     description:
       "Secure your premises with our expert installation of CCTV, ANPR, EPABX, biometric systems, and more.",
-    url: "https://www.quadrasecurity.com",
+    url: "https://www.quadrasecurity.in",
     siteName: "Quadra Security",
     images: [
       {
-        url: "https://www.quadrasecurity.com/logo_color.svg", // replace with your actual OG image
+        url: "https://www.quadrasecurity.in/logo_color.svg",
         width: 1200,
         height: 630,
         alt: "Quadra Security Installation",
@@ -148,7 +141,7 @@ themeColor: "#1e1e1e",
     title: "Quadra Security | CCTV & Biometric Experts",
     description:
       "Secure your home and office with our full range of security systems including CCTV, ANPR, EPABX, biometrics, and more.",
-    images: ["https://www.quadrasecurity.com/logo_color.svg"],
+    images: ["https://www.quadrasecurity.in/logo_color.svg"],
   },
   robots: {
     index: true,

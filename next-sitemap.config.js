@@ -1,6 +1,6 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
-  siteUrl: 'https://www.quadrasecurity.com', // 🔁 Replace with your actual domain
+  siteUrl: 'https://www.quadrasecurity.in',
   generateRobotsTxt: true,
   changefreq: 'weekly',
   priority: 0.7,

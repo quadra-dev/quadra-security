@@ -4,8 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import HeroBanner from "@/components/ui/hero-banner";
 import DownSidebar from "@/components/solutions/DownSidebar";
-import Canonical from "@/utils/Canonical";
-import Head from "next/head";
+
 
 const SolutionsPage = () => {
   const sidebarItems = [
@@ -21,14 +20,7 @@ const SolutionsPage = () => {
 
   return (
     <>
-      <Head>
-        <title>Comprehensive Bank Security Solutions - Quadra Security</title>
-        <meta
-          name="description"
-          content="Bank Security solutions by Quadra Security offering CCTV, biometric access, 24/7 monitoring & more."
-        />
-        <Canonical />
-      </Head>
+
       <div className="bg-white font-[family-name:var(--font-urbanist)] text-gray-800 min-h-screen">
         {/* Header Banner Section */}
         <HeroBanner title="Comprehensive Bank Security Solutions" />

@@ -9,8 +9,7 @@ import WhyChooseUs from "@/components/home/WhyChooseUs";
 import Testimonials from "@/components/home/Testimonials";
 import { useRouter } from "next/navigation";
 import Chatbot from "@/components/Chatbot";
-import Canonical from "@/utils/Canonical";
-import Head from "next/head";
+
 import  Link  from "next/link";
 
 export default function Home() {
@@ -21,16 +20,7 @@ export default function Home() {
 
   return (
     <>
-      <Head>
-        <title>
-          CCTV Installation in Gurugram | CCTV Cameras & Security Services
-        </title>
-        <meta
-          name="description"
-          content="Quadra Security offers expert CCTV installation in Gurugram, high-quality CCTV cameras, and complete security services for homes, offices, and commercial spaces."
-        />
-        <Canonical />
-      </Head>
+
 
       <div className="font-[family-name:var(--font-urbanist)]">
         {/* Section 1 - Hero */}

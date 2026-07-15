@@ -1,13 +1,12 @@
 "use client";
 
 import React from "react";
-import Head from "next/head";
 import Image from "next/image";
 import HeroBanner from "@/components/ui/hero-banner";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
 import { FaShieldAlt, FaDesktop, FaBrain, FaCheck } from "react-icons/fa";
-import Canonical from "@/utils/Canonical";;
+
 import ConsultationForm from "@/components/blog/ConsultationForm";
 import  Link  from "next/link";
 
@@ -24,14 +23,7 @@ const AboutUs: React.FC = () => {
 
   return (
     <>
-      <Head>
-        <title>About Us | Quadra Security</title>
-        <meta
-          name="description"
-          content="Learn about Quadra Security – your trusted partner in home and commercial surveillance, offering innovative and reliable security solutions in Gurugram."
-        />
-        <Canonical />
-      </Head>
+
 
       <motion.div
         className="flex flex-col min-h-screen font-[family-name:var(--font-urbanist)]"
@@ -39,13 +31,7 @@ const AboutUs: React.FC = () => {
         animate={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
       >
-        <Head>
-          <title>About Us | Quadra Security</title>
-          <meta
-            name="description"
-            content="About Quadra Security - Guarding homes & businesses with innovation"
-          />
-        </Head>
+
 
         {/* Header Banner Section */}
         <HeroBanner title="About Us" />

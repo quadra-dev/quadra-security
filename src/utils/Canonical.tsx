@@ -3,7 +3,7 @@
 import Head from "next/head";
 import { usePathname } from "next/navigation";
 
-const BASE_URL = "https://www.quadrasecurity.com"; // 🔁 Replace with your actual domain
+const BASE_URL = "https://www.quadrasecurity.in";
 
 const Canonical = () => {
   const pathname = usePathname();

@@ -3,10 +3,15 @@ import { Suspense } from "react";
 import { groq } from "next-sanity";
 import { client } from "@/lib/sanityClient";
 import BlogClientComponent from "./BlogClientComponent";
-import Canonical from "@/utils/Canonical";
-import Head from "next/head";
+import type { Metadata } from "next";
 
 export const revalidate = 60;
+
+export const metadata: Metadata = {
+  title: "Blog",
+  description:
+    "Read the latest news and updates on CCTV surveillance, security installations, biometrics, and other security services in Gurugram.",
+};
 
 // Blog post interface for TypeScript
 export interface BlogPost {
@@ -32,19 +37,8 @@ export default async function BlogPage() {
   const blogPosts = await client.fetch(query);
 
   return (
-    <>
-      <Head>
-        <title>Blog - Quadra Security</title>
-        <meta
-          name="description"
-          content="Read the latest news and updates on CCTV surveillance, security installations, biometrics, and other security services in Gurugram."
-        />
-        <Canonical />
-      </Head>
-
-      <Suspense fallback={<div>Loading...</div>}>
-        <BlogClientComponent blogPosts={blogPosts} />
-      </Suspense>
-    </>
+    <Suspense fallback={<div>Loading...</div>}>
+      <BlogClientComponent blogPosts={blogPosts} />
+    </Suspense>
   );
 }
