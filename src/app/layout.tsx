@@ -151,6 +151,9 @@ themeColor: "#1e1e1e",
   icons: {
     icon: "/favicon.ico",
   },
+  verification: {
+    google: "4yhx3VGYvzCw2i3kjNKK5343U_O2FgVK7x7rgvsPwhI",
+  },
 };
 
 export default function RootLayout({
@@ -160,12 +163,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <head>
-        <meta
-           name="google-site-verification"
-           content="-UWjIyWB-EVL-C8zjlw6VEcPR5uzG94QSbTzc7_FRD0"
-        />
-      </head>
       <body className={`${urbanist.variable} antialiased`}>
         <Analytics />
         <Toaster />
